@@ -32,20 +32,21 @@ public class UI_Manager : MonoBehaviour
     }
 
 
-    public T ShowSceneUI<T>(string name = null) where T : UI_Scene
+    public T ShowSceneUI<T>(Transform parent = null, string name = null) where T : UI_Scene
     {
 
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
-        GameObject go = Manager.Resource_Instance.Instantiate($"UI/Scene/{name}");
+        GameObject go = Manager.Resource_Instance.Instantiate($"UI/Scene/{name}", parent);
         T sceneUI = Util.GetOrAddComponent<T>(go);
         m_sceneUI = sceneUI;
-
-       
-        go.transform.SetParent(Root.transform);
+        if (parent == null)
+            go.transform.SetParent(Root.transform);
         return sceneUI;
-
     }
+
+
+   
 
 
     public T ShowPopupUI<T>(string name = null) where T : UI_Popup
@@ -56,8 +57,6 @@ public class UI_Manager : MonoBehaviour
         GameObject go = Manager.Resource_Instance.Instantiate($"UI/Popup/{name}");
         T popup = Util.GetOrAddComponent<T>(go);
         m_popupStack.Push(popup);
-
-       
         go.transform.SetParent(Root.transform);
         return popup;
 

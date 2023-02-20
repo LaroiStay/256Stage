@@ -12,6 +12,7 @@ public class GameScene : BaseScene
     protected override void Init()
     {
         base.Init();
+        Manager.UI_Instance.ShowSceneUI<BasicWindow>();
         SceneType = Define.Scene.Game;
     }
     public override void Clear()

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Scene : MonoBehaviour
+public class UI_Popup : MonoBehaviour
 {
     public virtual void init()
     {
-        Manager.UI_Instance.SetCanvas(gameObject, false);
+        Manager.UI_Instance.SetCanvas(gameObject, true);
     }
+
+  
 }

@@ -15,7 +15,7 @@ public class BasicWindow : UI_Scene
     int Other_Length = 4;
     int Light_Length = 1;
     int Speaker_Length= 1;
-    int Truss_Length = 7;
+    int Truss_Length = 8;
 
     List<int> tempList = new List<int>();
     Dictionary<string, int> myDictionary = new Dictionary<string, int>();
@@ -100,6 +100,7 @@ public class BasicWindow : UI_Scene
         }
         else if(CurrentState == true && IsSelect[buttonIndex] == false)
         {
+            DeleteAllInSelectMenu();
             for (int i = 0; i < IsSelect.Count; i++)
                 IsSelect[i] = false;
             IsSelect[buttonIndex] = true;
@@ -124,17 +125,21 @@ public class BasicWindow : UI_Scene
 
     void CloseMenu()
     {
-        int count = Get<Image>((int)Panels.MenuSelect).transform.GetChildCount();
-        for(int i= 0; i<count; i++)
-        {
-            Manager.Resource_Instance.Destroy(Get<Image>((int)Panels.MenuSelect).transform.GetChild(i).gameObject);
-        }
 
+        DeleteAllInSelectMenu();
         Get<Scrollbar>((int)Scrollbars.MenuScroll).gameObject.SetActive(false);
         StartCoroutine(UpMenu());
     }
 
 
+    void DeleteAllInSelectMenu()
+    {
+        int count = Get<Image>((int)Panels.MenuSelect).transform.GetChildCount();
+        for (int i = 0; i < count; i++)
+        {
+            Manager.Resource_Instance.Destroy(Get<Image>((int)Panels.MenuSelect).transform.GetChild(i).gameObject);
+        }
+    }
 
 
 

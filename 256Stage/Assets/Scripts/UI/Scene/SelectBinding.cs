@@ -7,8 +7,7 @@ using TMPro;
 public class SelectBinding : UI_Base
 {
     string m_text;
-    static bool CurrentState = false;
-    static bool isCurrent = false;
+    int index;
 
 
     enum Images
@@ -33,8 +32,9 @@ public class SelectBinding : UI_Base
         Bind<TextMeshProUGUI>(typeof(Texts));
     }
 
-    public void setName(string temptext)
+    public void setName(string temptext,int i)
     {
+        index = i;
         m_text = temptext;
         BindThings();
         Get<TextMeshProUGUI>((int)Texts.Text).text = temptext;
@@ -44,7 +44,7 @@ public class SelectBinding : UI_Base
 
     void setImage()
     {
-        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/Stage/{m_text}/{m_text}01");
+        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/Stage/{m_text}/{m_text}1");
         Get<Image>((int)Images.Image).sprite = temps;
     }
 
@@ -55,14 +55,7 @@ public class SelectBinding : UI_Base
 
     void ShowMenuBar()
     {
-        if(CurrentState == false)
-        {
-            FindObjectOfType<BasicWindow>().ShowMenu(m_text);
-            isCurrent = true;
-            CurrentState = true;
-        }
-
-
+        FindObjectOfType<BasicWindow>().ClickButton(index);
     }
 
 

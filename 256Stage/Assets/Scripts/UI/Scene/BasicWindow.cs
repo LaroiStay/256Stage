@@ -112,9 +112,7 @@ public class BasicWindow : UI_Scene
     void ShowMenu(string tempText)
     {
         int keyvalue = 0;
-        bool good = myDictionary.TryGetValue(tempText,out keyvalue);
-        Debug.Log(keyvalue);
-        Debug.Log(tempText);
+        myDictionary.TryGetValue(tempText,out keyvalue);
         for (int i=0; i<keyvalue; i++)
         {
             Manager.Resource_Instance.Instantiate("UI/ETC/RealSelectButton", Get<Image>((int)Panels.MenuSelect).transform).GetComponent<RealSelectButton>().SetImage(tempText, i+1);
@@ -134,7 +132,7 @@ public class BasicWindow : UI_Scene
 
     void DeleteAllInSelectMenu()
     {
-        int count = Get<Image>((int)Panels.MenuSelect).transform.GetChildCount();
+        int count = Get<Image>((int)Panels.MenuSelect).transform.childCount;
         for (int i = 0; i < count; i++)
         {
             Manager.Resource_Instance.Destroy(Get<Image>((int)Panels.MenuSelect).transform.GetChild(i).gameObject);

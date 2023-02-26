@@ -160,7 +160,6 @@ public class BasicWindow : UI_Scene
     IEnumerator UpMenu()
     {
         GameObject go = Get<Image>((int)Panels.RealSelect).gameObject;
-        Debug.Log(go);
         Vector3 vecc = go.transform.position;
         float time = 0f;
         while (time < m_time)

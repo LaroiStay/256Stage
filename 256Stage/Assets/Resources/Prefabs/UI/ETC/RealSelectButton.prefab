@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8825207275531910767}
   - component: {fileID: -6609248519892232852}
+  - component: {fileID: 34862388780516030}
   m_Layer: 5
   m_Name: RealSelectButton
   m_TagString: Untagged
@@ -169,5 +170,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6386d0c885c172c4b927ecde034e5d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &34862388780516030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913475553987608249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1794be23b136d0542a983d3a3f42e1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

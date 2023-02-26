@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class RealSelectButton : UI_Base
 {
-    string m_name;
-    int m_key;
+    [HideInInspector] public string m_name;
+    [HideInInspector] public int m_key;
 
     enum Buttons
     {
@@ -34,8 +34,8 @@ public class RealSelectButton : UI_Base
     }
     void InstantiatePrefab()
     {
-        Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
-        FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key);
+         GameObject gp = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
+         FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key);
     }
 
 

@@ -34,9 +34,11 @@ public class HierarchyCanvas : UI_Scene
         Get<TextMeshProUGUI>((int)Texts.Text).text = "Hierarchy";
     }
 
-    public void PlusPrefabsInHierarchy(string name, int key)
+    public void PlusPrefabsInHierarchy(string name, int key,GameObject go)
     {
-        Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform).GetOrAddComponent<TempHierarchyButton>().setName(name, key);
+        TempHierarchyButton HiButton = Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform).GetOrAddComponent<TempHierarchyButton>();
+        HiButton.setName(name, key);
+        HiButton.setGameObject(go);
     }
 
 

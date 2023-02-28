@@ -18,8 +18,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
-      
         offset = eventData.position - (Vector2)rectTransform.position;
     }
 
@@ -45,7 +43,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
         if(Physics.Raycast(ray, out hit, 1000.0f)){
             GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
             go.transform.position = hit.point;
-            FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key);
+            FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key,go);
+
         }
 
         Manager.Resource_Instance.Destroy(this.gameObject);

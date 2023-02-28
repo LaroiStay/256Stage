@@ -34,8 +34,8 @@ public class RealSelectButton : UI_Base
     }
     void InstantiatePrefab()
     {
-         GameObject gp = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
-         FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key);
+         GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
+         FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key, go);
     }
 
 

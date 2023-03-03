@@ -12,6 +12,11 @@ public class GameScene : BaseScene
     protected override void Init()
     {
         base.Init();
+<<<<<<< HEAD
+=======
+        Manager.UI_Instance.ShowSceneUI<BasicWindow>();
+        Manager.UI_Instance.ShowSceneUI<HierarchyCanvas>();
+>>>>>>> 256_woo
         SceneType = Define.Scene.Game;
     }
     public override void Clear()

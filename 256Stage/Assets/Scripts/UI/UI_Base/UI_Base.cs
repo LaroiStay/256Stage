@@ -6,9 +6,7 @@ using TMPro;
 
 public class UI_Base : MonoBehaviour
 {
-
     Dictionary<Type, UnityEngine.Object[]> m_objects = new Dictionary<Type, UnityEngine.Object[]>();
-
     protected void Bind<T>(Type type) where T : UnityEngine.Object
     {
         string[] names = Enum.GetNames(type);

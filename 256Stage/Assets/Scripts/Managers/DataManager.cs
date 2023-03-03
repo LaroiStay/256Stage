@@ -13,6 +13,8 @@ public class StageData
 
     public string StageName;
     public int StageNum = -1;
+    public string StageX;
+    public string StageY;
 
 }
 

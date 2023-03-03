@@ -12,7 +12,7 @@ public class StartScene : MonoBehaviour
     }
     public void GotoPlayerSelect()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Finish()
     {

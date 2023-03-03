@@ -21,17 +21,17 @@ public class PlayerSelectScene : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            if (File.Exists(DataManager.instance.path + $"{i}"))
+            if (!File.Exists(DataManager.instance.path + $"{i}"))
+            {
+                slotText[i].text = "No Player";
+            }
+            else
             {
                 savefile[i] = true;
                 DataManager.instance.nowSlot = i;
                 DataManager.instance.LoadData();
                 slotText[i].text = DataManager.instance.nowPlayer.StageName;
 
-            }
-            else
-            {
-                slotText[i].text = "No Player";
             }
         }
         DataManager.instance.DataClear();
@@ -59,7 +59,7 @@ public class PlayerSelectScene : MonoBehaviour
         if (savefile[number])
         {
             DataManager.instance.DeleteData();
-            //SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {
@@ -68,9 +68,15 @@ public class PlayerSelectScene : MonoBehaviour
     }
     public void CreateSlot()
     {
-        createStagePanel.gameObject.SetActive(true);
+        NewMethod();
 
     }
+
+    private void NewMethod()
+    {
+        createStagePanel.gameObject.SetActive(true);
+    }
+
     public void GotoStageSelect()
     {
         if (!savefile[DataManager.instance.nowSlot])

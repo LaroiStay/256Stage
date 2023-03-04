@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class CubeScaler : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class CubeScaler : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-
-        xScaleInputField = DataManager.instance.nowPlayer.StageX;
-        zScaleInputField = DataManager.instance.nowPlayer.StageY;
+        if (!File.Exists(DataManager.instance.nowPlayer.StageX) && File.Exists(DataManager.instance.nowPlayer.StageY))
+        {
+            print("NO NUM");
+        }
+        else
+        {
+            xScaleInputField = DataManager.instance.nowPlayer.StageX;
+            zScaleInputField = DataManager.instance.nowPlayer.StageY;
+        }
     }
     void Start()
     {

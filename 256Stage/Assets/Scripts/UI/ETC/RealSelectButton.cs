@@ -25,6 +25,8 @@ public class RealSelectButton : UI_Base
         m_key = key;
         BindThing();
         Get<Button>((int)Buttons.Button).image.sprite = Manager.Resource_Instance.Load<Sprite>($"Image/Stage/{name}/{name}{key}");
+        if (name == "Light")
+            this.gameObject.AddComponent<IsLight>();
         setFunc();
     }
 

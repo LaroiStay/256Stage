@@ -14,6 +14,7 @@ public class GameScene : BaseScene
         base.Init();
         Manager.UI_Instance.ShowSceneUI<BasicWindow>();
         Manager.UI_Instance.ShowSceneUI<HierarchyCanvas>();
+        Manager.UI_Instance.ShowSceneUI<TranslateOption>();
         SceneType = Define.Scene.Game;
     }
     public override void Clear()

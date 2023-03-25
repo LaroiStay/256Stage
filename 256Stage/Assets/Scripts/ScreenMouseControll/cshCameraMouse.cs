@@ -9,9 +9,20 @@ public class cshCameraMouse : MonoBehaviour
     [SerializeField] float m_zoomMax = 0f;
     [SerializeField] float m_zoomMin = 0f;
 
+    public Texture2D cursorTextureB;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
+
     float xRotate, yRotate, xRotateMove, yRotateMove;
     public float rotateSpeed = 500.0f;
     float lastClickTime;
+
+    public static bool isAlt= false;
+    public static bool isTranslate = false;
+    Vector2 clickPoint;
+    float dragSpeed = 15.0f;
+
     void CameraZoom()
     {
         float t_zoomDirection = Input.GetAxis("Mouse ScrollWheel");
@@ -25,7 +36,7 @@ public class cshCameraMouse : MonoBehaviour
         transform.position += transform.forward * t_zoomDirection * m_zoomSpeed;
     }
 
-    void CameraRotate()
+   void CameraRotate()
     {
         if (Input.GetMouseButton(2)) // 클릭한 경우
         {
@@ -42,57 +53,86 @@ public class cshCameraMouse : MonoBehaviour
         }
     }
 
-
-
-    /*void DoubleClick()
+    void CameraDrag()
     {
+        if (Input.GetMouseButtonDown(0)) clickPoint = Input.mousePosition;
 
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            if (Time.time - lastClickTime < 0.3f)
+            if (isAlt)
             {
+
+                Cursor.SetCursor(cursorTextureB, hotSpot, cursorMode);
+                Vector3 position
+                    = Camera.main.ScreenToViewportPoint((Vector2)Input.mousePosition - clickPoint);
+
+                position.z = position.y;
+                position.y = .0f;
+
+                Vector3 move = position * (Time.deltaTime * dragSpeed);
+
+                float y = transform.position.y;
+
+                transform.Translate(move);
+                transform.transform.position
+                    = new Vector3(transform.position.x, y, transform.position.z);
+            }
+        }
+    }
+
+   
+    void DoubleClick()
+     {
+
+         if (isTranslate)
+         {
+             if (Input.GetMouseButtonDown(0))
+             {
+                //if (Time.time - lastClickTime < 0.3f)
+                //{
                 DoSomethingOnDoubleClick();
+                
+                //}
+                //lastClickTime = Time.time;
             }
-            lastClickTime = Time.time;
-        }
-
-
-
-
-
-        
-    }*/
-
-
-    /*void DoSomethingOnDoubleClick()
-    {
-        if (CurrentObject.selectedCurrentObject != null)
-        {
-            Collider[] colliders = CurrentObject.selectedCurrentObject.GetComponentsInChildren<Collider>();
-            if (colliders.Length > 0)
-                for (int i = 0; i < colliders.Length; i++)
-                    colliders[i].enabled = true;
-            InMouse.IsOn = false;
-            CurrentObject.selectedCurrentObject = null;
-        }
-        else
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            GameObject go;
-            if (Physics.Raycast(ray, out hit, 1000.0f))
+            if (Input.GetMouseButton(1))
             {
-                go = hit.collider.gameObject;
-                if (CurrentObject.selectedCurrentObject == null)
-                {
-                    InMouse.IsOn = true;
-                    CurrentObject.selectedCurrentObject = go;
-                }
+                isTranslate = false;
             }
-        }
-       
-    }*/
+         }
+
+     }
+
+
+     void DoSomethingOnDoubleClick()
+     {
+         if (CurrentObject.selectedCurrentObject != null)
+         {
+             Collider[] colliders = CurrentObject.selectedCurrentObject.GetComponentsInChildren<Collider>();
+             if (colliders.Length > 0)
+                 for (int i = 0; i < colliders.Length; i++)
+                     colliders[i].enabled = true;
+             InMouse.IsOn = false;
+             CurrentObject.selectedCurrentObject = null;
+         }
+         else
+         {
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+             RaycastHit hit;
+             GameObject go;
+             if (Physics.Raycast(ray, out hit, 1000.0f))
+             {
+                 go = hit.collider.gameObject;
+                 if (CurrentObject.selectedCurrentObject == null)
+                 {
+                     Debug.Log(CurrentObject.selectedCurrentObject);
+                     InMouse.IsOn = true;
+                     CurrentObject.selectedCurrentObject = go;
+                 }
+             }
+         }
+
+     }
 
 
     // Update is called once per frame
@@ -100,6 +140,9 @@ public class cshCameraMouse : MonoBehaviour
     {
         CameraZoom();
         CameraRotate();
-        
+        CameraDrag();
+        DoubleClick();
+
+
     }
 }

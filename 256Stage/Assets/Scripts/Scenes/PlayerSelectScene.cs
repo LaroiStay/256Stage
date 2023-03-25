@@ -84,7 +84,7 @@ public class PlayerSelectScene : MonoBehaviour
             DataManager.instance.nowPlayer.StageName = newStageName.text;
             DataManager.instance.SaveData();
         }
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     }
 
 }

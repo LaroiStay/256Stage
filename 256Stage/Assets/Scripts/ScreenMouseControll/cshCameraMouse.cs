@@ -44,7 +44,7 @@ public class cshCameraMouse : MonoBehaviour
 
 
 
-    void DoubleClick()
+    /*void DoubleClick()
     {
 
 
@@ -62,10 +62,10 @@ public class cshCameraMouse : MonoBehaviour
 
 
         
-    }
+    }*/
 
 
-    void DoSomethingOnDoubleClick()
+    /*void DoSomethingOnDoubleClick()
     {
         if (CurrentObject.selectedCurrentObject != null)
         {
@@ -92,7 +92,7 @@ public class cshCameraMouse : MonoBehaviour
             }
         }
        
-    }
+    }*/
 
 
     // Update is called once per frame
@@ -100,6 +100,6 @@ public class cshCameraMouse : MonoBehaviour
     {
         CameraZoom();
         CameraRotate();
-        DoubleClick();
+        
     }
 }

@@ -58,10 +58,10 @@ public class StageSlectScene : MonoBehaviour
         DataManager.instance.nowPlayer.StageY = InputY.text;
         DataManager.instance.SaveData();
         
-        SceneManager.LoadScene(3);
+        //SceneManager.LoadScene(3);
     }
     public void GotoHome()
     {
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 }

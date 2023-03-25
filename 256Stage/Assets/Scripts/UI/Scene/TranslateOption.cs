@@ -11,8 +11,9 @@ public class TranslateOption : UI_Scene
     //RaycastHit hit;
     //float fixedY;
     //[HideInInspector] public static bool IsOn = false;
-    
-    enum OptionButton{
+
+    enum OptionButton
+    {
         HandIcon, TranslateIcon, RotationIcon, ScaleIcon
 
     }
@@ -33,11 +34,17 @@ public class TranslateOption : UI_Scene
     void HandMouseMove()
     {
         Debug.Log("HandMouse");
+        cshCameraMouse.isAlt = true;
+
+        cshCameraMouse.isTranslate = false;
     }
     void TranslateMouseMove()
     {
         Debug.Log("TranslateMouse");
-        //IsOn = true;
+
+        cshCameraMouse.isAlt = false;
+
+        cshCameraMouse.isTranslate = true;
     }
     void RotationMouseMove()
     {
@@ -51,20 +58,6 @@ public class TranslateOption : UI_Scene
 
     /*void Update()
     {
-        if (IsOn)
-        {
-            Collider[] colliders = CurrentObject.selectedCurrentObject.GetComponentsInChildren<Collider>();
-            if (colliders.Length > 0)
-                for (int i = 0; i < colliders.Length; i++)
-                    colliders[i].enabled = false;
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1000.0f))
-            {
-                CurrentObject.selectedCurrentObject.transform.position = hit.point;
-            }
-        }
     }*/
     
     /*private void OnMouseDrag()

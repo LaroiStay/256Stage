@@ -5,6 +5,14 @@ using UnityEngine;
 public class Define 
 {
    
+
+    public enum CurrentClickMode
+    {
+        Base,
+        Transform,
+        Rotation
+
+    }
     public enum Scene
     {
         UnKnown,

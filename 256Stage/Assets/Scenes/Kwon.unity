@@ -466,7 +466,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bec03802120615145ae298660678d63f, type: 3}
   m_Name: 
@@ -709,7 +709,6 @@ GameObject:
   - component: {fileID: 2133925705}
   - component: {fileID: 2133925704}
   - component: {fileID: 2133925703}
-  - component: {fileID: 2133925707}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -803,18 +802,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2133925707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133925701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5829418092875124cb9b6722069b6fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5829520199510422492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,6 +861,14 @@ PrefabInstance:
     - target: {fileID: 4150051335393487162, guid: 45dd1e8bde03bdf4fb9160609cb22ec4, type: 3}
       propertyPath: m_Name
       value: RTGApp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904686008250351501, guid: 45dd1e8bde03bdf4fb9160609cb22ec4, type: 3}
+      propertyPath: _mainToolbar._activeTabIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904686008250351501, guid: 45dd1e8bde03bdf4fb9160609cb22ec4, type: 3}
+      propertyPath: _sceneGizmoLookAndFeel._screenOffset.y
+      value: -150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

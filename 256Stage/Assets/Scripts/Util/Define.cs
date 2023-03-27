@@ -9,8 +9,10 @@ public class Define
     public enum CurrentClickMode
     {
         Base,
+        Handle,
         Transform,
-        Rotation
+        Rotation,
+        Scale
 
     }
     public enum Scene

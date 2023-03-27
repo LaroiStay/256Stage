@@ -12,8 +12,8 @@ public class TranslateOption : UI_Scene
 
     Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;
     List<Gizmo> gizmos = new List<Gizmo>();
-
     GameObject Currentobj;
+    
 
     //RaycastHit hit;
     //float fixedY;
@@ -45,7 +45,8 @@ public class TranslateOption : UI_Scene
 
     void HandMouseMove()
     {
-        Debug.Log("HandMouse");
+
+        SetButtonDefault(Define.CurrentClickMode.Handle);
 
         //cshCameraMouse.isAlt = true;
 
@@ -53,12 +54,9 @@ public class TranslateOption : UI_Scene
     }
     void TranslateMouseMove()
     {
-        if (CurrentMode == Define.CurrentClickMode.Transform)
-            CurrentMode = Define.CurrentClickMode.Base;
-        else
-            CurrentMode = Define.CurrentClickMode.Transform;
 
-        Debug.Log(CurrentMode);
+        SetButtonDefault(Define.CurrentClickMode.Transform);
+
         //Debug.Log("TranslateMouse");
         //cshCameraMouse.isAlt = false;
 
@@ -66,20 +64,41 @@ public class TranslateOption : UI_Scene
     }
     void RotationMouseMove()
     {
-        if(CurrentMode == Define.CurrentClickMode.Rotation)
-            CurrentMode = Define.CurrentClickMode.Base;
-        else
-            CurrentMode = Define.CurrentClickMode.Rotation;
-
+        SetButtonDefault(Define.CurrentClickMode.Rotation);
 
         //Debug.Log("RotationMouse");
     }
+
+
+
     void ScaleMouseMove()
     {
-        Debug.Log("ScaleMouse");
+        SetButtonDefault(Define.CurrentClickMode.Scale);
     }
 
-    
+
+
+
+    void SetButtonDefault(Define.CurrentClickMode ToChangmode)
+    {
+        Currentobj = GameObject.Find("Plane");
+        gizmosClear();
+        if (CurrentMode == Define.CurrentClickMode.Base)
+        {
+            CurrentMode = ToChangmode;
+        }
+        else if (CurrentMode == ToChangmode)
+        {
+            CurrentMode = Define.CurrentClickMode.Base;
+        }
+        else
+        {
+            Get<Button>((int)CurrentMode-1).GetComponent<Animator>().Play("anim");
+            Debug.Log(CurrentMode);
+            CurrentMode = ToChangmode;
+        }
+    }
+
 
 
     private void Update()
@@ -122,20 +141,21 @@ public class TranslateOption : UI_Scene
            
         }
 
-        void gizmosClear()
-        {
-            if (gizmos.Count == 0)
-                return;
-            foreach (var GG in gizmos)
-                GG.SetEnabled(false);
-            gizmos.Clear();
-        }
+      
 
 
     }
 
 
+    void gizmosClear()
+    {
 
+        if (gizmos.Count == 0)
+            return;
+        foreach (var GG in gizmos)
+            GG.SetEnabled(false);
+        gizmos.Clear();
+    }
 
 
 

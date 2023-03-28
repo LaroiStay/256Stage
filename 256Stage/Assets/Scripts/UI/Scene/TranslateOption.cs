@@ -5,16 +5,26 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 using Unity.VisualScripting;
+using RTG;
 
 public class TranslateOption : UI_Scene
 {
+
+    Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;
+    List<Gizmo> gizmos = new List<Gizmo>();
+    GameObject Currentobj;
+    
+
     //RaycastHit hit;
     //float fixedY;
     //[HideInInspector] public static bool IsOn = false;
 
     enum OptionButton
     {
-        HandIcon, TranslateIcon, RotationIcon, ScaleIcon
+        HandIcon,
+        TranslateIcon,
+        RotationIcon,
+        ScaleIcon
 
     }
     void OptionBindThings()
@@ -23,6 +33,8 @@ public class TranslateOption : UI_Scene
     }
     void Start()
     {
+        Currentobj = GameObject.Find("Plane");
+
         OptionBindThings();
 
         Get<Button>((int)OptionButton.HandIcon).onClick.AddListener(HandMouseMove);
@@ -33,33 +45,127 @@ public class TranslateOption : UI_Scene
 
     void HandMouseMove()
     {
-        Debug.Log("HandMouse");
-        cshCameraMouse.isAlt = true;
 
-        cshCameraMouse.isTranslate = false;
+        SetButtonDefault(Define.CurrentClickMode.Handle);
+
+        //cshCameraMouse.isAlt = true;
+
+        //cshCameraMouse.isTranslate = false;
     }
     void TranslateMouseMove()
     {
-        Debug.Log("TranslateMouse");
 
-        cshCameraMouse.isAlt = false;
+        SetButtonDefault(Define.CurrentClickMode.Transform);
 
-        cshCameraMouse.isTranslate = true;
+        //Debug.Log("TranslateMouse");
+        //cshCameraMouse.isAlt = false;
+
+        //cshCameraMouse.isTranslate = true;
     }
     void RotationMouseMove()
     {
+        SetButtonDefault(Define.CurrentClickMode.Rotation);
 
-        Debug.Log("RotationMouse");
+        //Debug.Log("RotationMouse");
     }
+
+
+
     void ScaleMouseMove()
     {
-        Debug.Log("ScaleMouse");
+        SetButtonDefault(Define.CurrentClickMode.Scale);
     }
+
+
+
+
+    void SetButtonDefault(Define.CurrentClickMode ToChangmode)
+    {
+        Currentobj = GameObject.Find("Plane");
+        gizmosClear();
+        if (CurrentMode == Define.CurrentClickMode.Base)
+        {
+            CurrentMode = ToChangmode;
+        }
+        else if (CurrentMode == ToChangmode)
+        {
+            CurrentMode = Define.CurrentClickMode.Base;
+        }
+        else
+        {
+            Get<Button>((int)CurrentMode-1).GetComponent<Animator>().Play("anim");
+            Debug.Log(CurrentMode);
+            CurrentMode = ToChangmode;
+        }
+    }
+
+
+
+    private void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.tag == "Pla")
+                    return;
+                GameObject clickedObject = hit.transform.gameObject;
+                if (clickedObject == Currentobj)
+                    return;
+                Currentobj = clickedObject;
+                switch (CurrentMode)
+                {
+                    case Define.CurrentClickMode.Base:
+                        break;
+                    case Define.CurrentClickMode.Transform:
+                        gizmosClear();
+                        var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                        transformGizmo.SetTargetObject(clickedObject);
+                        transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                        gizmos.Add(transformGizmo.Gizmo);
+                        break;
+                    case Define.CurrentClickMode.Rotation:
+                        gizmosClear();
+                         var rotationGizmo = RTGizmosEngine.Get.CreateObjectRotationGizmo();
+                        rotationGizmo.SetTargetObject(clickedObject);
+                        rotationGizmo.SetTransformSpace(GizmoSpace.Local);
+                        gizmos.Add(rotationGizmo.Gizmo);
+                        break;
+                }
+            }
+           
+        }
+
+      
+
+
+    }
+
+
+    void gizmosClear()
+    {
+
+        if (gizmos.Count == 0)
+            return;
+        foreach (var GG in gizmos)
+            GG.SetEnabled(false);
+        gizmos.Clear();
+    }
+
+
+
+
+
 
     /*void Update()
     {
     }*/
-    
+
     /*private void OnMouseDrag()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // ¸¶¿ì½º ÁÂÇ¥¿¡¼­ ½î´Â ray

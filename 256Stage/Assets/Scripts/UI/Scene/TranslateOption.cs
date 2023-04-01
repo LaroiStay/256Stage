@@ -111,9 +111,10 @@ public class TranslateOption : UI_Scene
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "Pla")
+                if (hit.transform.tag != "Obj")
                     return;
-                GameObject clickedObject = hit.transform.gameObject;
+                GameObject clickedObject = hit.transform.gameObject.GetComponentInParent<Detect>().gameObject;
+                Debug.Log(clickedObject);
                 if (clickedObject == Currentobj)
                     return;
                 Currentobj = clickedObject;

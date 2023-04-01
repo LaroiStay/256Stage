@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1675984927074526499}
   - component: {fileID: 1729088445797244849}
   - component: {fileID: 1570958941659181221}
+  - component: {fileID: -6132216527109578374}
   m_Layer: 0
   m_Name: Floor 15
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +126,15 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1675984927074526499}
   m_Enabled: 1
+--- !u!114 &-6132216527109578374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662938058906119351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

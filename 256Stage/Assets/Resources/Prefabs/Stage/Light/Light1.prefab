@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5824415833969897993}
   m_Layer: 0
   m_Name: 6sofits_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,9 +115,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8432308937165020217}
   - component: {fileID: 8633521820467447535}
+  - component: {fileID: 4299153239521255844}
   m_Layer: 0
   m_Name: Light1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +139,7 @@ Transform:
   - {fileID: 8431931451395932455}
   - {fileID: 8438333958256312421}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &8633521820467447535
 LODGroup:
@@ -167,6 +168,18 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8457451777841093475}
   m_Enabled: 1
+--- !u!114 &4299153239521255844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434663914166866671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8434799287327385595
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +193,7 @@ GameObject:
   - component: {fileID: 8457451777841093475}
   m_Layer: 0
   m_Name: 6sofits_LOD2
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +276,7 @@ GameObject:
   - component: {fileID: 8457388210357786293}
   m_Layer: 0
   m_Name: 6sofits_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

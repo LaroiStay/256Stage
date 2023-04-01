@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6319077309009678997}
   m_Layer: 0
   m_Name: ConcertSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6270917296766243827}
   m_Layer: 0
   m_Name: ConcertSub_LOD2
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 6270357240879447901}
   m_Layer: 0
   m_Name: ConcertSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,9 +281,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6289081225691182453}
   - component: {fileID: 6164977563897741343}
+  - component: {fileID: -1571951164158866001}
   m_Layer: 0
   m_Name: Speaker1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +305,7 @@ Transform:
   - {fileID: 6294252228536293843}
   - {fileID: 6294335419142851913}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &6164977563897741343
 LODGroup:
@@ -333,3 +334,15 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6270917296766243827}
   m_Enabled: 1
+--- !u!114 &-1571951164158866001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292932071787543689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

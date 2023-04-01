@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5681590894614977262}
   - component: {fileID: 5648631971233398690}
   - component: {fileID: 5499065176205066220}
+  - component: {fileID: 7425461356902898966}
   m_Layer: 0
   m_Name: Truss7
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +126,15 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5681590894614977262}
   m_Enabled: 1
+--- !u!114 &7425461356902898966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659919111374680388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

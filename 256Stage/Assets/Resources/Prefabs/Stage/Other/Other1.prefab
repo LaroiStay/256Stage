@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 363461136247017311}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 413881132537634959}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 363756197625068435}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,9 +282,10 @@ GameObject:
   m_Component:
   - component: {fileID: 380964014699853753}
   - component: {fileID: 328618350103710284}
+  - component: {fileID: 113347746116367636}
   m_Layer: 0
   m_Name: Other1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +315,7 @@ Transform:
   - {fileID: 381107146736003867}
   - {fileID: 385021729133850155}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &328618350103710284
 LODGroup:
@@ -349,6 +350,18 @@ LODGroup:
     - renderer: {fileID: 363419053745475711}
     - renderer: {fileID: 363756197625068435}
   m_Enabled: 1
+--- !u!114 &113347746116367636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386239249966724463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &386317993992385685
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +376,7 @@ GameObject:
   - component: {fileID: 414018306298640099}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +482,7 @@ GameObject:
   - component: {fileID: 414049091857440789}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +588,7 @@ GameObject:
   - component: {fileID: 413681647783450623}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +693,7 @@ GameObject:
   - component: {fileID: 363419053745475711}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -763,7 +776,7 @@ GameObject:
   - component: {fileID: 363550104465890795}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -846,7 +859,7 @@ GameObject:
   - component: {fileID: 363593040408922301}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -929,7 +942,7 @@ GameObject:
   - component: {fileID: 363872044051598489}
   m_Layer: 0
   m_Name: ConcertMSub_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,7 +1026,7 @@ GameObject:
   - component: {fileID: 413243953718193921}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1119,7 +1132,7 @@ GameObject:
   - component: {fileID: 413683896223813285}
   m_Layer: 0
   m_Name: ConcertMSub_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

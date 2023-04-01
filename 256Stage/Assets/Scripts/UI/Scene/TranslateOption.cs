@@ -49,7 +49,6 @@ public class TranslateOption : UI_Scene
         SetButtonDefault(Define.CurrentClickMode.Handle);
 
         //cshCameraMouse.isAlt = true;
-
         //cshCameraMouse.isTranslate = false;
     }
     void TranslateMouseMove()
@@ -141,15 +140,11 @@ public class TranslateOption : UI_Scene
            
         }
 
-      
-
-
     }
 
 
     void gizmosClear()
     {
-
         if (gizmos.Count == 0)
             return;
         foreach (var GG in gizmos)

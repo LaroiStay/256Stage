@@ -49,7 +49,6 @@ public class TranslateOption : UI_Scene
         SetButtonDefault(Define.CurrentClickMode.Handle);
 
         //cshCameraMouse.isAlt = true;
-
         //cshCameraMouse.isTranslate = false;
     }
     void TranslateMouseMove()
@@ -112,9 +111,10 @@ public class TranslateOption : UI_Scene
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "Pla")
+                if (hit.transform.tag != "Obj")
                     return;
-                GameObject clickedObject = hit.transform.gameObject;
+                GameObject clickedObject = hit.transform.gameObject.GetComponentInParent<Detect>().gameObject;
+                Debug.Log(clickedObject);
                 if (clickedObject == Currentobj)
                     return;
                 Currentobj = clickedObject;
@@ -141,15 +141,11 @@ public class TranslateOption : UI_Scene
            
         }
 
-      
-
-
     }
 
 
     void gizmosClear()
     {
-
         if (gizmos.Count == 0)
             return;
         foreach (var GG in gizmos)

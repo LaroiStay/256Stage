@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5914598576356070882}
   - component: {fileID: 5827394055374796898}
+  - component: {fileID: 2850635389850684446}
   m_Layer: 0
   m_Name: Curtain1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +35,7 @@ Transform:
   - {fileID: 5914710387640929228}
   - {fileID: 5914734611122551858}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &5827394055374796898
 LODGroup:
@@ -64,6 +65,18 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5933296353810026208}
   m_Enabled: 1
+--- !u!114 &2850635389850684446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908759076371619080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5908792129313827298
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +90,7 @@ GameObject:
   - component: {fileID: 5933296353810026208}
   m_Layer: 0
   m_Name: ConcertCurtains_LOD2
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +173,7 @@ GameObject:
   - component: {fileID: 5933186515627687376}
   m_Layer: 0
   m_Name: ConcertCurtains_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +257,7 @@ GameObject:
   - component: {fileID: 943716007504557346}
   m_Layer: 0
   m_Name: ConcertCurtains_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +362,7 @@ GameObject:
   - component: {fileID: 5933311773415397944}
   m_Layer: 0
   m_Name: ConcertCurtains0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

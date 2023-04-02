@@ -17,10 +17,10 @@ public class TurssQueue : MonoBehaviour
 
         for(int i = 0; i<m_truss_light_or_speaker_quantity; i++)
         {
-            Light_Or_Speaker_localPosition.Enqueue(new Vector3(m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) , m_truss_width/2));
-            Light_Or_Speaker_localPosition.Enqueue(new Vector3(-m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) , m_truss_width/2));
-            Light_Or_Speaker_localPosition.Enqueue(new Vector3(m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) , -m_truss_width/2));
-            Light_Or_Speaker_localPosition.Enqueue(new Vector3(-m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) , -m_truss_width/2));
+            Light_Or_Speaker_localPosition.Enqueue(new Vector3(m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) *m_truss_size, m_truss_width/2));
+            Light_Or_Speaker_localPosition.Enqueue(new Vector3(-m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1)*m_truss_size , m_truss_width/2));
+            Light_Or_Speaker_localPosition.Enqueue(new Vector3(m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1) *m_truss_size, -m_truss_width/2));
+            Light_Or_Speaker_localPosition.Enqueue(new Vector3(-m_truss_width/2, i/(m_truss_light_or_speaker_quantity-1)*m_truss_size , -m_truss_width/2));
         }
 
         for (int i = 0; i < m_truss_light_or_speaker_quantity; i++)

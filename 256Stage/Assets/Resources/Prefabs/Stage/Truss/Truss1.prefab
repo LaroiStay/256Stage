@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1368923708367079779}
   m_Layer: 0
   m_Name: 2x05mFarm_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1315713841368204173}
   m_Layer: 0
   m_Name: 2x05mFarm_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,9 +199,10 @@ GameObject:
   - component: {fileID: 1298913313878150797}
   - component: {fileID: 1211450382288729003}
   - component: {fileID: 3693957058040212102}
+  - component: {fileID: 7026342022300221219}
   m_Layer: 0
   m_Name: Truss1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +222,7 @@ Transform:
   - {fileID: 1298840757675892999}
   - {fileID: 1304206178087560603}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &1211450382288729003
 LODGroup:
@@ -258,6 +259,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3814da9483e885f43b6a19e1a3d77b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_truss_size: 10
-  m_truss_width: 1
-  m_truss_light_or_speaker_quantity: 10
+  m_truss_size: 2
+  m_truss_width: 0.5
+  m_truss_light_or_speaker_quantity: 5
+--- !u!114 &7026342022300221219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302363750634023627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

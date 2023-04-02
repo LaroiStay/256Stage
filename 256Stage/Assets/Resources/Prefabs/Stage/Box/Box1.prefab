@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8820180224419305284}
   m_Layer: 0
   m_Name: SceneBox_LOD0
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8850010455460983844}
   m_Layer: 0
   m_Name: SceneBox_LOD1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,9 +198,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8831338965576227372}
   - component: {fileID: 8672156195108112192}
+  - component: {fileID: 766781574292083107}
   m_Layer: 0
   m_Name: Box1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,3 +246,15 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8850010455460983844}
   m_Enabled: 1
+--- !u!114 &766781574292083107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828668271517635598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

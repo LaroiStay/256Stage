@@ -9,13 +9,16 @@ public class BasicWindow : UI_Scene
     float m_time = 0.25f;
     static List<bool> IsSelect = new List<bool>();
     static bool CurrentState = false;
-    int Box_Length =1;
+    //int Box_Length =1;
     int Curtain_Length = 1;
     int Floor_Length = 15;
-    int Other_Length = 4;
-    int Light_Length = 1;
-    int Speaker_Length= 1;
-    int Truss_Length = 8;
+    int Light_Length = 3;
+    int Other_Length = 3;
+    int Screen_Length = 1;
+    int Speaker_Length= 7;
+    int Stage_Length = 8;
+    int Truss_Length = 9;
+    
 
     List<int> tempList = new List<int>();
     Dictionary<string, int> myDictionary = new Dictionary<string, int>();
@@ -35,12 +38,14 @@ public class BasicWindow : UI_Scene
 
     enum Menu
     {
-        Box,
+        
         Curtain,
         Floor,
         Light,
         Other,
+        Screen,
         Speaker,
+        Stage,
         Truss,
     }
 
@@ -53,12 +58,14 @@ public class BasicWindow : UI_Scene
 
     void ListAdds()
     {
-        tempList.Add(Box_Length);
+        //tempList.Add(Box_Length);
         tempList.Add(Curtain_Length);
         tempList.Add(Floor_Length);
         tempList.Add(Light_Length);
         tempList.Add(Other_Length);
+        tempList.Add(Screen_Length);
         tempList.Add(Speaker_Length);
+        tempList.Add(Stage_Length);
         tempList.Add(Truss_Length);
     }
 

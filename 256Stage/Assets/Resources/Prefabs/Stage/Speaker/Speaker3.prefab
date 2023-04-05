@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9194696015219071418}
   - component: {fileID: 922427206062063219}
   m_Layer: 0
-  m_Name: Other4
+  m_Name: Speaker3
   m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

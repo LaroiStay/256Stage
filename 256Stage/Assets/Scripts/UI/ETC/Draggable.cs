@@ -15,6 +15,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
     bool isFirst = true;
     bool FirstMakeObject = true;
     bool isLight = false;
+    bool flag = true;
 
     void Awake()
     {
@@ -39,8 +40,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
-
-        if(isLight == false)
+        if (flag)
+        {
+            flag = false;
+            //this.transform.parent = null;
+        }
+        if (isLight == false)
         {
             if (isFirst)
             {
@@ -94,7 +99,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
                         }
                     }
 
-                    Debug.Log(LightOffset);
 
                     LightObject.transform.position = LightOffset;
                     if (FirstMakeObject)
@@ -121,10 +125,14 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
             {
                 GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
                 go.transform.position = hit.point;
-                FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, go);
+               
 
             }
 
+            Manager.Resource_Instance.Destroy(this.gameObject);
+        }
+        else
+        {
             Manager.Resource_Instance.Destroy(this.gameObject);
         }
     }

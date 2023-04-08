@@ -15,9 +15,6 @@ public class TranslateOption : UI_Scene
     GameObject Currentobj;
     
 
-    //RaycastHit hit;
-    //float fixedY;
-    //[HideInInspector] public static bool IsOn = false;
 
     enum OptionButton
     {
@@ -48,24 +45,17 @@ public class TranslateOption : UI_Scene
 
         SetButtonDefault(Define.CurrentClickMode.Handle);
 
-        //cshCameraMouse.isAlt = true;
-        //cshCameraMouse.isTranslate = false;
     }
     void TranslateMouseMove()
     {
 
         SetButtonDefault(Define.CurrentClickMode.Transform);
 
-        //Debug.Log("TranslateMouse");
-        //cshCameraMouse.isAlt = false;
-
-        //cshCameraMouse.isTranslate = true;
     }
     void RotationMouseMove()
     {
         SetButtonDefault(Define.CurrentClickMode.Rotation);
 
-        //Debug.Log("RotationMouse");
     }
 
 
@@ -158,22 +148,4 @@ public class TranslateOption : UI_Scene
 
 
 
-    /*void Update()
-    {
-    }*/
-
-    /*private void OnMouseDrag()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // 마우스 좌표에서 쏘는 ray
-
-        // 바닥에 ray hit이 된 경우 오브젝트의 좌표를 충돌된 좌표로 바꾼다..
-        // 물론 y좌표는 바뀌면 안되므로 사전에 저장한 fixedY로 바꾸도록 한다.
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Floor")))
-        {
-            Debug.Log(hit.transform.name);
-            Vector3 nextPos = hit.point;
-            nextPos.y = fixedY;
-            transform.position = nextPos;
-        }
-    }*/
 }

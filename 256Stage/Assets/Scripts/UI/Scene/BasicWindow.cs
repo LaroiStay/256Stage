@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class BasicWindow : UI_Scene
+public class BasicWindow : UI_ETC
 {
     float m_time = 0.25f;
     static List<bool> IsSelect = new List<bool>();
@@ -76,7 +76,8 @@ public class BasicWindow : UI_Scene
         BindThings();
         Transform tempTransform = Get<Image>((int)Panels.SelectObjectPanel).transform;
         string[] names = Enum.GetNames(typeof(Menu));
-        for(int i =0; i< names.Length; i++)
+        Get<Image>((int)Panels.RealSelect).gameObject.transform.position = new Vector3(Get<Image>((int)Panels.RealSelect).gameObject.transform.position.x, 1000f, Get<Image>((int)Panels.RealSelect).gameObject.transform.position.z);
+        for (int i =0; i< names.Length; i++)
         {
             GameObject go = Manager.Resource_Instance.Instantiate("UI/ETC/SelectBinding",tempTransform);
             go.GetComponent<SelectBinding>().setName(names[i],i);

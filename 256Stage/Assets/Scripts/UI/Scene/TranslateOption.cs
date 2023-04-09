@@ -7,7 +7,7 @@ using System;
 using Unity.VisualScripting;
 using RTG;
 
-public class TranslateOption : UI_Scene
+public class TranslateOption : UI_ETC
 {
 
     Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class HierarchyCanvas : UI_Scene 
+public class HierarchyCanvas : UI_ETC 
 {
     
     enum Panels

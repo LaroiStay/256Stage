@@ -20,7 +20,10 @@ public class Define
         UnKnown,
         Login,
         Lobby,
-        Game
+        Game,
+        Kwon,
+        PlayerSelect,
+        StageSelect
     }
 
     public enum Sound

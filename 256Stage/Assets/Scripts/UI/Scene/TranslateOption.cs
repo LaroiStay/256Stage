@@ -68,7 +68,7 @@ public class TranslateOption : UI_ETC
 
 
 
-    void SetButtonDefault(Define.CurrentClickMode ToChangmode)
+    public void SetButtonDefault(Define.CurrentClickMode ToChangmode)
     {
         Currentobj = GameObject.Find("Plane");
         gizmosClear();
@@ -83,8 +83,52 @@ public class TranslateOption : UI_ETC
         else
         {
             Get<Button>((int)CurrentMode-1).GetComponent<Animator>().Play("anim");
-            Debug.Log(CurrentMode);
             CurrentMode = ToChangmode;
+        }
+    }
+
+    public void SetButtonStateOther(Define.CurrentClickMode ToChangmode, GameObject go)
+    {
+
+        if (ToChangmode == Define.CurrentClickMode.Base)
+        {
+            Get<Button>((int)CurrentMode-1).GetComponent<Animator>().Play("anim");
+            CurrentMode = Define.CurrentClickMode.Base;
+
+        }
+        else if (ToChangmode == Define.CurrentClickMode.Transform)
+        {
+            if(CurrentMode == Define.CurrentClickMode.Base)
+            {
+                CurrentMode = Define.CurrentClickMode.Transform;
+                Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim 0");
+                gizmosClear();
+                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                transformGizmo.SetTargetObject(go);
+                transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(transformGizmo.Gizmo);
+            }
+            else if (CurrentMode == Define.CurrentClickMode.Transform)
+            {
+                CurrentMode = Define.CurrentClickMode.Transform;
+                gizmosClear();
+                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                transformGizmo.SetTargetObject(go);
+                transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(transformGizmo.Gizmo);
+
+            }
+            else
+            {
+                Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim");
+                CurrentMode = Define.CurrentClickMode.Transform;
+                Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim 0");
+                gizmosClear();
+                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                transformGizmo.SetTargetObject(go);
+                transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(transformGizmo.Gizmo);
+            }
         }
     }
 

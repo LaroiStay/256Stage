@@ -168,7 +168,6 @@ public class UI_Manager : MonoBehaviour
             MethodInfo closeETCUIMethod = typeof(UI_Manager).GetMethod("CloseETCUI").MakeGenericMethod(tempKey);
             closeETCUIMethod.Invoke(this, null);
         }
-        
 
     }
 

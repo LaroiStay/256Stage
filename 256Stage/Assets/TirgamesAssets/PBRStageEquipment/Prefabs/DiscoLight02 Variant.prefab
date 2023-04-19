@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       propertyPath: m_Name
-      value: DiscoLight02
+      value: DiscoLight02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -75,6 +75,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 723727657}
+    - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2347532071940802615}
+    - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -138545239435890013}
+    - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7496716097547205043}
   m_SourcePrefab: {fileID: 100100000, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
 --- !u!1 &4816199646415025302 stripped
 GameObject:
@@ -101,3 +110,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2347532071940802615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816199646415025302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8bb8017a8957c4198655d43f3c03f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &-138545239435890013
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816199646415025302}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7496716097547205043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816199646415025302}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

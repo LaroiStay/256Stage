@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RTG;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,8 +37,12 @@ public class RealSelectButton : UI_Base
     }
     void InstantiatePrefab()
     {
-         GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
-         FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key, go);
+        GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
+        FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key, go);
+        List<GameObject> goList = new List<GameObject>();
+        goList.Add(go);
+        var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+        postObjectSpawnAction.Execute();
     }
 
 

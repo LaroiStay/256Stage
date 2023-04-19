@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using RTG;
 
 public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
@@ -66,6 +67,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
                 temp_key = GetComponent<RealSelectButton>().m_key;
                 temp_name = GetComponent<RealSelectButton>().m_name;
                 GameObject go = Manager.Resource_Instance.Instantiate("UI/ETC/RealSelectButton", this.transform.parent);
+                
                 go.transform.SetSiblingIndex(temp_key - 1);
                 go.GetComponent<RealSelectButton>().SetImage(temp_name, temp_key);
                 this.GetComponent<RealSelectButton>().GetComponentInChildren<Button>().gameObject.SetActive(false);
@@ -124,8 +126,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
                 GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
+                FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, go);
                 go.transform.position = hit.point;
-               
+                List<GameObject> goList = new List<GameObject>();
+                goList.Add(go);
+                var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+                postObjectSpawnAction.Execute();
 
             }
 
@@ -133,6 +139,10 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
         }
         else
         {
+            List<GameObject> goList = new List<GameObject>();
+            goList.Add(LightObject);
+            var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+            postObjectSpawnAction.Execute();
             Manager.Resource_Instance.Destroy(this.gameObject);
         }
     }

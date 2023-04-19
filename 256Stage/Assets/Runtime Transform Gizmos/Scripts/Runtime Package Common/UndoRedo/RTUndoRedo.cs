@@ -101,7 +101,7 @@ namespace RTG
             }
         }
 
-        private void Undo()
+        public void Undo()
         {
             if (!_isEnabled || _stackPointer < 0) return;
 
@@ -120,7 +120,7 @@ namespace RTG
             }
         }
 
-        private void Redo()
+        public void Redo()
         {
             if (!_isEnabled) return;
             if (_actionGroupStack.Count == 0 || _stackPointer == _actionGroupStack.Count - 1) return;

@@ -728,7 +728,7 @@ RectTransform:
   - {fileID: 8200866448507259778}
   - {fileID: 8200866449007707826}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1022,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4259173850044780261, guid: aa0faa005d230f14e88b4981c05922d4, type: 3}
       propertyPath: m_Name
-      value: BeforeButton
+      value: UndoButton
       objectReference: {fileID: 0}
     - target: {fileID: 4259173850044780263, guid: aa0faa005d230f14e88b4981c05922d4, type: 3}
       propertyPath: m_TargetGraphic
@@ -1599,7 +1599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4259173850044780261, guid: aa0faa005d230f14e88b4981c05922d4, type: 3}
       propertyPath: m_Name
-      value: NextButton
+      value: RedoButton
       objectReference: {fileID: 0}
     - target: {fileID: 4259173850044780263, guid: aa0faa005d230f14e88b4981c05922d4, type: 3}
       propertyPath: m_TargetGraphic

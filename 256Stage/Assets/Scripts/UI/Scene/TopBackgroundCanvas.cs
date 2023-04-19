@@ -8,10 +8,15 @@ public class TopBackgroundCanvas : UI_ETC
 {
 
     RTUndoRedo RTGRedo;
-
+    enum Panels
+    {
+        FilePanel
+    }
     enum Buttons {
         RedoButton,
         UndoButton,
+        FileButton,
+        EditButton
     }
 
     private void Start()
@@ -23,6 +28,7 @@ public class TopBackgroundCanvas : UI_ETC
 
     void BindThings()
     {
+        Bind<Image>(typeof(Panels));
         Bind<Button>(typeof(Buttons));
     }
 
@@ -37,6 +43,7 @@ public class TopBackgroundCanvas : UI_ETC
     {
         Get<Button>((int)Buttons.RedoButton).onClick.AddListener(RedoButtonFunc);
         Get<Button>((int)Buttons.UndoButton).onClick.AddListener(UndoButtonFunc);
+        Get<Button>((int)Buttons.FileButton).onClick.AddListener(FileButtonFunc);
     }
 
 
@@ -50,6 +57,9 @@ public class TopBackgroundCanvas : UI_ETC
     {
         RTGRedo.Undo();
     }
-
+    void FileButtonFunc()
+    {
+        Debug.Log("FileButton");
+    }
 
 }

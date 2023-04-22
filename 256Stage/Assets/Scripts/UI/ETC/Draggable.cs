@@ -106,7 +106,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
                     if (FirstMakeObject)
                     {
                         FirstMakeObject = false;
-                        FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, LightObject);
+                       
+
                     }
 
                 }
@@ -126,12 +127,18 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
                 GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
-                FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, go);
+                GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, go);
+
                 go.transform.position = hit.point;
                 List<GameObject> goList = new List<GameObject>();
                 goList.Add(go);
+                goList.Add(go2);
                 var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+                //Debug.Log(postObjectSpawnAction);
+
+                //CurrentObject.HierarchyButtonsDetail.Add(LightObject, postObjectSpawnAction);
                 postObjectSpawnAction.Execute();
+                postObjectSpawnAction.OnRemovedFromUndoRedoStack();
 
             }
 
@@ -140,9 +147,15 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
         else
         {
             List<GameObject> goList = new List<GameObject>();
+            GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, LightObject);
+            
             goList.Add(LightObject);
+            goList.Add(go2);
             var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+            Debug.Log(postObjectSpawnAction);
+            //CurrentObject.HierarchyButtonsDetail.Add(LightObject, postObjectSpawnAction);
             postObjectSpawnAction.Execute();
+            postObjectSpawnAction.OnRemovedFromUndoRedoStack();
             Manager.Resource_Instance.Destroy(this.gameObject);
         }
     }

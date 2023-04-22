@@ -161,6 +161,7 @@ public class TranslateOption : UI_ETC
                         var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
                         transformGizmo.SetTargetObject(clickedObject);
                         transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                        CurrentObject.selectedCurrentObject = clickedObject;
                         gizmos.Add(transformGizmo.Gizmo);
                         break;
                     case Define.CurrentClickMode.Rotation:
@@ -168,6 +169,7 @@ public class TranslateOption : UI_ETC
                          var rotationGizmo = RTGizmosEngine.Get.CreateObjectRotationGizmo();
                         rotationGizmo.SetTargetObject(clickedObject);
                         rotationGizmo.SetTransformSpace(GizmoSpace.Local);
+                        CurrentObject.selectedCurrentObject = clickedObject;
                         gizmos.Add(rotationGizmo.Gizmo);
                         break;
                 }
@@ -178,7 +180,7 @@ public class TranslateOption : UI_ETC
     }
 
 
-    void gizmosClear()
+    public void gizmosClear()
     {
         if (gizmos.Count == 0)
             return;

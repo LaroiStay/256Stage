@@ -3,6 +3,59 @@ using System.Collections.Generic;
 
 namespace RTG
 {
+
+
+    public class PostObjectDesAction : IUndoRedoAction
+    {
+        private bool _cleanupOnRemovedFromStack;
+        private List<GameObject> _spawnedParents = new List<GameObject>();
+
+        public PostObjectDesAction(List<GameObject> spawnedParents)
+        {
+            _spawnedParents = new List<GameObject>(spawnedParents);
+        }
+
+        public void Execute()
+        {
+            RTUndoRedo.Get.RecordAction(this);
+        }
+
+        public void Undo()
+        {
+            if (_spawnedParents != null)
+            {
+                foreach (var parent in _spawnedParents)
+                {
+                    parent.SetActive(true);
+                }
+                _cleanupOnRemovedFromStack = false;
+            }
+        }
+
+        public void Redo()
+        {
+            if (_spawnedParents != null)
+            {
+                foreach (var parent in _spawnedParents)
+                {
+                    parent.SetActive(false);
+                }
+                _cleanupOnRemovedFromStack = true;
+            }
+        }
+
+        public void OnRemovedFromUndoRedoStack()
+        {
+            if (_cleanupOnRemovedFromStack && _spawnedParents.Count != 0)
+            {
+                foreach (var parent in _spawnedParents) GameObject.Destroy(parent);
+                _spawnedParents.Clear();
+            }
+        }
+    }
+
+
+
     public class PostObjectSpawnAction : IUndoRedoAction
     {
         private bool _cleanupOnRemovedFromStack;

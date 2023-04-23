@@ -19,7 +19,7 @@ public class cshControlSky : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(200, 200, 80, 20), "Day"))
+        if (GUI.Button(new Rect(1800, 400, 100, 30), "Day View"))
         {
             RenderSettings.skybox = dayMat;
             RenderSettings.fogColor = dayFog;
@@ -27,7 +27,7 @@ public class cshControlSky : MonoBehaviour
             nightLight.SetActive(false);
         }
 
-        if (GUI.Button(new Rect(200, 230, 80, 20), "Night"))
+        if (GUI.Button(new Rect(1800, 440, 100, 30), "Night View"))
         {
             RenderSettings.skybox = nightMat;
             RenderSettings.fogColor = nightFog;

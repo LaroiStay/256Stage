@@ -37,7 +37,7 @@ public class TempHierarchyButton : UI_Base
     public void setName(string name, int key)
     {
         BindThing();
-        Get<TextMeshProUGUI>((int)Texts.Text).text = $"{name}{key}";
+        Get<TextMeshProUGUI>((int)Texts.Text).text = $"  > {name}{key}";
     }
 
     public void setGameObject(GameObject tempgo)

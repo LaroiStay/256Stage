@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.63270134, g: 0.8733717, b: 0.9880908, a: 1}
+  m_IndirectSpecularColor: {r: 0.6328339, g: 0.8733902, b: 0.9880834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &100674678
 BoxCollider:
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &197706822
 BoxCollider:
@@ -513,6 +515,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &246578060
 BoxCollider:
@@ -555,6 +558,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &269071689
 BoxCollider:
@@ -597,6 +601,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &287233375
 BoxCollider:
@@ -639,6 +644,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &293668600
 BoxCollider:
@@ -681,6 +687,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &330998720
 BoxCollider:
@@ -723,6 +730,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &356155397
 BoxCollider:
@@ -765,6 +773,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &361941337
 BoxCollider:
@@ -833,6 +842,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &392836636
 BoxCollider:
@@ -901,6 +911,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &461828675
 BoxCollider:
@@ -987,6 +998,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &491444241
 BoxCollider:
@@ -1029,6 +1041,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &491972308
 BoxCollider:
@@ -1202,6 +1215,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &551803208
 BoxCollider:
@@ -1244,6 +1258,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &552436610
 BoxCollider:
@@ -1286,6 +1301,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &559634862
 BoxCollider:
@@ -1328,6 +1344,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &560367192
 BoxCollider:
@@ -1458,6 +1475,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &615317799
 BoxCollider:
@@ -1500,6 +1518,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &619254664
 BoxCollider:
@@ -1542,6 +1561,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &629154549
 BoxCollider:
@@ -1584,6 +1604,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &631772369
 BoxCollider:
@@ -1626,6 +1647,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &671784360
 BoxCollider:
@@ -1668,6 +1690,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &672025062
 BoxCollider:
@@ -1710,6 +1733,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &691139720
 BoxCollider:
@@ -1872,6 +1896,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &710622286
 BoxCollider:
@@ -1914,6 +1939,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &787733108
 BoxCollider:
@@ -1956,6 +1982,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &798868826
 BoxCollider:
@@ -1998,6 +2025,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &811140208
 BoxCollider:
@@ -2066,6 +2094,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &868664248
 BoxCollider:
@@ -2108,6 +2137,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &883829909
 BoxCollider:
@@ -2176,6 +2206,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &935593166
 BoxCollider:
@@ -2330,6 +2361,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &965507275
 BoxCollider:
@@ -2372,6 +2404,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &979049288
 BoxCollider:
@@ -2440,6 +2473,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &998168938
 BoxCollider:
@@ -2482,6 +2516,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &999506178
 BoxCollider:
@@ -2524,6 +2559,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1014933493
 BoxCollider:
@@ -2592,6 +2628,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1040763085
 BoxCollider:
@@ -2687,6 +2724,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1113939604
 BoxCollider:
@@ -2729,6 +2767,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1145443786
 BoxCollider:
@@ -3439,6 +3478,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1248754636
 BoxCollider:
@@ -3481,6 +3521,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1255946571
 BoxCollider:
@@ -3601,6 +3642,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1272548468
 BoxCollider:
@@ -3643,6 +3685,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1277579627
 BoxCollider:
@@ -3685,6 +3728,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1288723120
 BoxCollider:
@@ -3727,6 +3771,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1293269080
 BoxCollider:
@@ -3769,6 +3814,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1324181636
 BoxCollider:
@@ -3811,6 +3857,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1401743114
 BoxCollider:
@@ -3853,6 +3900,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1427501196
 BoxCollider:
@@ -3921,6 +3969,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1439755305
 BoxCollider:
@@ -4031,6 +4080,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1459307195
 BoxCollider:
@@ -4149,6 +4199,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1480504765
 BoxCollider:
@@ -4345,6 +4396,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1591826994
 BoxCollider:
@@ -4413,6 +4465,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1596073936
 BoxCollider:
@@ -4455,6 +4508,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1607166783
 BoxCollider:
@@ -4497,6 +4551,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1656165869
 BoxCollider:
@@ -4565,6 +4620,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1703515318
 BoxCollider:
@@ -4607,6 +4663,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1709440208
 BoxCollider:
@@ -4675,6 +4732,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1765633451
 BoxCollider:
@@ -4717,6 +4775,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1781901240
 BoxCollider:
@@ -4842,6 +4901,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1851856604
 BoxCollider:
@@ -4884,6 +4944,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1873649396
 BoxCollider:
@@ -4952,6 +5013,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1943943854
 BoxCollider:
@@ -4994,6 +5056,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1961073699
 BoxCollider:
@@ -5036,6 +5099,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1968312614
 BoxCollider:
@@ -5078,6 +5142,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1968433555
 BoxCollider:
@@ -5120,6 +5185,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &1975582289
 BoxCollider:
@@ -5162,6 +5228,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2014363262
 BoxCollider:
@@ -5230,6 +5297,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2061148597
 BoxCollider:
@@ -5272,6 +5340,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2063915774
 BoxCollider:
@@ -5314,6 +5383,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2087261853
 BoxCollider:
@@ -5356,6 +5426,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2108119955
 BoxCollider:
@@ -5398,6 +5469,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2113022121
 BoxCollider:
@@ -5440,6 +5512,7 @@ MonoBehaviour:
   m_truss_size: 2
   m_truss_width: 0.4
   m_truss_light_or_speaker_quantity: 6
+  AlreadyMade: 1
   isZ: 1
 --- !u!65 &2144714205
 BoxCollider:

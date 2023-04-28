@@ -102,19 +102,19 @@ public class TranslateOption : UI_ETC
                 CurrentMode = Define.CurrentClickMode.Transform;
                 Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim 0");
                 gizmosClear();
-                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
-                transformGizmo.SetTargetObject(go);
-                transformGizmo.SetTransformSpace(GizmoSpace.Local);
-                gizmos.Add(transformGizmo.Gizmo);
+                TG = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                TG.SetTargetObject(go);
+                TG.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(TG.Gizmo);
             }
             else if (CurrentMode == Define.CurrentClickMode.Transform)
             {
                 CurrentMode = Define.CurrentClickMode.Transform;
                 gizmosClear();
-                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
-                transformGizmo.SetTargetObject(go);
-                transformGizmo.SetTransformSpace(GizmoSpace.Local);
-                gizmos.Add(transformGizmo.Gizmo);
+                TG = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                TG.SetTargetObject(go);
+                TG.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(TG.Gizmo);
 
             }
             else
@@ -123,10 +123,10 @@ public class TranslateOption : UI_ETC
                 CurrentMode = Define.CurrentClickMode.Transform;
                 Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim 0");
                 gizmosClear();
-                var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
-                transformGizmo.SetTargetObject(go);
-                transformGizmo.SetTransformSpace(GizmoSpace.Local);
-                gizmos.Add(transformGizmo.Gizmo);
+                TG = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                TG.SetTargetObject(go);
+                TG.SetTransformSpace(GizmoSpace.Local);
+                gizmos.Add(TG.Gizmo);
             }
         }
     }

@@ -352,7 +352,7 @@ namespace RTG
 
         public override void OnGizmoDragBegin(int handleId)
         {
-            _preTransformSnapshots = LocalTransformSnapshot.GetSnapshotCollection(_targetObjects);
+            _preTransformSnapshots = LocalTransformSnapshot.GetSnapshotCollection(_targetObjects,true);
             _transformableParents = GetTransformableParentObjects();
             _targetGroupAABBOnDragBegin = GetTargetObjectGroupWorldAABB();
         }
@@ -368,6 +368,11 @@ namespace RTG
         {
             if (_transformableParents.Count != 0)
             {
+                //for(int i=0; i<_transformableParents.Count; i++)
+                //{
+                //    if (_transformableParents[i].GetComponent<Rigidbody>() != null)
+                //        _transformableParents[i].GetComponent<Rigidbody>().isKinematic = false;
+                //}
                 var postObjectTransformChangedAction = new PostObjectTransformsChangedAction(_preTransformSnapshots, LocalTransformSnapshot.GetSnapshotCollection(_targetObjects));
                 postObjectTransformChangedAction.Execute();
             }

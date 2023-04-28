@@ -13,15 +13,24 @@ namespace RTG
 
         public Transform Transform { get { return _transform; } }
 
-        public static List<LocalTransformSnapshot> GetSnapshotCollection(IEnumerable<GameObject> gameObjects)
+        public static List<LocalTransformSnapshot> GetSnapshotCollection(IEnumerable<GameObject> gameObjects, bool flag = false)
         {
             if (gameObjects == null) return new List<LocalTransformSnapshot>();
-
             var localTransformSnapshots = new List<LocalTransformSnapshot>(20);
             foreach(var gameObject in gameObjects)
             {
                 if (gameObject != null)
                 {
+                    if (flag)
+                    {
+                        if (gameObject.GetComponent<Rigidbody>() != null)
+                            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    }
+                    else
+                    {
+                        if (gameObject.GetComponent<Rigidbody>() != null)
+                            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    }
                     var snapshot = new LocalTransformSnapshot();
                     snapshot.Snapshot(gameObject.transform);
                     localTransformSnapshots.Add(snapshot);

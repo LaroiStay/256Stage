@@ -9,7 +9,7 @@ using RTG;
 
 public class TranslateOption : UI_ETC
 {
-
+    ObjectTransformGizmo TG = null;
     Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;
     List<Gizmo> gizmos = new List<Gizmo>();
     GameObject Currentobj;
@@ -135,7 +135,7 @@ public class TranslateOption : UI_ETC
 
     private void Update()
     {
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -157,24 +157,26 @@ public class TranslateOption : UI_ETC
                         break;
                     case Define.CurrentClickMode.Transform:
                         gizmosClear();
-                        var transformGizmo = RTGizmosEngine.Get.CreateObjectMoveGizmo();
-                        transformGizmo.SetTargetObject(clickedObject);
-                        transformGizmo.SetTransformSpace(GizmoSpace.Local);
+                        TG = RTGizmosEngine.Get.CreateObjectMoveGizmo();
+                        TG.SetTargetObject(clickedObject);
+                        TG.SetTransformSpace(GizmoSpace.Local);
                         CurrentObject.selectedCurrentObject = clickedObject;
-                        gizmos.Add(transformGizmo.Gizmo);
+                        gizmos.Add(TG.Gizmo);
                         break;
                     case Define.CurrentClickMode.Rotation:
                         gizmosClear();
-                         var rotationGizmo = RTGizmosEngine.Get.CreateObjectRotationGizmo();
-                        rotationGizmo.SetTargetObject(clickedObject);
-                        rotationGizmo.SetTransformSpace(GizmoSpace.Local);
+                        TG = RTGizmosEngine.Get.CreateObjectRotationGizmo();
+                        TG.SetTargetObject(clickedObject);
+                        TG.SetTransformSpace(GizmoSpace.Local);
                         CurrentObject.selectedCurrentObject = clickedObject;
-                        gizmos.Add(rotationGizmo.Gizmo);
+                        gizmos.Add(TG.Gizmo);
                         break;
                 }
             }
            
         }
+        if (TG != null)
+            TG.RefreshPositionAndRotation();
 
     }
 

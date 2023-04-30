@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 499878}
   - component: {fileID: 3340968}
   - component: {fileID: 2380580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DiscoLight03Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493138}
   - component: {fileID: 10867666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 448894}
   - component: {fileID: 3330526}
   - component: {fileID: 2315822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DiscoLight03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 481422}
   - component: {fileID: 3373602}
   - component: {fileID: 2398056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DiscoLight03Ball1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426338}
   - component: {fileID: 10890948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,8 +455,8 @@ GameObject:
   - component: {fileID: 9518736}
   - component: {fileID: 3587846402010099525}
   - component: {fileID: -4909214259995097917}
-  - component: {fileID: -932798875516747008}
-  m_Layer: 0
+  - component: {fileID: -4600968227324625770}
+  m_Layer: 9
   m_Name: DiscoLight03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-932798875516747008
+--- !u!114 &-4600968227324625770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 131414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8bb8017a8957c4198655d43f3c03f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 93d5096b29cfbe542b69608a4b700917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &134638
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433270}
   - component: {fileID: 10810804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 479002}
   - component: {fileID: 3343740}
   - component: {fileID: 2367234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DiscoLIght03Ball2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493736}
   - component: {fileID: 10884382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494988}
   - component: {fileID: 10854834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450932}
   - component: {fileID: 10894208}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465058}
   - component: {fileID: 10860790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474072}
   - component: {fileID: 10836172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointLight4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

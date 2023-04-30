@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 168626, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 168626, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -17,8 +21,16 @@ PrefabInstance:
       value: DiscoLight01 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 187148, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 187148, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197740, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 197740, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413800, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 413800, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,7 +115,7 @@ PrefabInstance:
       addedObject: {fileID: -6060036006778725400}
     - targetCorrespondingSourceObject: {fileID: 187148, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6529873539566969674}
+      addedObject: {fileID: 1529783228366411135}
   m_SourcePrefab: {fileID: 100100000, guid: 0a11cb210006ed746a534c60c1385559, type: 3}
 --- !u!1 &8970621467975271347 stripped
 GameObject:
@@ -178,7 +190,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6529873539566969674
+--- !u!114 &1529783228366411135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,6 +199,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8970621467975271347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8bb8017a8957c4198655d43f3c03f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 93d5096b29cfbe542b69608a4b700917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

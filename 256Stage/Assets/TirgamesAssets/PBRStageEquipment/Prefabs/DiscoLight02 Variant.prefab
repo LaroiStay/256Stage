@@ -13,12 +13,24 @@ PrefabInstance:
       value: DiscoLight02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 189976, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 189976, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198684, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 198684, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -77,13 +89,13 @@ PrefabInstance:
       addedObject: {fileID: 723727657}
     - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2347532071940802615}
-    - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -138545239435890013}
     - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7496716097547205043}
+    - targetCorrespondingSourceObject: {fileID: 128012, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5336254181981662496}
   m_SourcePrefab: {fileID: 100100000, guid: 1aef720b739516a48a87fab8532b06c1, type: 3}
 --- !u!1 &4816199646415025302 stripped
 GameObject:
@@ -110,18 +122,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2347532071940802615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4816199646415025302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8bb8017a8957c4198655d43f3c03f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &-138545239435890013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +170,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5336254181981662496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816199646415025302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d5096b29cfbe542b69608a4b700917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

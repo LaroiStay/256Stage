@@ -14,15 +14,24 @@ public class cshControlSky : MonoBehaviour
     public Color dayFog;
     public Color nightFog;
 
-    public Button dayButton;
-    public Button nightButton;
+    public bool daynight = true;
+
 
     void Update()
     {
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
+
+        if (daynight)
+        {
+            dayday();
+        }
+        else
+        {
+            nightnight();
+        }
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
         if (GUI.Button(new Rect(1800, 240, 100, 30), "Day"))
         {
@@ -39,7 +48,7 @@ public class cshControlSky : MonoBehaviour
             dayLight.SetActive(false);
             nightLight.SetActive(true);
         }
-    }
+    }*/
     public void dayday()
     {
         RenderSettings.skybox = dayMat;

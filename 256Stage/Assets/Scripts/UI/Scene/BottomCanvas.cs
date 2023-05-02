@@ -14,6 +14,8 @@ public class BottomCanvas : UI_ETC
     public static GameObject MainCam;
     public static GameObject MainCamMove;
     public static GameObject RTG;
+
+    public cshControlSky controlSky;
     enum Buttons
     {
         StageTooltip,
@@ -21,7 +23,9 @@ public class BottomCanvas : UI_ETC
         Barea,
         Carea,
         Darea,
-        Earea
+        Earea,
+        DayButton,
+        NightButton
     }
 
     enum Tooltips
@@ -65,6 +69,8 @@ public class BottomCanvas : UI_ETC
         Get<Button>((int)Buttons.Carea).onClick.AddListener(CC);
         Get<Button>((int)Buttons.Darea).onClick.AddListener(DD);
         Get<Button>((int)Buttons.Earea).onClick.AddListener(EE);
+        Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
+        Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
         Get<Image>((int)Tooltips.tooltip).gameObject.SetActive(false);
     }
 
@@ -131,7 +137,14 @@ public class BottomCanvas : UI_ETC
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
     }
+    void Dayday()
+    {
+        Debug.Log("Day weather");
+        controlSky.daynight = false;
+    }
+    void Nightnight()
+    {
 
-
+    }
 
 }

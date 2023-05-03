@@ -26,7 +26,7 @@ public class RealSelectButton : UI_Base
         m_key = key;
         BindThing();
         Get<Button>((int)Buttons.Button).image.sprite = Manager.Resource_Instance.Load<Sprite>($"Image/Stage/{name}/{name}{key}");
-        if (name == "Light")
+        if (name == "Light"||name == "Screen"||name == "Speaker")
             this.gameObject.AddComponent<IsLight>();
         setFunc();
     }
@@ -38,6 +38,7 @@ public class RealSelectButton : UI_Base
     void InstantiatePrefab()
     {
         GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
+        go.transform.position = CurrentObject.objectMake.transform.position;
         GameObject go2= FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key, go);
         List<GameObject> goList = new List<GameObject>();
         goList.Add(go);

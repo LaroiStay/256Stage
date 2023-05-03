@@ -12,7 +12,7 @@ public class BasicWindow : UI_ETC
     //int Box_Length =1;
     int Curtain_Length = 1;
     int Floor_Length = 15;
-    int Light_Length = 3;
+    int Light_Length = 7;
     int Other_Length = 3;
     int Screen_Length = 1;
     int Speaker_Length= 7;
@@ -158,10 +158,10 @@ public class BasicWindow : UI_ETC
         while (time < m_time)
         {
             time += Time.deltaTime;
-            go.transform.position = new Vector3(vecc.x, 1080- 90 -100*time/m_time, vecc.z);
+            go.transform.position = new Vector3(vecc.x, 1080- 180 -100*time/m_time, vecc.z);
             yield return new WaitForSeconds(Time.deltaTime);
         }
-        go.transform.position = new Vector3(vecc.x, 1080 - 140 - 50, vecc.z);
+        go.transform.position = new Vector3(vecc.x, 1080 - 230 - 50, vecc.z);
     }
 
 
@@ -173,7 +173,7 @@ public class BasicWindow : UI_ETC
         while (time < m_time)
         {
             time += Time.deltaTime;
-            go.transform.position = new Vector3(vecc.x, 890 + 100 * time / m_time, vecc.z);
+            go.transform.position = new Vector3(vecc.x, 845 + 100 * time / m_time, vecc.z);
             yield return new WaitForSeconds(Time.deltaTime);
         }
         

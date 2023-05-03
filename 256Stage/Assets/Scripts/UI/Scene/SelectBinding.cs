@@ -37,14 +37,14 @@ public class SelectBinding : UI_Base
         index = i;
         m_text = temptext;
         BindThings();
-        Get<TextMeshProUGUI>((int)Texts.Text).text = temptext;
+        //Get<TextMeshProUGUI>((int)Texts.Text).text = temptext;
         setImage();
         setFunc();
     }
 
     void setImage()
     {
-        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/Stage/{m_text}/{m_text}1");
+        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/StageIcon/{m_text}Icon");
         Get<Image>((int)Images.Image).sprite = temps;
     }
 

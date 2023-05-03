@@ -16,8 +16,8 @@ public class TopBackgroundCanvas : UI_ETC
     {
         RedoButton,
         UndoButton,
-        FileButton,
-        EditButton,
+        //FileButton,
+        //EditButton,
         TrashButton
     }
 
@@ -45,7 +45,7 @@ public class TopBackgroundCanvas : UI_ETC
     {
         Get<Button>((int)Buttons.RedoButton).onClick.AddListener(RedoButtonFunc);
         Get<Button>((int)Buttons.UndoButton).onClick.AddListener(UndoButtonFunc);
-        Get<Button>((int)Buttons.FileButton).onClick.AddListener(FileButtonFunc);
+        //Get<Button>((int)Buttons.FileButton).onClick.AddListener(FileButtonFunc);
         Get<Button>((int)Buttons.TrashButton).onClick.AddListener(TrashButtonFunc);
     }
 

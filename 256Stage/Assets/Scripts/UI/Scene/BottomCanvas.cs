@@ -16,6 +16,7 @@ public class BottomCanvas : UI_ETC
     public static GameObject RTG;
 
     public cshControlSky controlSky;
+
     enum Buttons
     {
         StageTooltip,
@@ -36,12 +37,14 @@ public class BottomCanvas : UI_ETC
 
     private void Start()
     {
+        
         if (whatthe)
         {
             BingThings();
             DoFirstThing();
             setFunc();
             whatthe = false;
+
         }
        
         //DoFirstThing();
@@ -140,11 +143,12 @@ public class BottomCanvas : UI_ETC
     void Dayday()
     {
         Debug.Log("Day weather");
-        controlSky.daynight = false;
     }
     void Nightnight()
     {
 
+        Debug.Log("Night weather");
+        controlSky.daynight = false;
     }
 
 }

@@ -6,8 +6,15 @@ using System;
 public class Player : MonoBehaviour
 {
 
+    string DancingPath = "Player/DancingGirl";
+
+    public Transform DancingPoint;
 
     // Update is called once per frame
+    public void Start()
+    {
+        DancingPoint = transform.Find("DancingPoint");
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.Q))
@@ -24,5 +31,23 @@ public class Player : MonoBehaviour
             Manager.UI_Instance.ShowUI<BottomCanvas>();
             Destroy(this.gameObject);
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Debug.Log("Mode");
+
+            Manager.UI_Instance.ShowUI<ModeInformation>();
+
+            Invoke("DeleteUI", 2f);
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+
+            Manager.Resource_Instance.Instantiate(DancingPath).transform.position = DancingPoint.transform.position;
+
+        }
+    }
+    void DeleteUI()
+    {
+        Manager.UI_Instance.CloseETCUI<ModeInformation>();
     }
 }

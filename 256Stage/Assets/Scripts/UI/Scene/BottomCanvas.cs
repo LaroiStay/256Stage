@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static RTG.Object2ObjectSnap;
 
 
 public class BottomCanvas : UI_ETC
 {
     bool flag = true;
     string PlayerPath = "Player/FirstPersonController";
+    //string DancingPath = "Player/DancingGirl";
     bool whatthe = true;
 
 
     public static GameObject MainCam;
     public static GameObject MainCamMove;
     public static GameObject RTG;
+
+    //public Transform DancingPoint;
+    //public GameObject DancingGirl;
 
     public cshControlSky controlSky;
 
@@ -44,6 +49,7 @@ public class BottomCanvas : UI_ETC
             DoFirstThing();
             setFunc();
             whatthe = false;
+            controlSky =GameObject.Find("SkyBox").GetComponent<cshControlSky>();
 
         }
        
@@ -99,7 +105,11 @@ public class BottomCanvas : UI_ETC
 
         MainCam.SetActive(false);
         RTG.SetActive(false);
-        Manager.Resource_Instance.Instantiate(PlayerPath).transform.position =  GameObject.Find("A").transform.position;
+        Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("A").transform.position;
+       
+        //Manager.Resource_Instance.Instantiate(DancingPath).transform.position = DancingPoint.transform.position;
+        //GameObject clone = Instantiate(DancingGirl, DancingPoint.position, DancingPoint.rotation);
+        //clone.transform.SetParent(DancingPoint);
         MainCamMove.SetActive(false);
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
@@ -142,12 +152,11 @@ public class BottomCanvas : UI_ETC
     }
     void Dayday()
     {
-        Debug.Log("Day weather");
+        controlSky.daynight = true;
     }
     void Nightnight()
     {
 
-        Debug.Log("Night weather");
         controlSky.daynight = false;
     }
 

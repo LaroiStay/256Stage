@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kwon.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/First.unity
+    guid: 40743de6040ef124aaf4d389af72b8c1
+  - enabled: 1
+    path: Assets/Scenes/Proscenium.unity
+    guid: 44c85a5868c79f749beb85e59a867161
+  - enabled: 1
+    path: Assets/Scenes/SceneSample1.unity
+    guid: b0c2b9b31f97cd346a9f3681ef38c563
+  - enabled: 1
+    path: Assets/Scenes/Second.unity
+    guid: 7b629eca9bd54184ab9ba50c8dab9521
+  - enabled: 1
+    path: Assets/Scenes/Third.unity
+    guid: 8888c911c752d7a4282ae1a5c6be668a
   m_configObjects: {}

@@ -37,6 +37,9 @@ public class Manager : MonoBehaviour
         }
     }
 
+
+
+
     public static void Clear()
     {
         Sound_Instance.Clear();

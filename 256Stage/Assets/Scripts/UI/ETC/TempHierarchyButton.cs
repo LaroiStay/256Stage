@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class TempHierarchyButton : UI_Base
 {
-    GameObject go;
+    [HideInInspector] public GameObject go;
     GameObject Cam;
     TranslateOption TO;
     float distance = 10f;
+    [HideInInspector] public string nameS;
+    [HideInInspector] public int KeyS;
 
     enum Texts
     {
@@ -36,6 +38,8 @@ public class TempHierarchyButton : UI_Base
 
     public void setName(string name, int key)
     {
+        nameS = name;
+        KeyS = key;
         BindThing();
         Get<TextMeshProUGUI>((int)Texts.Text).text = $"  > {name}{key}";
     }

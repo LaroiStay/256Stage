@@ -49,7 +49,7 @@ public class BottomCanvas : UI_ETC
             DoFirstThing();
             setFunc();
             whatthe = false;
-            controlSky =GameObject.Find("SkyBox").GetComponent<cshControlSky>();
+            //controlSky =GameObject.Find("SkyBox").GetComponent<cshControlSky>();
 
         }
        
@@ -78,8 +78,8 @@ public class BottomCanvas : UI_ETC
         Get<Button>((int)Buttons.Carea).onClick.AddListener(CC);
         Get<Button>((int)Buttons.Darea).onClick.AddListener(DD);
         Get<Button>((int)Buttons.Earea).onClick.AddListener(EE);
-        Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
-        Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
+        //Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
+       // Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
         Get<Image>((int)Tooltips.tooltip).gameObject.SetActive(false);
     }
 

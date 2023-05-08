@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 public class SceneManagerEx 
 {
     public BaseScene CurrentScene { get{return GameObject.FindObjectOfType<BaseScene>();} }
-
+    string ScenePath = "Assets/Scenes/";
 
    public void LoadScene(Define.Scene type)
     {
         Manager.Clear();
         SceneManager.LoadScene(GetSceneName(type));
     }
+ 
+
 
 
     string GetSceneName(Define.Scene name)

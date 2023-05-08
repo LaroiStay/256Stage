@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KwonScene : BaseScene
 {
@@ -17,9 +18,10 @@ public class KwonScene : BaseScene
         Manager.UI_Instance.ShowUI<TranslateOption>();
         Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
         Manager.UI_Instance.ShowUI<BottomCanvas>();
-
-        SceneType = Define.Scene.Game;
+        SceneType = Define.Scene.Kwon;
+    
     }
+
     public override void Clear()
     {
        

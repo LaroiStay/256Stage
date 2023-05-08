@@ -22,8 +22,14 @@ public class Define
         Lobby,
         Game,
         Kwon,
+        Proscenium,
+        SceneSample1,
         PlayerSelect,
-        StageSelect
+        StageSelect,
+        First,
+        Second,
+        Third,
+        Fourth
     }
 
     public enum Sound

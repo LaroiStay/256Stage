@@ -283,9 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   good: {fileID: 7679228585965375766}
+  Clickbutton: {fileID: 7679228586134844146}
   name: 
-  SceneType: 0
-  GameobjectPos: []
-  GameobjectRotation: []
-  ObjectName: []
-  ObjectKey: 
+  SceneNum: 0
+  SceneNumType: 0
+  NUM: 0

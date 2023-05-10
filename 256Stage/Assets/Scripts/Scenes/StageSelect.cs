@@ -82,23 +82,34 @@ public class StageSelect : UI_ETC
 
     void PanelsActiveTrue_Stage1()
     {
-        Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
+       // Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
         SceneType = Define.Scene.Kwon;
         ES3.Save("CurrentSceneType", 1);
+        int ll = ES3.Load<int>("CurrentSceneCount", 0);
+        ES3.Save("CurrentSceneCount", ll);
+        Manager.UI_Instance.CloseETCUI<StageSelect>();
+        Manager.Scene_Instance.LoadScene(SceneType);
 
     }
     void PanelsActiveTrue_Stage2()
     {
-        Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
-        SceneType = Define.Scene.SceneSample1;
+        //Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
+        SceneType = Define.Scene.Proscenium;
         ES3.Save("CurrentSceneType", 2);
+        int ll = ES3.Load<int>("CurrentSceneCount", 0);
+        ES3.Save("CurrentSceneCount", ll);
+        Manager.UI_Instance.CloseETCUI<StageSelect>();
+        Manager.Scene_Instance.LoadScene(SceneType);
     }
     void PanelsActiveTrue_Stage3()
     {
-        Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
-        SceneType = Define.Scene.Proscenium;
+        //Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(true);
+        SceneType = Define.Scene.SceneSample1;
         ES3.Save("CurrentSceneType", 3);
-
+        int ll = ES3.Load<int>("CurrentSceneCount", 0);
+        ES3.Save("CurrentSceneCount", ll);
+        Manager.UI_Instance.CloseETCUI<StageSelect>();
+        Manager.Scene_Instance.LoadScene(SceneType);
     }
 
 

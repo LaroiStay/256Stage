@@ -24,7 +24,7 @@ public class HierarchyCanvas : UI_ETC
     }
 
 
-    private void Start()
+    private void Awake()
     {
         BindThings();
         SetText();
@@ -46,6 +46,7 @@ public class HierarchyCanvas : UI_ETC
 
     public GameObject PlusPrefabsInHierarchy(string name, int key,GameObject go)
     {
+        
         GameObject TempGo = Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform);
         TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
         HiButton.setName(name, key);

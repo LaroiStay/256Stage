@@ -7,10 +7,10 @@ using System;
 
 public class TopBackgroundCanvas : UI_ETC
 {
-    int CurrentScene = ES3.Load<int>("CurrentSceneCount", 0)+1;
+    int CurrentScene = ES3.Load<int>("CurrentSceneCount", 0);
     TranslateOption TLO;
     RTUndoRedo RTGRedo;
-    bool flag = true;
+    private bool flag = true;
     enum Panels
     {
         FilePanel
@@ -90,6 +90,8 @@ public class TopBackgroundCanvas : UI_ETC
         if (flag)
         {
             flag = false;
+            CurrentScene++;
+
             string currentName = ES3.Load<string>("CurrentStageName");
             string[] defaultNames = new string[] { };
             string[] names = ES3.Load<string[]>("SceneNames", defaultNames);
@@ -97,8 +99,7 @@ public class TopBackgroundCanvas : UI_ETC
             for (int i = 0; i < names.Length; i++)
                 newNames[i] = names[i];
             newNames[newNames.Length - 1] = currentName;
-            for(int i = 0; i< newNames.Length; i++)
-                Debug.Log(newNames[i]);
+            
             ES3.Save<string[]>("SceneNames", newNames);
             int  ix =  ES3.Load<int>("TotalCount", 0);
             ix++;
@@ -115,13 +116,16 @@ public class TopBackgroundCanvas : UI_ETC
             ES3.Save("SceneList", sceneList);
 
 
+            ES3.Save<int>("CurrentSceneCount", newValue);
+            Debug.Log(ES3.Load<int>("CurrentSceneCount"));
+
             int[] defaultIInt = { };
-            int[] sceneTypeList = ES3.Load("CurrentSceneTypes", defaultIInt);
+            int[] sceneTypeList = ES3.Load<int[]>("SceneTypes", defaultIInt);
             int indexx = sceneTypeList.Length;
             Array.Resize(ref sceneTypeList, sceneTypeList.Length + 1);
             int newValuee = ES3.Load<int>("CurrentSceneType");
             sceneTypeList[indexx] = newValuee;
-            ES3.Save("SceneList", sceneTypeList);
+            ES3.Save("SceneTypes", sceneTypeList);
 
 
 
@@ -135,8 +139,8 @@ public class TopBackgroundCanvas : UI_ETC
         ES3.Save<string[]>($"{CurrentScene}NameS", nameSBundle.ToArray());
         ES3.Save<Vector3[]>($"{CurrentScene}Rotation", RotationBundle.ToArray());
         ES3.Save<Vector3[]>($"{CurrentScene}Pos", PosBundle.ToArray());
-       
 
+        Debug.Log(CurrentScene);
 
 
 
@@ -192,5 +196,15 @@ public class TopBackgroundCanvas : UI_ETC
             Debug.Log("FileButton");
         }
 
-    
+    public void SetFlagfalse()
+    {
+        flag = false;
+    }
+    public void SetCurrentScene(int i)
+    {
+        CurrentScene = i;
+    }
+
+
+
 }

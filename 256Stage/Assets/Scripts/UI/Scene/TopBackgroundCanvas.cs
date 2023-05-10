@@ -22,7 +22,8 @@ public class TopBackgroundCanvas : UI_ETC
         //FileButton,
         //EditButton,
         TrashButton,
-        SaveButton
+        SaveButton,
+        ExitButton
     }
 
     private void Start()
@@ -52,6 +53,7 @@ public class TopBackgroundCanvas : UI_ETC
         //Get<Button>((int)Buttons.FileButton).onClick.AddListener(FileButtonFunc);
         Get<Button>((int)Buttons.TrashButton).onClick.AddListener(TrashButtonFunc);
         Get<Button>((int)Buttons.SaveButton).onClick.AddListener(SaveFuc);
+        Get<Button>((int)Buttons.ExitButton).onClick.AddListener(ExitButtonClick);
         //ES3AutoSave
     }
 
@@ -127,13 +129,6 @@ public class TopBackgroundCanvas : UI_ETC
             sceneTypeList[indexx] = newValuee;
             ES3.Save("SceneTypes", sceneTypeList);
 
-
-
-            //int iiii = ES3.Load<int>("CurrentSceneCount");
-            //ES3.Save<int>($"{CurrentScene}Type", iiii);
-
-
-
         }
         ES3.Save<int[]>($"{CurrentScene}KeyS", KeySBundle.ToArray());
         ES3.Save<string[]>($"{CurrentScene}NameS", nameSBundle.ToArray());
@@ -182,19 +177,29 @@ public class TopBackgroundCanvas : UI_ETC
         CurrentObject.selectedCurrentObject = null;
     }
 
-        void RedoButtonFunc()
-        {
-            RTGRedo.Redo();
-        }
+    void ExitButtonClick()
+    {
+#if UNITY_EDITOR // 에디터에서는 종료됨
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL // 웹에서는 종료됨
+        Application.OpenURL("about:blank");
+#else // 안드로이드, iOS 등에서는 백그라운드로 전환됨
+        Application.Quit();
+#endif
+    }
+    void RedoButtonFunc()
+    {
+        RTGRedo.Redo();
+    }
 
-        void UndoButtonFunc()
-        {
-            RTGRedo.Undo();
-        }
-        void FileButtonFunc()
-        {
-            Debug.Log("FileButton");
-        }
+    void UndoButtonFunc()
+    {
+        RTGRedo.Undo();
+    }
+    void FileButtonFunc()
+    {
+        Debug.Log("FileButton");
+    }
 
     public void SetFlagfalse()
     {
@@ -204,6 +209,8 @@ public class TopBackgroundCanvas : UI_ETC
     {
         CurrentScene = i;
     }
+
+    
 
 
 

@@ -42,7 +42,7 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         path = Application.dataPath + "/Players/player";
-        print(path);
+        //print(path);
 
     }
     void Start()

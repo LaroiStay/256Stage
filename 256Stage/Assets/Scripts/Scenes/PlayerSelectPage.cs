@@ -61,7 +61,7 @@ public class PlayerSelectPage : UI_ETC
         {
             string[] names = ES3.Load<string[]>("SceneNames");
             int [] SceneList = ES3.Load<int[]>("SceneList");
-            int[] SceneTypeList = ES3.Load<int[]>("CurrentSceneTypes");
+            int[] SceneTypeList = ES3.Load<int[]>("SceneTypes");
             for (int i = 0; i<ix; i++)
             {
                 GameObject go = Manager.Resource_Instance.Instantiate(path);
@@ -69,14 +69,14 @@ public class PlayerSelectPage : UI_ETC
                 Stage2 S2 = go.GetComponent<Stage2>();
                 S2.name = names[i];
                 S2.SceneNum = SceneList[i];
-                if(SceneTypeList[i] == 1)
-                    S2.SceneType = Define.Scene.Kwon;
-                else if(SceneTypeList[i] == 2)
-                    S2.SceneType = Define.Scene.SceneSample1;
-                else if (SceneTypeList[i] == 3)
-                    S2.SceneType = Define.Scene.Proscenium;
-                else
-                    return;
+                S2.SceneNumType = SceneTypeList[i];
+                S2.NUM = i+1;
+
+
+
+
+
+
                 //if()
                 //S2.ObjectKey = ES3.Load<int[]>($"{SceneList[i]}KeyS");
                 //S2.ObjectName = ES3.Load<string[]>($"{SceneList[i]}NameS");

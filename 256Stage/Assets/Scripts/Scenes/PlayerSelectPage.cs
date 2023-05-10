@@ -12,11 +12,14 @@ public class PlayerSelectPage : UI_ETC
 {
 
     string path = "UI/EE/Stage2";
+    string NumPath = "UI/EE/num";
+
 
     enum Panels
     {
         stage,
-        CreatePlayerPanel
+        CreatePlayerPanel,
+        NumberGrid
     }
     enum TMP
     {
@@ -56,9 +59,22 @@ public class PlayerSelectPage : UI_ETC
         Get<Image>((int)Panels.CreatePlayerPanel).gameObject.SetActive(false);
         int ix = ES3.Load<int>("TotalCount", 0);
         
+        
+
+
         Get<TextMeshProUGUI>((int)TMP.project).text = $"There is {ix} project HERE!";
         if(ix != 0)
         {
+            for(int i =0; i<(ix+1)/4+1; i++)
+            {
+                Button bu = Manager.Resource_Instance.Instantiate(NumPath).GetComponent<Button>();
+                bu.transform.parent = Get<Image>((int)Panels.NumberGrid).transform;
+                bu.GetComponentInChildren<TextMeshProUGUI>().text = $"{i+1}";
+                int index = i;
+                Debug.Log($"{i}");
+                bu.onClick.AddListener(() => { ClickNumButton(index); });
+            }
+
             string[] names = ES3.Load<string[]>("SceneNames");
             int [] SceneList = ES3.Load<int[]>("SceneList");
             int[] SceneTypeList = ES3.Load<int[]>("SceneTypes");
@@ -71,17 +87,6 @@ public class PlayerSelectPage : UI_ETC
                 S2.SceneNum = SceneList[i];
                 S2.SceneNumType = SceneTypeList[i];
                 S2.NUM = i+1;
-
-
-
-
-
-
-                //if()
-                //S2.ObjectKey = ES3.Load<int[]>($"{SceneList[i]}KeyS");
-                //S2.ObjectName = ES3.Load<string[]>($"{SceneList[i]}NameS");
-                //S2.GameobjectPos = ES3.Load<Vector3[]>($"{SceneList[i]}Pos");
-                //S2.GameobjectRotation = ES3.Load<Vector3[]>($"{SceneList[i]}Rotation");
                 S2.STA();
             }
         }
@@ -94,7 +99,7 @@ public class PlayerSelectPage : UI_ETC
         Get<Button>((int)Buttons.Stage1).onClick.AddListener(CreateNew);
         Get<Button>((int)Buttons.CreatePlayerButton).onClick.AddListener(CreateButton);
         Get<Button>((int)Buttons.Blue).onClick.AddListener(CreateNew);
-
+        
     }
 
 
@@ -116,6 +121,31 @@ public class PlayerSelectPage : UI_ETC
 
         Manager.Scene_Instance.LoadScene(Define.Scene.StageSelect);
     }
+
+
+     void ClickNumButton(int i)
+    {
+        Debug.Log(i);
+        int k = i * 4;
+        Transform parent = Get<Image>((int)Panels.stage).transform;
+        int childCount = parent.childCount;
+        for (int ix = 0; ix < childCount; ix++)
+            parent.GetChild(ix).gameObject.SetActive(false);
+        for (int ix = 0; ix < childCount; ix++)
+        {
+            if (k <= ix && ix <= k + 3)
+            {
+                //Debug.Log(ix);
+                parent.GetChild(ix).gameObject.SetActive(true);
+            }
+        }
+
+
+    }
+
+
+
+
 
 
 

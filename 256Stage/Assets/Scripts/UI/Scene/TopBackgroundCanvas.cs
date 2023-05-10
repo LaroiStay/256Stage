@@ -84,12 +84,12 @@ public class TopBackgroundCanvas : UI_ETC
             RotationBundle.Add(ActiveTempHier[i].go.transform.localEulerAngles);
             PosBundle.Add(ActiveTempHier[i].go.transform.position);
         }
+        if (KeySBundle.Count == 0)
+            return;
 
         if (flag)
         {
             flag = false;
-
-
             string currentName = ES3.Load<string>("CurrentStageName");
             string[] defaultNames = new string[] { };
             string[] names = ES3.Load<string[]>("SceneNames", defaultNames);

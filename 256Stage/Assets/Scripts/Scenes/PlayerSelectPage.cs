@@ -21,10 +21,10 @@ public class PlayerSelectPage : UI_ETC
         CreatePlayerPanel,
         NumberGrid
     }
-    enum TMP
-    {
-        project,
-    }
+    //enum TMP
+    //{
+    //    project,
+    //}
     enum TMPInput
     {
 
@@ -48,7 +48,7 @@ public class PlayerSelectPage : UI_ETC
     void BindThings()
     {
         Bind<Image>(typeof(Panels));
-        Bind<TextMeshProUGUI>(typeof(TMP));
+        //Bind<TextMeshProUGUI>(typeof(TMP));
         Bind<Button>(typeof(Buttons));
         Bind<TMP_InputField>(typeof(TMPInput));
 
@@ -62,7 +62,7 @@ public class PlayerSelectPage : UI_ETC
         
 
 
-        Get<TextMeshProUGUI>((int)TMP.project).text = $"There is {ix} project HERE!";
+        //Get<TextMeshProUGUI>((int)TMP.project).text = $"There is {ix} project HERE!";
         if(ix != 0)
         {
             for(int i =0; i<(ix+1)/4+1; i++)

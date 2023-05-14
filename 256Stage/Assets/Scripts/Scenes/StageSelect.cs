@@ -21,17 +21,17 @@ public class StageSelect : UI_ETC
         stage1,
         stage2,
         stage3,
-        DoneButton
+        //DoneButton
     }
 
     enum Texts
     {
         StageNameText
     }
-    enum Panels
-    {
-        StageSizePage,
-    }
+    //enum Panels
+    //{
+    //    StageSizePage,
+    //}
 
     enum TMP_Input
     {
@@ -50,12 +50,12 @@ public class StageSelect : UI_ETC
     {
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
-        Bind<Image>(typeof(Panels));
+        //Bind<Image>(typeof(Panels));
         Bind<TMP_InputField>(typeof(TMP_Input));
     }
     void DoFirstThing()
     {
-        PanelsActiveFalse();
+        //PanelsActiveFalse();
         SetName();
     }
     void SetFuc()
@@ -63,7 +63,7 @@ public class StageSelect : UI_ETC
         Get<Button>((int)Buttons.stage1).onClick.AddListener(PanelsActiveTrue_Stage1);
         Get<Button>((int)Buttons.stage2).onClick.AddListener(PanelsActiveTrue_Stage2);
         Get<Button>((int)Buttons.stage3).onClick.AddListener(PanelsActiveTrue_Stage3);
-        Get<Button>((int)Buttons.DoneButton).onClick.AddListener(DoneButtonClick);
+      //  Get<Button>((int)Buttons.DoneButton).onClick.AddListener(DoneButtonClick);
         Get<Button>((int)Buttons.HomeButton).onClick.AddListener(ClickHomeButton);
         //Get<Button>((int)Buttons.HomeButton).onClick.AddListener();
     }
@@ -75,10 +75,10 @@ public class StageSelect : UI_ETC
         Get<TextMeshProUGUI>((int)Texts.StageNameText).text = s;
     }
 
-    void PanelsActiveFalse()
-    {
-        Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(false);
-    }
+    //void PanelsActiveFalse()
+    //{
+    //   // Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(false);
+    //}
 
     void PanelsActiveTrue_Stage1()
     {
@@ -122,20 +122,20 @@ public class StageSelect : UI_ETC
     }
 
 
-    void DoneButtonClick()
-    {
-        int num, num1;
-        if (TryGetIntFromInputField(Get<TMP_InputField>((int)TMP_Input.InputX), out num) && TryGetIntFromInputField(Get<TMP_InputField>((int)TMP_Input.InputY), out num1))
-        {
-            ES3.Save("CurrentInputX", num);
-            ES3.Save("CurrentInputY", num1);
-        }
-        int ll = ES3.Load<int>("CurrentSceneCount", 1);
-        ES3.Save("CurrentSceneCount", ll);
-        Manager.UI_Instance.CloseETCUI<StageSelect>();
-        Manager.Scene_Instance.LoadScene(SceneType);
+    //void DoneButtonClick()
+    //{
+    //    int num, num1;
+    //    if (TryGetIntFromInputField(Get<TMP_InputField>((int)TMP_Input.InputX), out num) && TryGetIntFromInputField(Get<TMP_InputField>((int)TMP_Input.InputY), out num1))
+    //    {
+    //        ES3.Save("CurrentInputX", num);
+    //        ES3.Save("CurrentInputY", num1);
+    //    }
+    //    int ll = ES3.Load<int>("CurrentSceneCount", 1);
+    //    ES3.Save("CurrentSceneCount", ll);
+    //    Manager.UI_Instance.CloseETCUI<StageSelect>();
+    //    Manager.Scene_Instance.LoadScene(SceneType);
 
-    }
+    //}
 
     private bool TryGetIntFromInputField(TMP_InputField inputField, out int result)
     {

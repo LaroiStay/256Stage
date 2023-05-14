@@ -50,4 +50,5 @@ public class Player : MonoBehaviour
     {
         Manager.UI_Instance.CloseETCUI<ModeInformation>();
     }
+
 }

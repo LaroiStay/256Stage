@@ -40,6 +40,7 @@ public class RealSelectButton : UI_Base
         GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{m_name}/{m_name}{m_key}");
         go.transform.position = CurrentObject.objectMake.transform.position;
         GameObject go2= FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(m_name, m_key, go);
+        
         List<GameObject> goList = new List<GameObject>();
         goList.Add(go);
         goList.Add(go2);

@@ -44,7 +44,7 @@ public class SelectBinding : UI_Base
 
     void setImage()
     {
-        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/StageIcon/{m_text}Icon");
+        Sprite temps = Manager.Resource_Instance.Load<Sprite>($"Image/UI/UI_{m_text.ToLower()}");
         Get<Image>((int)Images.Image).sprite = temps;
     }
 

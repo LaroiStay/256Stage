@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
 
     string DancingPath = "Player/DancingGirl";
+    string MusicPath = "Music/";
 
     public Transform DancingPoint;
 
@@ -19,30 +20,42 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
+            if (CurrentMusicAudioS.audioSourceDic.Count != 0)
+                foreach (var key in CurrentMusicAudioS.audioSourceDic.Keys)
+                    key.Stop();
+
             BottomCanvas.MainCam.SetActive(true);
             BottomCanvas.MainCamMove.SetActive(true);
             BottomCanvas.RTG.SetActive(true);
             Cursor.lockState = CursorLockMode.None; // 마우스 잠금 해제
             Cursor.visible = true; // 마우스 보이게 설정
+            Manager.UI_Instance.CloseETCUI<JText>();
             Manager.UI_Instance.ShowUI<BasicWindow>();
             Manager.UI_Instance.ShowUI<HierarchyCanvas>();
             Manager.UI_Instance.ShowUI<TranslateOption>();
             Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
             Manager.UI_Instance.ShowUI<BottomCanvas>();
+            GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>().ObjectsLoad();
             Destroy(this.gameObject);
         }
-        if (Input.GetKeyDown(KeyCode.M))
+        else if (Input.GetKeyDown(KeyCode.M))
         {
             Debug.Log("Mode");
-
             Manager.UI_Instance.ShowUI<ModeInformation>();
-
             Invoke("DeleteUI", 2f);
         }
-        if(Input.GetKeyDown(KeyCode.P))
+        else if (Input.GetKeyDown(KeyCode.P))
         {
-
             Manager.Resource_Instance.Instantiate(DancingPath).transform.position = DancingPoint.transform.position;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+            MusicOn(1);
+            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+            MusicOn(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+            MusicOn(3);
+        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
 
         }
     }
@@ -50,5 +63,18 @@ public class Player : MonoBehaviour
     {
         Manager.UI_Instance.CloseETCUI<ModeInformation>();
     }
+
+    void MusicOn(int i)
+    {
+        AudioClip audioClip = Manager.Resource_Instance.Load<AudioClip>($"{MusicPath}{i}");
+        if (CurrentMusicAudioS.audioSourceDic.Count != 0)
+            foreach (var key in CurrentMusicAudioS.audioSourceDic.Keys)
+            {
+                key.Stop();
+                key.clip = audioClip;
+                key.Play();
+            }
+    }
+
 
 }

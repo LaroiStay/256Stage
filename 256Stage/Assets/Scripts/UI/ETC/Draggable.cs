@@ -87,7 +87,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
                     if (FirstMakeObject)
                     {
                         LightObject = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
-
+                     
                     }
                     GameObject[] tempList = TurssQueue.GameObjects.ToArray();
                     float distance = 1000.0f;

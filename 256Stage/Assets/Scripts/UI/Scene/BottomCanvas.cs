@@ -103,10 +103,10 @@ public class BottomCanvas : UI_ETC
         MainCam.SetActive(false);
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("A").transform.position;
-       
+        SaveHi();
         MainCamMove.SetActive(false);
         Manager.UI_Instance.ClearETCUI();
-        //Manager.UI_Instance.ShowUI<JText>();
+        Manager.UI_Instance.ShowUI<JText>();
     }
     void BB()
     {
@@ -114,8 +114,12 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("B").transform.position;
         MainCamMove.SetActive(false);
+        SaveHi();
+
+
+
         Manager.UI_Instance.ClearETCUI();
-        //Manager.UI_Instance.ShowUI<JText>();
+        Manager.UI_Instance.ShowUI<JText>();
     }
     void CC()
     {
@@ -123,16 +127,17 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("C").transform.position;
         MainCamMove.SetActive(false);
-       
-        Manager.UI_Instance.CloseETCUI<TopBackgroundCanvas>();
-        Manager.UI_Instance.CloseETCUI<BasicWindow>();
-        Manager.UI_Instance.CloseETCUI<HierarchyCanvas>();
-        Manager.UI_Instance.CloseETCUI<TranslateOption>();
-        Debug.Log("1");
-        Manager.UI_Instance.CloseETCUI<BottomCanvas>();
-        Debug.Log("2");
-        //Manager.UI_Instance.ClearETCUI();
-        //Manager.UI_Instance.ShowUI<JText>();
+        SaveHi();
+
+        //Manager.UI_Instance.CloseETCUI<TopBackgroundCanvas>();
+        //Manager.UI_Instance.CloseETCUI<BasicWindow>();
+        //Manager.UI_Instance.CloseETCUI<HierarchyCanvas>();
+        //Manager.UI_Instance.CloseETCUI<TranslateOption>();
+        //Debug.Log("1");
+        //Manager.UI_Instance.CloseETCUI<BottomCanvas>();
+        //Debug.Log("2");
+        Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<JText>();
     }
     void DD()
     {
@@ -140,8 +145,9 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("D").transform.position;
         MainCamMove.SetActive(false);
+        SaveHi();
         Manager.UI_Instance.ClearETCUI();
-       // Manager.UI_Instance.ShowUI<JText>();
+        Manager.UI_Instance.ShowUI<JText>();
     }
     void EE()
     {
@@ -149,8 +155,9 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("E").transform.position;
         MainCamMove.SetActive(false);
+        SaveHi();
         Manager.UI_Instance.ClearETCUI();
-       // Manager.UI_Instance.ShowUI<JText>();
+        Manager.UI_Instance.ShowUI<JText>();
     }
     void Dayday()
     {
@@ -161,5 +168,11 @@ public class BottomCanvas : UI_ETC
 
         controlSky.daynight = false;
     }
+
+    void SaveHi()
+    {
+        GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>().ObjectSave();
+    }
+
 
 }

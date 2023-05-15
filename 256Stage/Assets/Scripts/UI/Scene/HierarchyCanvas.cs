@@ -6,7 +6,16 @@ using UnityEngine.UI;
 
 public class HierarchyCanvas : UI_ETC 
 {
-    
+    GameObject ObjectsMove
+    {
+        get
+        {
+            GameObject go = GameObject.Find("ObjectsMove");
+            if (go == null)
+                go = new GameObject { name = "ObjectsMove" };
+            return go;
+        }
+    }
     enum Panels
     {
         HierarchyPanel,
@@ -46,14 +55,49 @@ public class HierarchyCanvas : UI_ETC
 
     public GameObject PlusPrefabsInHierarchy(string name, int key,GameObject go)
     {
-        
+       
         GameObject TempGo = Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform);
+        if (name == "Speaker")
+            CurrentMusicAudioS.audioSourceDic.Add(go.GetComponent<AudioSource>(), "");
         TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
         HiButton.setName(name, key);
         HiButton.setGameObject(go);
         CurrentObject.HierarchyButtons.Add(go, TempGo);
+
+        //string ns = null;
+        //string[] s = ES3.Load<string[]>("OBJnames", ns);
+        //string 
+
+
+        //ES3.Save();
+
         return TempGo;
     }
+
+
+    public void ObjectSave()
+    {
+        if (Get<Image>((int)Panels.RealHierarchyPanel).transform.childCount == 0)
+            return;
+        for (int kk = 0; kk< Get<Image>((int)Panels.RealHierarchyPanel).transform.childCount; kk++){
+            GameObject go = Get<Image>((int)Panels.RealHierarchyPanel).transform.GetChild(kk).gameObject;
+            go.transform.parent = ObjectsMove.transform;
+        }
+    }
+
+
+    public void ObjectsLoad()
+    {
+        if (ObjectsMove.transform.childCount == 0)
+            return;
+        for (int kk = 0; kk < ObjectsMove.transform.childCount; kk++)
+        {
+            GameObject go = ObjectsMove.transform.GetChild(kk).gameObject;
+            go.transform.parent = Get<Image>((int)Panels.RealHierarchyPanel).transform;
+        }
+    }
+
+
 
 
    void FirstSetting()

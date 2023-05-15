@@ -56,7 +56,7 @@ public class StageSelect : UI_ETC
     void DoFirstThing()
     {
         //PanelsActiveFalse();
-        SetName();
+        //SetName();
     }
     void SetFuc()
     {
@@ -69,11 +69,11 @@ public class StageSelect : UI_ETC
     }
 
 
-    void SetName()
-    {
-        string s = ES3.Load<string>("CurrentStageName");
-        Get<TextMeshProUGUI>((int)Texts.StageNameText).text = s;
-    }
+    //void SetName()
+    //{
+    //    string s = ES3.Load<string>("CurrentStageName");
+    //    Get<TextMeshProUGUI>((int)Texts.StageNameText).text = s;
+    //}
 
     //void PanelsActiveFalse()
     //{

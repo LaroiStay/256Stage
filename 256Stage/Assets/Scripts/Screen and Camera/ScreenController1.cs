@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreenController : MonoBehaviour
+public class ScreenController1 : MonoBehaviour
 {
     public Camera targetCamera; // 화면을 찍을 Camera 오브젝트
     public GameObject screenObject; // 화면을 표시할 Screen 오브젝트

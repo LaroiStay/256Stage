@@ -19,7 +19,7 @@ public class BottomCanvas : UI_ETC
 
     public cshControlSky controlSky;
     HierarchyCanvas HC;
-
+    CamOptions CO;
     enum Buttons
     {
         StageTooltip,
@@ -102,10 +102,12 @@ public class BottomCanvas : UI_ETC
     void AA()
     {
 
+
         MainCam.SetActive(false);
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("A").transform.position;
         HC.ObjectSave();
+        TurnCOOff();
         MainCamMove.SetActive(false);
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
@@ -113,6 +115,7 @@ public class BottomCanvas : UI_ETC
     void BB()
     {
         MainCam.SetActive(false);
+        TurnCOOff();
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("B").transform.position;
         MainCamMove.SetActive(false);
@@ -127,6 +130,7 @@ public class BottomCanvas : UI_ETC
     void CC()
     {
         MainCam.SetActive(false);
+        TurnCOOff();
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("C").transform.position;
         MainCamMove.SetActive(false);
@@ -146,6 +150,7 @@ public class BottomCanvas : UI_ETC
     void DD()
     {
         MainCam.SetActive(false);
+        TurnCOOff();
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("D").transform.position;
         MainCamMove.SetActive(false);
@@ -157,6 +162,7 @@ public class BottomCanvas : UI_ETC
     void EE()
     {
         MainCam.SetActive(false);
+        TurnCOOff();
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("E").transform.position;
         MainCamMove.SetActive(false);
@@ -165,6 +171,13 @@ public class BottomCanvas : UI_ETC
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
     }
+    void TurnCOOff()
+    {
+        if (CO == null)
+            CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
+        CO.OFFCamOption();
+    }
+
     void Dayday()
     {
         controlSky.daynight = true;

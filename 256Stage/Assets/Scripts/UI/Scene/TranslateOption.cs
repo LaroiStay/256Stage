@@ -13,6 +13,7 @@ public class TranslateOption : UI_ETC
     Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;
     List<Gizmo> gizmos = new List<Gizmo>();
     GameObject Currentobj;
+    CamOptions CO;
 
 
     enum OptionButton
@@ -138,6 +139,8 @@ public class TranslateOption : UI_ETC
         
         if (Input.GetMouseButtonDown(0))
         {
+             if(CO == null)
+                        CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -147,7 +150,18 @@ public class TranslateOption : UI_ETC
                 if (hit.transform.tag != "Obj")
                     return;
                 GameObject clickedObject = hit.transform.gameObject.GetComponentInParent<Detect>().gameObject;
+              
                 Debug.Log(clickedObject);
+                if(clickedObject.name == "Screen1")
+                {
+                   
+                    CO.OnCamOption(clickedObject.transform.position, clickedObject);
+                }
+                else
+                {
+                   
+                    CO.OFFCamOption();
+                }
                 if (clickedObject == Currentobj)
                     return;
                 Currentobj = clickedObject;

@@ -19,7 +19,8 @@ public class PlayerSelectPage : UI_ETC
     {
         stage,
         CreatePlayerPanel,
-        NumberGrid
+        NumberGrid,
+        Manual
     }
     //enum TMP
     //{
@@ -35,7 +36,10 @@ public class PlayerSelectPage : UI_ETC
     {
         Stage1,
         CreatePlayerButton,
-        Blue
+        Blue,
+        CancleButton,
+        Manuel,
+        Manu
     }
 
     private void Start()
@@ -57,13 +61,9 @@ public class PlayerSelectPage : UI_ETC
     void DoFirstThing()
     {
         Get<Image>((int)Panels.CreatePlayerPanel).gameObject.SetActive(false);
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
         int ix = ES3.Load<int>("TotalCount", 0);
-        
-        
-
-
-        //Get<TextMeshProUGUI>((int)TMP.project).text = $"There is {ix} project HERE!";
-        if(ix != 0)
+        if (ix != 0)
         {
             for(int i =0; i<(ix+1)/4+1; i++)
             {
@@ -74,7 +74,6 @@ public class PlayerSelectPage : UI_ETC
                 Debug.Log($"{i}");
                 bu.onClick.AddListener(() => { ClickNumButton(index); });
             }
-
             string[] names = ES3.Load<string[]>("SceneNames");
             int [] SceneList = ES3.Load<int[]>("SceneList");
             int[] SceneTypeList = ES3.Load<int[]>("SceneTypes");
@@ -90,7 +89,6 @@ public class PlayerSelectPage : UI_ETC
                 S2.STA();
             }
         }
-
     }
 
 
@@ -99,7 +97,9 @@ public class PlayerSelectPage : UI_ETC
         Get<Button>((int)Buttons.Stage1).onClick.AddListener(CreateNew);
         Get<Button>((int)Buttons.CreatePlayerButton).onClick.AddListener(CreateButton);
         Get<Button>((int)Buttons.Blue).onClick.AddListener(CreateNew);
-        
+        Get<Button>((int)Buttons.CancleButton).onClick.AddListener(Cancel);
+        Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
+        Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
     }
 
 
@@ -144,7 +144,20 @@ public class PlayerSelectPage : UI_ETC
     }
 
 
+    void Cancel()
+    {
+        Get<Image>((int)Panels.CreatePlayerPanel).gameObject.SetActive(false);
+    }
 
+    void OnMan()
+    {
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(true);
+    }
+    void OffMan()
+    {
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
+
+    }
 
 
 

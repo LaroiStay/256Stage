@@ -13,7 +13,8 @@ public class TopBackgroundCanvas : UI_ETC
     private bool flag = true;
     enum Panels
     {
-        FilePanel
+        FilePanel,
+        Manual
     }
     enum Buttons
     {
@@ -23,7 +24,10 @@ public class TopBackgroundCanvas : UI_ETC
         //EditButton,
         TrashButton,
         SaveButton,
-        ExitButton
+        ExitButton,
+        Manuel,
+        Manu
+
     }
 
     private void Start()
@@ -44,6 +48,7 @@ public class TopBackgroundCanvas : UI_ETC
     {
         RTGRedo = GameObject.Find("RTUndoRedo").GetComponent<RTUndoRedo>();
         TLO = GameObject.Find("TranslateOption").GetComponent<TranslateOption>();
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
     }
 
     void SetButtonFunc()
@@ -54,6 +59,8 @@ public class TopBackgroundCanvas : UI_ETC
         Get<Button>((int)Buttons.TrashButton).onClick.AddListener(TrashButtonFunc);
         Get<Button>((int)Buttons.SaveButton).onClick.AddListener(SaveFuc);
         Get<Button>((int)Buttons.ExitButton).onClick.AddListener(ExitButtonClick);
+        Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
+        Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
         //ES3AutoSave
     }
 
@@ -145,6 +152,17 @@ public class TopBackgroundCanvas : UI_ETC
     }
 
 
+    void OnMan()
+    {
+
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(true);
+    }
+    void OffMan()
+    {
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
+
+    }
+
 
 
     void TrashButtonFunc()
@@ -211,6 +229,8 @@ public class TopBackgroundCanvas : UI_ETC
     {
         CurrentScene = i;
     }
+
+    
 
     
 

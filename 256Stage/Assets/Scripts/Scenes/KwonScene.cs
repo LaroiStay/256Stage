@@ -18,6 +18,7 @@ public class KwonScene : BaseScene
         Manager.UI_Instance.ShowUI<TranslateOption>();
         Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
         Manager.UI_Instance.ShowUI<BottomCanvas>();
+        Manager.UI_Instance.ShowUI<CamOptions>();
         SceneType = Define.Scene.Kwon;
     
     }

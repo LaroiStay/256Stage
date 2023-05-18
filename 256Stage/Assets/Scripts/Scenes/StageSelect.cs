@@ -14,6 +14,10 @@ public class StageSelect : UI_ETC
     Define.Scene SceneType = Define.Scene.UnKnown;
 
 
+    enum Panels
+    {
+        Manual
+    }
 
     enum Buttons
     {
@@ -21,12 +25,15 @@ public class StageSelect : UI_ETC
         stage1,
         stage2,
         stage3,
+        Manuel,
+        Manu
         //DoneButton
     }
 
     enum Texts
     {
-        StageNameText
+        StageNameText,
+        StageText
     }
     //enum Panels
     //{
@@ -52,11 +59,13 @@ public class StageSelect : UI_ETC
         Bind<TextMeshProUGUI>(typeof(Texts));
         //Bind<Image>(typeof(Panels));
         Bind<TMP_InputField>(typeof(TMP_Input));
+        Bind<Image>(typeof(Panels));
     }
     void DoFirstThing()
     {
         //PanelsActiveFalse();
-        //SetName();
+        SetName();
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
     }
     void SetFuc()
     {
@@ -66,18 +75,23 @@ public class StageSelect : UI_ETC
       //  Get<Button>((int)Buttons.DoneButton).onClick.AddListener(DoneButtonClick);
         Get<Button>((int)Buttons.HomeButton).onClick.AddListener(ClickHomeButton);
         //Get<Button>((int)Buttons.HomeButton).onClick.AddListener();
+        Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
+        Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
     }
 
 
-    //void SetName()
-    //{
-    //    string s = ES3.Load<string>("CurrentStageName");
-    //    Get<TextMeshProUGUI>((int)Texts.StageNameText).text = s;
-    //}
+    void SetName()
+    {
+        string s = ES3.Load<string>("CurrentStageName");
+        Get<TextMeshProUGUI>((int)Texts.StageText).text = @$"StageName: 
+{s}";
+
+
+    }
 
     //void PanelsActiveFalse()
     //{
-    //   // Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(false);
+    //    // Get<Image>((int)Panels.StageSizePage).gameObject.SetActive(false);
     //}
 
     void PanelsActiveTrue_Stage1()
@@ -118,6 +132,18 @@ public class StageSelect : UI_ETC
         ES3.Save("CurrentStageName", "");
         Manager.UI_Instance.CloseETCUI<StageSelect>();
         Manager.Scene_Instance.LoadScene(Define.Scene.PlayerSelect);
+
+    }
+
+
+    void OnMan()
+    {
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(true);
+    }
+
+    void OffMan()
+    {
+        Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
 
     }
 

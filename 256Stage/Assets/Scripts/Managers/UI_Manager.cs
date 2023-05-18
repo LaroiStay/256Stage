@@ -99,7 +99,9 @@ public class UI_Manager : MonoBehaviour
 
         int value = 0;
 
-       
+        string name = typeof(T).Name;
+        if (name == "CamOptions")
+            return;
 
         if (m_UI_ETC.TryGetValue(typeof(T), out value))
         {

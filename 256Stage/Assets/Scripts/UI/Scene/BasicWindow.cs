@@ -10,6 +10,7 @@ public class BasicWindow : UI_ETC
     static List<bool> IsSelect = new List<bool>();
     static bool CurrentState = false;
     //int Box_Length =1;
+    int Camera_Lenght = 1;
     int Curtain_Length = 1;
     int Floor_Length = 15;
     int Light_Length = 7;
@@ -38,7 +39,7 @@ public class BasicWindow : UI_ETC
 
     enum Menu
     {
-        
+        Camera,
         Curtain,
         Floor,
         Light,
@@ -59,6 +60,7 @@ public class BasicWindow : UI_ETC
     void ListAdds()
     {
         //tempList.Add(Box_Length);
+        tempList.Add(Camera_Lenght);
         tempList.Add(Curtain_Length);
         tempList.Add(Floor_Length);
         tempList.Add(Light_Length);

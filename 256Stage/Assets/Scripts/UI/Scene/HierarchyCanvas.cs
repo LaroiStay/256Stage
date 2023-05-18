@@ -62,7 +62,7 @@ public class HierarchyCanvas : UI_ETC
         TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
         HiButton.setName(name, key);
         HiButton.setGameObject(go);
-        CurrentObject.HierarchyButtons.Add(go, TempGo);
+        //CurrentObject.HierarchyButtons.Add(go, TempGo);
 
         //string ns = null;
         //string[] s = ES3.Load<string[]>("OBJnames", ns);
@@ -79,8 +79,12 @@ public class HierarchyCanvas : UI_ETC
     {
         if (Get<Image>((int)Panels.RealHierarchyPanel).transform.childCount == 0)
             return;
-        for (int kk = 0; kk< Get<Image>((int)Panels.RealHierarchyPanel).transform.childCount; kk++){
-            GameObject go = Get<Image>((int)Panels.RealHierarchyPanel).transform.GetChild(kk).gameObject;
+
+        int iii = Get<Image>((int)Panels.RealHierarchyPanel).transform.childCount;
+        for (int kk = 0; kk< iii; kk++){
+
+           
+            GameObject go = Get<Image>((int)Panels.RealHierarchyPanel).transform.GetChild(0).gameObject;
             go.transform.parent = ObjectsMove.transform;
         }
     }
@@ -90,9 +94,12 @@ public class HierarchyCanvas : UI_ETC
     {
         if (ObjectsMove.transform.childCount == 0)
             return;
-        for (int kk = 0; kk < ObjectsMove.transform.childCount; kk++)
+        int iii = ObjectsMove.transform.childCount;
+        for (int kk = 0; kk < iii; kk++)
         {
-            GameObject go = ObjectsMove.transform.GetChild(kk).gameObject;
+            Debug.Log("??");
+
+            GameObject go = ObjectsMove.transform.GetChild(0).gameObject;
             go.transform.parent = Get<Image>((int)Panels.RealHierarchyPanel).transform;
         }
     }

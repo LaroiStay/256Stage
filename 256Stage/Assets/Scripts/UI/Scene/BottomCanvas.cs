@@ -18,6 +18,7 @@ public class BottomCanvas : UI_ETC
 
 
     public cshControlSky controlSky;
+    HierarchyCanvas HC;
 
     enum Buttons
     {
@@ -65,6 +66,7 @@ public class BottomCanvas : UI_ETC
         MainCam = GameObject.Find("Main Camera");
         MainCamMove = GameObject.Find("CameraMove");
         RTG = GameObject.Find("RTGApp");
+        HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
     }
 
     void setFunc()
@@ -103,7 +105,7 @@ public class BottomCanvas : UI_ETC
         MainCam.SetActive(false);
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("A").transform.position;
-        SaveHi();
+        HC.ObjectSave();
         MainCamMove.SetActive(false);
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
@@ -114,7 +116,8 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("B").transform.position;
         MainCamMove.SetActive(false);
-        SaveHi();
+        HC.ObjectSave();
+
 
 
 
@@ -127,7 +130,8 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("C").transform.position;
         MainCamMove.SetActive(false);
-        SaveHi();
+        HC.ObjectSave();
+
 
         //Manager.UI_Instance.CloseETCUI<TopBackgroundCanvas>();
         //Manager.UI_Instance.CloseETCUI<BasicWindow>();
@@ -145,7 +149,8 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("D").transform.position;
         MainCamMove.SetActive(false);
-        SaveHi();
+        HC.ObjectSave();
+
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
     }
@@ -155,7 +160,8 @@ public class BottomCanvas : UI_ETC
         RTG.SetActive(false);
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("E").transform.position;
         MainCamMove.SetActive(false);
-        SaveHi();
+        HC.ObjectSave();
+
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.ShowUI<JText>();
     }

@@ -285,6 +285,8 @@ namespace RTG
             AABB targetGroupAABB = AABB.GetInvalid();
             foreach(var targetObject in _targetObjects)
             {
+                if (targetObject == null)
+                    return new AABB();
                 AABB targetAABB = ObjectBounds.CalcWorldAABB(targetObject, boundsQConfig);
                 if (targetGroupAABB.IsValid) targetGroupAABB.Encapsulate(targetAABB);
                 else targetGroupAABB = targetAABB;

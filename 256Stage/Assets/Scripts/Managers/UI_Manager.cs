@@ -47,6 +47,12 @@ public class UI_Manager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
+        if(name == "CamOptions")
+        {
+            GameObject gogo = GameObject.Find("CamOptions");
+            if (gogo != null)
+                return null;
+        }
         GameObject go = Manager.Resource_Instance.Instantiate($"UI/ETC/{name}");
         T ETCUI = Util.GetOrAddComponent<T>(go);
         m_UI_ETC.Add(typeof(T), 1);

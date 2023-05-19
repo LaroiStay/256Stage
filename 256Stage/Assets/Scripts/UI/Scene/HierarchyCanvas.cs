@@ -16,6 +16,7 @@ public class HierarchyCanvas : UI_ETC
             return go;
         }
     }
+    GameObject COgo;
     CamOptions CO;
     enum Panels
     {
@@ -56,10 +57,16 @@ public class HierarchyCanvas : UI_ETC
 
     public GameObject PlusPrefabsInHierarchy(string name, int key,GameObject go)
     {
-        if(CO ==null)
-            CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
-
-
+        if(CO == null)
+        {
+            COgo = GameObject.Find("CamOptions");
+            if(COgo == null)
+            {
+                CO = Manager.UI_Instance.ShowUI<CamOptions>();
+            }
+            else
+                CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
+        }
 
         GameObject TempGo = Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform);
         if (name == "Speaker")
@@ -73,15 +80,7 @@ public class HierarchyCanvas : UI_ETC
         TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
         HiButton.setName(name, key);
         HiButton.setGameObject(go);
-        //CurrentObject.HierarchyButtons.Add(go, TempGo);
-
-        //string ns = null;
-        //string[] s = ES3.Load<string[]>("OBJnames", ns);
-        //string 
-
-
-        //ES3.Save();
-
+        CurrentObject.HierarchyButtons.Add(go, TempGo);
         return TempGo;
     }
 

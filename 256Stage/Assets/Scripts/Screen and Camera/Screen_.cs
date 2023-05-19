@@ -5,7 +5,7 @@ using UnityEngine;
 public class Screen_ : MonoBehaviour
 {
     int childIndex = 0;
-    GameObject QuadObj;
+    [HideInInspector] public GameObject QuadObj;
     private void Start()
     {
         Transform childTransform = transform.GetChild(childIndex);

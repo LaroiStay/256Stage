@@ -14,7 +14,7 @@ public class TranslateOption : UI_ETC
     List<Gizmo> gizmos = new List<Gizmo>();
     GameObject Currentobj;
     CamOptions CO;
-
+    GameObject tempSaveScreenObj;
 
     enum OptionButton
     {
@@ -154,17 +154,27 @@ public class TranslateOption : UI_ETC
                 Debug.Log(clickedObject);
                 if(clickedObject.name == "Screen1")
                 {
-                   
-                    CO.OnCamOption(clickedObject.transform.position, clickedObject);
+
+                    CO.OnCamOption(clickedObject.transform.position, clickedObject.GetComponent<Screen_>().QuadObj);
+                    if(tempSaveScreenObj == clickedObject)
+                    {
+                        CO.OFFCamOption();
+                        tempSaveScreenObj = null;
+                    }
+                    else
+                    {
+                        tempSaveScreenObj = clickedObject;
+                    }
                 }
                 else
                 {
-                   
                     CO.OFFCamOption();
                 }
                 if (clickedObject == Currentobj)
                     return;
                 Currentobj = clickedObject;
+                CurrentObject.selectedCurrentObject = clickedObject;
+
                 switch (CurrentMode)
                 {
                     case Define.CurrentClickMode.Base:

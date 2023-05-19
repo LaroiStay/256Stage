@@ -10,6 +10,7 @@ public class TopBackgroundCanvas : UI_ETC
     int CurrentScene = ES3.Load<int>("CurrentSceneCount", 0);
     TranslateOption TLO;
     RTUndoRedo RTGRedo;
+    CamOptions CO = null;
     private bool flag = true;
     enum Panels
     {
@@ -167,6 +168,8 @@ public class TopBackgroundCanvas : UI_ETC
 
     void TrashButtonFunc()
     {
+        if (CO == null)
+            CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
         if (CurrentObject.selectedCurrentObject == null)
             return;
 
@@ -174,12 +177,11 @@ public class TopBackgroundCanvas : UI_ETC
             return;
         GameObject value = null;
 
-        //PostObjectSpawnAction DeleteValue = null;
 
         CurrentObject.HierarchyButtons.TryGetValue(CurrentObject.selectedCurrentObject,out value);
         if (value == null)
             return;
-
+      
         List<GameObject> goList = new List<GameObject>();
         //CurrentObject.HierarchyButtonsDetail.TryGetValue(CurrentObject.selectedCurrentObject, out DeleteValue);
         // if (DeleteValue == null)
@@ -188,6 +190,8 @@ public class TopBackgroundCanvas : UI_ETC
         GameObject go__ = CurrentObject.selectedCurrentObject;
         goList.Add(value);
         goList.Add(go__);
+        if (go__.name == "Camera1")
+            CO.DeleteCam(go__.GetComponent<CamInFo>().GetCam());
         CurrentMusicAudioS.audioSourceDic.Remove(go__.GetComponent<AudioSource>());
         var DesTTT = new PostObjectDesAction(goList);
         DesTTT.Execute();

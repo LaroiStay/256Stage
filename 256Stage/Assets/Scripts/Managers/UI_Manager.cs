@@ -179,6 +179,11 @@ public class UI_Manager : MonoBehaviour
 
     }
 
+    public void compulsionClear()
+    {
+        m_UI_ETC = new Dictionary<Type, int>();
+    }
+
 
 
 }

@@ -37,25 +37,26 @@ public class Stage2 : MonoBehaviour
         ES3.Save("CurrentSceneInfo1", SceneNum);
         ES3.Save("CurrentSceneInfo2", SceneNumType);
 
-        switch (NUM)
-        {
-            case 1:
+        Manager.Scene_Instance.LoadScene(Define.Scene.First);
+        //switch (NUM)
+        //{
+        //    case 1:
 
-                Manager.Scene_Instance.LoadScene(Define.Scene.First);
-                break;
-            case 2:
+        //        Manager.Scene_Instance.LoadScene(Define.Scene.First);
+        //        break;
+        //    case 2:
 
-                Manager.Scene_Instance.LoadScene(Define.Scene.Second);
-                break;
-            case 3:
+        //        Manager.Scene_Instance.LoadScene(Define.Scene.Second);
+        //        break;
+        //    case 3:
 
-                Manager.Scene_Instance.LoadScene(Define.Scene.Third);
-                break;
-            default:
-                return;
-                break;
+        //        Manager.Scene_Instance.LoadScene(Define.Scene.Third);
+        //        break;
+        //    default:
+        //        return;
+        //        break;
             
-        }
+        //}
 
     }
 

@@ -177,7 +177,7 @@ public class BottomCanvas : UI_ETC
         CO.OFFCamOption();
     }
 
-    void Dayday()
+    /*void Dayday()
     {
         controlSky.daynight = true;
     }
@@ -185,7 +185,7 @@ public class BottomCanvas : UI_ETC
     {
 
         controlSky.daynight = false;
-    }
+    }*/
 
     void SaveHi()
     {

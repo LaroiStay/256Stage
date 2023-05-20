@@ -17,7 +17,7 @@ public class BottomCanvas : UI_ETC
     public static GameObject RTG;
 
 
-    public cshControlSky controlSky;
+    //public cshControlSky controlSky;
     HierarchyCanvas HC;
     CamOptions CO;
     enum Buttons
@@ -37,18 +37,17 @@ public class BottomCanvas : UI_ETC
         tooltip
     }
 
-
     private void Start()
     {
-        
+
         if (whatthe)
         {
             BingThings();
             DoFirstThing();
             setFunc();
             whatthe = false;
-            //controlSky =GameObject.Find("SkyBox").GetComponent<cshControlSky>();
 
+            //controlSky = GetComponent<cshControlSky>();
         }
        
         //DoFirstThing();
@@ -78,7 +77,7 @@ public class BottomCanvas : UI_ETC
         Get<Button>((int)Buttons.Darea).onClick.AddListener(DD);
         Get<Button>((int)Buttons.Earea).onClick.AddListener(EE);
         //Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
-       // Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
+        //Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
         Get<Image>((int)Tooltips.tooltip).gameObject.SetActive(false);
     }
 

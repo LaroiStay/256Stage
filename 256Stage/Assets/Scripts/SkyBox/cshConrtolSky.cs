@@ -54,14 +54,17 @@ public class cshControlSky : MonoBehaviour
         RenderSettings.skybox = dayMat;
         RenderSettings.fogColor = dayFog;
         dayLight.SetActive(true);
-        nightLight.SetActive(false);
+        //nightLight.SetActive(false);
     }
     public void nightnight()
     {
-        RenderSettings.skybox = nightMat;
+        /*RenderSettings.skybox = nightMat;
         RenderSettings.fogColor = nightFog;
         dayLight.SetActive(false);
-        nightLight.SetActive(true);
+        nightLight.SetActive(true);*/
+        RenderSettings.skybox = nightMat;
+        RenderSettings.fogColor = nightFog;
 
+        dayLight.SetActive(false);
     }
 }

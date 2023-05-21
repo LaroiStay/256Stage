@@ -8,26 +8,43 @@ public class cshControlSky : MonoBehaviour
 {
     public Material dayMat;
     public Material nightMat;
+    public Material spaceMat;
+    public Material animationMat;
+
     public GameObject dayLight;
     public GameObject nightLight;
 
     public Color dayFog;
     public Color nightFog;
 
-    public bool daynight = true;
-
-
-    void Update()
+    public int weatherNum = 0;
+    private int previousWeatherNum = -1;
+    public void Update()
     {
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
+        if (weatherNum != previousWeatherNum)
+        {
+            previousWeatherNum = weatherNum;
 
-        if (daynight)
-        {
-            dayday();
-        }
-        else
-        {
-            nightnight();
+            switch (weatherNum)
+            {
+                case 0:
+                    Debug.Log("day");
+                    dayday();
+                    break;
+                case 1:
+                    Debug.Log("night");
+                    nightnight();
+                    break;
+                case 2:
+                    Debug.Log("space");
+                    spacespace();
+                    break;
+                case 3:
+                    Debug.Log("ani");
+                    aniani();
+                    break;
+            }
         }
     }
 
@@ -66,5 +83,17 @@ public class cshControlSky : MonoBehaviour
         RenderSettings.fogColor = nightFog;
 
         dayLight.SetActive(false);
+    }
+    public void spacespace()
+    {
+        RenderSettings.skybox = spaceMat;
+        dayLight.SetActive(false);
+    }
+    public void aniani()
+    {
+
+        RenderSettings.skybox = animationMat;
+        RenderSettings.fogColor = dayFog;
+
     }
 }

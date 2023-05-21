@@ -484,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2972067853936043695
 Transform:
   m_ObjectHideFlags: 0
@@ -513,12 +513,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayMat: {fileID: 2100000, guid: 9ca22510633fbfd4399f1704cd9d5c72, type: 2}
-  nightMat: {fileID: 2100000, guid: d1fdb8e44b28da34d9e922cca0bc740e, type: 2}
+  nightMat: {fileID: 2100000, guid: b5a27fa4b11bfb24cbc6daff3802c229, type: 2}
+  spaceMat: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  animationMat: {fileID: 2100000, guid: 6c154636a358e41b4bcc5d4158c4c529, type: 2}
   dayLight: {fileID: 2972067852540681861}
-  nightLight: {fileID: 0}
+  nightLight: {fileID: 2972067852540681861}
   dayFog: {r: 0.15481488, g: 0.52537745, b: 0.6698113, a: 1}
   nightFog: {r: 0.17094868, g: 0.15218937, b: 0.33962262, a: 1}
-  daynight: 1
+  weatherNum: 0
 --- !u!1 &6719464650995808642
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +613,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5748732838077881017, guid: f8952cc3866c80c409596e519109873a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721476865849721329, guid: f8952cc3866c80c409596e519109873a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

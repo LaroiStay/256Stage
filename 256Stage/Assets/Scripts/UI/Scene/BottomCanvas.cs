@@ -17,7 +17,7 @@ public class BottomCanvas : UI_ETC
     public static GameObject RTG;
 
 
-    //public cshControlSky controlSky;
+    public cshControlSky controlSky;
     HierarchyCanvas HC;
     CamOptions CO;
     enum Buttons
@@ -29,7 +29,9 @@ public class BottomCanvas : UI_ETC
         Darea,
         Earea,
         DayButton,
-        NightButton
+        NightButton,
+        UniverseButton,
+        AnimationButton,
     }
 
     enum Tooltips
@@ -47,7 +49,7 @@ public class BottomCanvas : UI_ETC
             setFunc();
             whatthe = false;
 
-            //controlSky = GetComponent<cshControlSky>();
+            controlSky = GameObject.Find("SkyBox").GetComponent<cshControlSky>();
         }
        
         //DoFirstThing();
@@ -76,8 +78,10 @@ public class BottomCanvas : UI_ETC
         Get<Button>((int)Buttons.Carea).onClick.AddListener(CC);
         Get<Button>((int)Buttons.Darea).onClick.AddListener(DD);
         Get<Button>((int)Buttons.Earea).onClick.AddListener(EE);
-        //Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
-        //Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
+        Get<Button>((int)Buttons.DayButton).onClick.AddListener(Dayday);
+        Get<Button>((int)Buttons.NightButton).onClick.AddListener(Nightnight);
+        Get<Button>((int)Buttons.UniverseButton).onClick.AddListener(Spacespace);
+        Get<Button>((int)Buttons.AnimationButton).onClick.AddListener(Aniani);
         Get<Image>((int)Tooltips.tooltip).gameObject.SetActive(false);
     }
 
@@ -177,16 +181,36 @@ public class BottomCanvas : UI_ETC
         CO.OFFCamOption();
     }
 
-    /*void Dayday()
+    void Dayday()
     {
-        controlSky.daynight = true;
+        controlSky.weatherNum = 0;
+
+        Debug.Log(controlSky.weatherNum);
     }
     void Nightnight()
     {
 
-        controlSky.daynight = false;
-    }*/
 
+        controlSky.weatherNum = 1;
+
+        Debug.Log(controlSky.weatherNum);
+    }
+    void Spacespace()
+    {
+
+        controlSky.weatherNum = 2;
+
+        Debug.Log(controlSky.weatherNum);
+
+    }
+    void Aniani()
+    {
+
+        controlSky.weatherNum = 3;
+
+        Debug.Log(controlSky.weatherNum);
+
+    }
     void SaveHi()
     {
         GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>().ObjectSave();

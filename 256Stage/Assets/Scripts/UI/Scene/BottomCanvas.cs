@@ -185,7 +185,6 @@ public class BottomCanvas : UI_ETC
     {
         controlSky.weatherNum = 0;
 
-        Debug.Log(controlSky.weatherNum);
     }
     void Nightnight()
     {
@@ -193,14 +192,12 @@ public class BottomCanvas : UI_ETC
 
         controlSky.weatherNum = 1;
 
-        Debug.Log(controlSky.weatherNum);
     }
     void Spacespace()
     {
 
         controlSky.weatherNum = 2;
 
-        Debug.Log(controlSky.weatherNum);
 
     }
     void Aniani()
@@ -208,7 +205,6 @@ public class BottomCanvas : UI_ETC
 
         controlSky.weatherNum = 3;
 
-        Debug.Log(controlSky.weatherNum);
 
     }
     void SaveHi()

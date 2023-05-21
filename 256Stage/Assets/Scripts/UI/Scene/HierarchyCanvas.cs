@@ -70,14 +70,20 @@ public class HierarchyCanvas : UI_ETC
 
         GameObject TempGo = Manager.Resource_Instance.Instantiate("UI/ETC/TempHierarchyButton", Get<Image>((int)Panels.RealHierarchyPanel).transform);
         if (name == "Speaker")
+        {
+
             CurrentMusicAudioS.audioSourceDic.Add(go.GetComponent<AudioSource>(), "");
-        else if(name == "Camera")
+        }
+        else if (name == "Camera")
         {
             CamInFo CIF = go.GetComponent<CamInFo>();
             CO.AddOption(CIF.GetCam());
-           //CO.AddOption()
         }
-        TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
+        else if (name == "Light")
+        {
+            CurrentObject.LightObj.Add(go,1);
+        }
+            TempHierarchyButton HiButton = TempGo.GetOrAddComponent<TempHierarchyButton>();
         HiButton.setName(name, key);
         HiButton.setGameObject(go);
         CurrentObject.HierarchyButtons.Add(go, TempGo);

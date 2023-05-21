@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickAnimation : MonoBehaviour
 {
-    [SerializeField] private float interactionDistance = 5f; // 상호작용 가능한 거리
+    private float interactionDistance = 500f; // 상호작용 가능한 거리
     [SerializeField] private LayerMask interactableLayer; // 상호작용 가능한 레이어
     [SerializeField] private Camera playerCamera; // 플레이어 카메라
     private RaycastHit hit; // 레이캐스트를 통해 충돌한 오브젝트 정보

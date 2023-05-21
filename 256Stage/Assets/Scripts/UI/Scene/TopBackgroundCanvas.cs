@@ -195,6 +195,14 @@ public class TopBackgroundCanvas : UI_ETC
         goList.Add(go__);
         if (go__.name == "Camera1")
             CO.DeleteCam(go__.GetComponent<CamInFo>().GetCam());
+        if(go__.name == "Light1"|| go__.name == "Light2" || go__.name == "Light3" || go__.name == "Light4" || go__.name == "Light5" || go__.name == "Light6" || go__.name == "Light7")
+        {
+            int ii = 0;
+            CurrentObject.LightObj.TryGetValue(go__, out ii);
+            if (ii == 1)
+                CurrentObject.LightObj.Remove(go__);
+
+        }
         CurrentMusicAudioS.audioSourceDic.Remove(go__.GetComponent<AudioSource>());
         var DesTTT = new PostObjectDesAction(goList);
         DesTTT.Execute();

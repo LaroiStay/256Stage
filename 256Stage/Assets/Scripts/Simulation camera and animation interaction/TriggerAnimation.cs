@@ -6,31 +6,38 @@ public class TriggerAnimation : MonoBehaviour
 {
 
     Animator animator;
+    public List<GameObject> k = new List<GameObject>();
+    float Distance = 15f;
 
-    void Start()
+    private void Update()
     {
-       
-        //animator.enabled = false; // 애니메이션 비활성화
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Light")) // 카메라와 충돌체 감지
+        if (k.Count == 0)
+            return;
+        for (int i = 0; i < k.Count; i++)
         {
-            animator = other.GetComponent<Animator>();
-            animator.enabled = true; // 애니메이션 활성화
+            if (Vector3.Distance(transform.position, k[i].transform.position) < Distance)
+            {
+                Animator ani = k[i].GetComponent<Animator>();
+                if (ani != null)
+                    ani.enabled = true;
+            }
+            else
+            {
+                Animator ani = k[i].GetComponent<Animator>();
+                if (ani != null)
+                    ani.enabled = false;
+            }
         }
     }
-
-    void OnTriggerExit(Collider other)
+    public void SetK(List<GameObject> good)
     {
-        if (other.CompareTag("Light")) // 카메라와 충돌체 감지
-        {
-            animator = other.GetComponent<Animator>();
-            animator.enabled = false; // 애니메이션 비활성화
-        }
+        k = good;
     }
 
 
-   
+
+
+
+
+
 }

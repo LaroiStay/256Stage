@@ -40,9 +40,9 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
-            Debug.Log("Mode");
-            Manager.UI_Instance.ShowUI<ModeInformation>();
-            Invoke("DeleteUI", 2f);
+            //Debug.Log("Mode");
+            //Manager.UI_Instance.ShowUI<ModeInformation>();
+            //Invoke("DeleteUI", 2f);
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {

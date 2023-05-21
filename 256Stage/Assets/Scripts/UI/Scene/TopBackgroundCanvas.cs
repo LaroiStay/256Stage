@@ -11,6 +11,7 @@ public class TopBackgroundCanvas : UI_ETC
     TranslateOption TLO;
     RTUndoRedo RTGRedo;
     CamOptions CO = null;
+    HierarchyCanvas HC;
     private bool flag = true;
     enum Panels
     {
@@ -171,6 +172,8 @@ public class TopBackgroundCanvas : UI_ETC
 
     void TrashButtonFunc()
     {
+        if (HC == null)
+            HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
         if (CO == null)
             CO = GameObject.Find("CamOptions").GetComponent<CamOptions>();
         if (CurrentObject.selectedCurrentObject == null)
@@ -209,7 +212,8 @@ public class TopBackgroundCanvas : UI_ETC
         value.SetActive(false);
         CurrentObject.selectedCurrentObject.SetActive(false);
         TLO.gizmosClear();
-        CurrentObject.selectedCurrentObject = null; 
+        CurrentObject.selectedCurrentObject = null;
+        HC.Minus30();
         CurrentObject.i--;
     }
 

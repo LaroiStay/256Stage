@@ -140,6 +140,7 @@ public class HierarchyCanvas : UI_ETC
         CurrentObject.HierarchyButtons.Add(go, TempGo);
         TempGo.transform.SetSiblingIndex(CurrentObject.i);
         CurrentObject.i++;
+        Plus30();
         return TempGo;
     }
 
@@ -247,8 +248,6 @@ public class HierarchyCanvas : UI_ETC
         }
         else
         {
-
-               
             tempGo = go;
 
             if (tempGo == null)
@@ -311,5 +310,44 @@ public class HierarchyCanvas : UI_ETC
         Get<Image>((int)Images.PosX).gameObject.transform.SetSiblingIndex(ii);
         Get<Image>((int)Images.PosText).gameObject.transform.SetSiblingIndex(ii);
     }
+
+    public void Plus30()
+    {
+        if(Get<Image>((int)Images.RealHierarchyPanel).transform.childCount >= 26)
+        Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta = 
+            new Vector2(Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.x,
+            Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.y + 30f);
+    }
+    public void Minus30()
+    {
+        if (Get<Image>((int)Images.RealHierarchyPanel).transform.childCount >= 26)
+            Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta =
+           new Vector2(Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.x,
+           Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.y - 30f);
+    }
+
+    //public void Plus270()
+    //{
+    //    if (Get<Image>((int)Images.RealHierarchyPanel).transform.childCount >= 17)
+    //    {
+    //        int k = Get<Image>((int)Images.RealHierarchyPanel).transform.childCount + 9 - 26;
+            
+    //        Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta =
+    //       new Vector2(Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.x,
+    //       Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.y + 30f*k);
+    //    }
+    //}
+
+    //public void Minus270()
+    //{
+    //    if (Get<Image>((int)Images.RealHierarchyPanel).transform.childCount >= 17)
+    //    {
+    //        int k = Get<Image>((int)Images.RealHierarchyPanel).transform.childCount + 9 - 26;
+
+    //        Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta =
+    //       new Vector2(Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.x,
+    //       Get<Image>((int)Images.RealHierarchyPanel).GetComponent<RectTransform>().sizeDelta.y - 30f * k);
+    //    }
+    //}
 
 }

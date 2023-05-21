@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public Transform DancingPoint;
 
+    private bool isModeImage;
+
     // Update is called once per frame
     public void Start()
     {
@@ -40,9 +42,19 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.M))
         {
-            //Debug.Log("Mode");
-            //Manager.UI_Instance.ShowUI<ModeInformation>();
-            //Invoke("DeleteUI", 2f);
+            if (isModeImage)
+            {
+                Manager.UI_Instance.ShowUI<Mode1Text>();
+                Invoke("CloseMode1Text", 2f);
+
+            }
+            else
+            {
+                Manager.UI_Instance.ShowUI<Mode2Text>();
+                Invoke("CloseMode2Text", 2f);
+            }
+
+            isModeImage = !isModeImage;
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
@@ -59,6 +71,7 @@ public class Player : MonoBehaviour
 
         }
     }
+    
     void DeleteUI()
     {
         Manager.UI_Instance.CloseETCUI<ModeInformation>();
@@ -76,5 +89,16 @@ public class Player : MonoBehaviour
             }
     }
 
+
+
+    private void CloseMode1Text()
+    {
+        Manager.UI_Instance.CloseETCUI<Mode1Text>();
+    }
+
+    private void CloseMode2Text()
+    {
+        Manager.UI_Instance.CloseETCUI<Mode2Text>();
+    }
 
 }

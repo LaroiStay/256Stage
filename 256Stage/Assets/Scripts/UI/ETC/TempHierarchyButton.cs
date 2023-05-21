@@ -9,6 +9,7 @@ public class TempHierarchyButton : UI_Base
     [HideInInspector] public GameObject go;
     GameObject Cam;
     TranslateOption TO;
+    HierarchyCanvas HC;
     float distance = 10f;
     [HideInInspector] public string nameS;
     [HideInInspector] public int KeyS;
@@ -25,9 +26,13 @@ public class TempHierarchyButton : UI_Base
 
     private void Start()
     {
+        HC = GetComponentInParent<HierarchyCanvas>();
         Cam = GameObject.Find("Main Camera");
         TO = GameObject.Find("TranslateOption").GetComponent<TranslateOption>();
     }
+
+
+
 
 
     void BindThing()
@@ -54,7 +59,10 @@ public class TempHierarchyButton : UI_Base
     {
         if (CurrentObject.selectedCurrentObject == null)
         {
+            HC.dkwhwrkxek();
+            int k = GetChildIndex(transform.parent.gameObject, this.gameObject);
             CurrentObject.selectedCurrentObject = go;
+            HC.GetNum(CurrentObject.selectedCurrentObject, k);
             TO.SetButtonStateOther(Define.CurrentClickMode.Transform , CurrentObject.selectedCurrentObject);
             Vector3 direction = CurrentObject.selectedCurrentObject.transform.position - Cam.transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction, Cam.transform.up);
@@ -66,9 +74,11 @@ public class TempHierarchyButton : UI_Base
         }
         else /*(CurrentObject.selectedCurrentObject != go)*/
         {
-
+            HC.dkwhwrkxek();
             TO.SetButtonStateOther(Define.CurrentClickMode.Transform , go);
+            int k = GetChildIndex(transform.parent.gameObject, this.gameObject);
             CurrentObject.selectedCurrentObject = go;
+            HC.GetNum(CurrentObject.selectedCurrentObject, k);
             Vector3 direction = CurrentObject.selectedCurrentObject.transform.position - Cam.transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction, Cam.transform.up);
 
@@ -85,4 +95,21 @@ public class TempHierarchyButton : UI_Base
         //}
     }
 
+
+
+
+    int GetChildIndex(GameObject parent, GameObject child)
+    {
+        Transform parentTransform = parent.transform;
+        Transform childTransform = child.transform;
+
+        for (int i = 0; i < parentTransform.childCount; i++)
+        {
+            if (parentTransform.GetChild(i) == childTransform)
+            {
+                return i;
+            }
+        }
+        return -1; // 자식 오브젝트가 부모 오브젝트의 자식 리스트에 없는 경우
+    }
 }

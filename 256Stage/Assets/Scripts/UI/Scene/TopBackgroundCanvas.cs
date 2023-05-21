@@ -209,7 +209,8 @@ public class TopBackgroundCanvas : UI_ETC
         value.SetActive(false);
         CurrentObject.selectedCurrentObject.SetActive(false);
         TLO.gizmosClear();
-        CurrentObject.selectedCurrentObject = null;
+        CurrentObject.selectedCurrentObject = null; 
+        CurrentObject.i--;
     }
 
     void ExitButtonClick()

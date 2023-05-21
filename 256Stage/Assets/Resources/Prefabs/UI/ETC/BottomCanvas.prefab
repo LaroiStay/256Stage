@@ -116,7 +116,7 @@ RectTransform:
   - {fileID: 6255250225890691567}
   - {fileID: 7056982509110044185}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3491,6 +3491,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 957858628833351758}
     m_Modifications:
+    - target: {fileID: 697203183629229582, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697203183629229582, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5044738299146775148, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
       propertyPath: m_Name
       value: ProsceniumStageTooltip

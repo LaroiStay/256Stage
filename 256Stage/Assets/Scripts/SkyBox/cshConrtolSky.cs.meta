@@ -3,7 +3,13 @@ guid: 4885b546a1f170740a12174fed0e6706
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dayMat: {fileID: 2100000, guid: 9ca22510633fbfd4399f1704cd9d5c72, type: 2}
+  - nightMat: {fileID: 2100000, guid: d1fdb8e44b28da34d9e922cca0bc740e, type: 2}
+  - spaceMat: {instanceID: 0}
+  - animationMat: {instanceID: 0}
+  - dayLight: {instanceID: 0}
+  - nightLight: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

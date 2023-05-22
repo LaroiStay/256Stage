@@ -62,14 +62,27 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             MusicOn(1);
-            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
             MusicOn(2);
         else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
             MusicOn(3);
         else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-        {
+            MusicOn(4);
+        else if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
+            MusicOn(5);
+        else if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
+            MusicOn(6);
+        else if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
+            MusicOn(7);
+        else if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
+            MusicOn(8);
+        else if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
+            MusicOn(9);
+        else if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
+            MusicOff();
 
-        }
+
+
     }
     
     void DeleteUI()
@@ -87,6 +100,12 @@ public class Player : MonoBehaviour
                 key.clip = audioClip;
                 key.Play();
             }
+    }
+    void MusicOff()
+    {
+        if (CurrentMusicAudioS.audioSourceDic.Count != 0)
+            foreach (var key in CurrentMusicAudioS.audioSourceDic.Keys)
+                key.Stop();
     }
 
 

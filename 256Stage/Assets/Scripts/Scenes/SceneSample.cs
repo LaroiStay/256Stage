@@ -18,8 +18,9 @@ public class SceneSample : BaseScene
         Manager.UI_Instance.ShowUI<TranslateOption>();
         Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
         Manager.UI_Instance.ShowUI<BottomCanvas>();
+        Manager.UI_Instance.ShowUI<CamOptions>();
         SceneType = Define.Scene.SceneSample1;
-    
+
     }
 
     public override void Clear()

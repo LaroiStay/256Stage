@@ -86,6 +86,7 @@ public class PlayerSelectPage : UI_ETC
                 S2.SceneNum = SceneList[i];
                 S2.SceneNumType = SceneTypeList[i];
                 S2.NUM = i+1;
+                S2.inti = i;
                 S2.STA();
             }
         }

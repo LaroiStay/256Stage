@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e7426d54879314c8a49ca55ff1926e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DancingPoint: {fileID: 0}
 --- !u!65 &6386530692206388367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -243,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8445509e7e2611f42a1b4c287329a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 5
   interactableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8bb8017a8957c4198655d43f3c03f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  k: []
 --- !u!114 &1552154772110211931
 MonoBehaviour:
   m_ObjectHideFlags: 0

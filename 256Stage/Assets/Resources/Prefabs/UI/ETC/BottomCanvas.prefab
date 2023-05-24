@@ -3491,6 +3491,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 957858628833351758}
     m_Modifications:
+    - target: {fileID: 345795077920186747, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PCarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 358942260670174020, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PEarea
+      objectReference: {fileID: 0}
     - target: {fileID: 697203183629229582, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -3499,9 +3507,25 @@ PrefabInstance:
       propertyPath: m_IgnoreParentGroups
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 953340023760534767, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PDarea
+      objectReference: {fileID: 0}
     - target: {fileID: 5044738299146775148, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
       propertyPath: m_Name
       value: ProsceniumStageTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555763981922018973, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PAarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360844844818008169, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PBarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564714090518174276, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
+      propertyPath: m_Name
+      value: PFarea
       objectReference: {fileID: 0}
     - target: {fileID: 8225712459451630912, guid: 121f0bc179805bf45892306cfe29b7dc, type: 3}
       propertyPath: m_Pivot.x
@@ -3605,9 +3629,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 957858628833351758}
     m_Modifications:
+    - target: {fileID: 588189446382319022, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: RAarea
+      objectReference: {fileID: 0}
     - target: {fileID: 2643093032203059964, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
       propertyPath: m_Name
       value: RoundStageTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816117715268524890, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: RBarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190644353547962743, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: RFarea
       objectReference: {fileID: 0}
     - target: {fileID: 5477567659541511953, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
       propertyPath: m_Pivot.x
@@ -3692,6 +3728,18 @@ PrefabInstance:
     - target: {fileID: 5477567659541511953, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205935540945138248, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: RCarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208304039426015351, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: REarea
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911224461050769372, guid: 499f969aaba1b4947aa04866e853f035, type: 3}
+      propertyPath: m_Name
+      value: RDarea
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

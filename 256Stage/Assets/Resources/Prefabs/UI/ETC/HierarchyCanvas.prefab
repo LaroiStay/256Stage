@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 6344479799978706204}
   - component: {fileID: 6301912565068027341}
   m_Layer: 5
-  m_Name: HierarchyPanel (1)
+  m_Name: HierarchyPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

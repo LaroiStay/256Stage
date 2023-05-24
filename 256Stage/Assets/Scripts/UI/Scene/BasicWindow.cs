@@ -16,7 +16,7 @@ public class BasicWindow : UI_ETC
     int Light_Length = 6;
     int Other_Length = 3;
     int Screen_Length = 1;
-    int Speaker_Length= 7;
+    int Speaker_Length= 12;
     int Stage_Length = 8;
     int Truss_Length = 9;
     

@@ -3068,7 +3068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1294757933017522446, guid: 66c358fb2867c65458fcdf889d767435, type: 3}
       propertyPath: m_text
-      value: 'MANUEL
+      value: 'MANUAL
 
 '
       objectReference: {fileID: 0}

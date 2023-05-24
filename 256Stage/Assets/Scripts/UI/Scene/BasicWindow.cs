@@ -13,7 +13,7 @@ public class BasicWindow : UI_ETC
     int Camera_Lenght = 1;
     int Curtain_Length = 1;
     int Floor_Length = 15;
-    int Light_Length = 7;
+    int Light_Length = 6;
     int Other_Length = 3;
     int Screen_Length = 1;
     int Speaker_Length= 7;

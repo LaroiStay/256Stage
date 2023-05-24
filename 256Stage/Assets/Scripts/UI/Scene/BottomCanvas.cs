@@ -113,6 +113,7 @@ public class BottomCanvas : UI_ETC
         TurnCOOff();
         MainCamMove.SetActive(false);
         Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<Mode1Text>();
         Manager.UI_Instance.ShowUI<JText>();
     }
     void BB()
@@ -123,11 +124,8 @@ public class BottomCanvas : UI_ETC
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("B").transform.position;
         MainCamMove.SetActive(false);
         HC.ObjectSave();
-
-
-
-
         Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<Mode1Text>();
         Manager.UI_Instance.ShowUI<JText>();
     }
     void CC()
@@ -138,16 +136,8 @@ public class BottomCanvas : UI_ETC
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("C").transform.position;
         MainCamMove.SetActive(false);
         HC.ObjectSave();
-
-
-        //Manager.UI_Instance.CloseETCUI<TopBackgroundCanvas>();
-        //Manager.UI_Instance.CloseETCUI<BasicWindow>();
-        //Manager.UI_Instance.CloseETCUI<HierarchyCanvas>();
-        //Manager.UI_Instance.CloseETCUI<TranslateOption>();
-        //Debug.Log("1");
-        //Manager.UI_Instance.CloseETCUI<BottomCanvas>();
-        //Debug.Log("2");
         Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<Mode1Text>();
         Manager.UI_Instance.ShowUI<JText>();
     }
     void DD()
@@ -160,6 +150,7 @@ public class BottomCanvas : UI_ETC
         HC.ObjectSave();
 
         Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<Mode1Text>();
         Manager.UI_Instance.ShowUI<JText>();
     }
     void EE()
@@ -170,8 +161,8 @@ public class BottomCanvas : UI_ETC
         Manager.Resource_Instance.Instantiate(PlayerPath).transform.position = GameObject.Find("E").transform.position;
         MainCamMove.SetActive(false);
         HC.ObjectSave();
-
         Manager.UI_Instance.ClearETCUI();
+        Manager.UI_Instance.ShowUI<Mode1Text>();
         Manager.UI_Instance.ShowUI<JText>();
     }
     void TurnCOOff()

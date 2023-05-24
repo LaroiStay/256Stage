@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 2240331112247037025}
   - component: {fileID: 7021553605058271306}
   m_Layer: 9
-  m_Name: Ligth7
+  m_Name: Ligth6
   m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,7 @@ Transform:
   - {fileID: 3114146758446637448}
   - {fileID: 3114146758446605370}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3114146758439172934
 Animator:
@@ -471,8 +471,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.37646183, y: 0.51502573, z: 0.43759325}
+  m_Center: {x: 0.002037719, y: 0.24248713, z: -0.008150712}
 --- !u!114 &7021553605058271306
 MonoBehaviour:
   m_ObjectHideFlags: 0

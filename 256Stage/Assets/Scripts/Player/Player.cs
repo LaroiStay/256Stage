@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     string DancingPath = "Player/DancingGirl";
     string MusicPath = "Music/";
+    Mode1Text Mode;
 
     public Transform DancingPoint;
 
@@ -16,7 +17,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public void Start()
     {
+            
         DancingPoint = transform.Find("DancingPoint");
+        Mode = GameObject.Find("Mode1Text").GetComponent<Mode1Text>();
     }
     void Update()
     {
@@ -32,6 +35,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None; // 마우스 잠금 해제
             Cursor.visible = true; // 마우스 보이게 설정
             Manager.UI_Instance.CloseETCUI<JText>();
+            Manager.UI_Instance.CloseETCUI<Mode1Text>();
             Manager.UI_Instance.ShowUI<BasicWindow>();
             Manager.UI_Instance.ShowUI<HierarchyCanvas>();
             Manager.UI_Instance.ShowUI<TranslateOption>();
@@ -44,14 +48,12 @@ public class Player : MonoBehaviour
         {
             if (isModeImage)
             {
-                Manager.UI_Instance.ShowUI<Mode1Text>();
-                Invoke("CloseMode1Text", 2f);
+                Mode.ChangeMode();
 
             }
             else
             {
-                Manager.UI_Instance.ShowUI<Mode2Text>();
-                Invoke("CloseMode2Text", 2f);
+                Mode.ChangeMode();
             }
 
             isModeImage = !isModeImage;

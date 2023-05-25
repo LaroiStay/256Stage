@@ -50,13 +50,23 @@ public class Stage2 : MonoBehaviour
 
     void Trash(int i)
     {
+
+       
+
+
         string [] s = ES3.Load<string[]>("SceneNames");
+        Debug.Log(s);
+
+
+       
+
         List<string> sList = new List<string>(s);
         sList.RemoveAt(i);
         s = sList.ToArray();
         ES3.Save<string []>("SceneNames", s);
+       
 
-        int [] intint = ES3.Load<int[]>("SceneList");
+        int[] intint = ES3.Load<int[]>("SceneList");
         List<int> IList = new List<int>(intint);
         IList.RemoveAt(i);
         intint = IList.ToArray();
@@ -64,9 +74,11 @@ public class Stage2 : MonoBehaviour
 
 
         int[] intint_ = ES3.Load<int[]>("SceneTypes");
+
+
         List<int> IList_ = new List<int>(intint_);
         IList_.RemoveAt(i);
-        intint_ = IList.ToArray();
+        intint_ = IList_.ToArray();
         ES3.Save<int[]>("SceneTypes", intint_);
 
 

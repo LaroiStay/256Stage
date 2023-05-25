@@ -29,19 +29,15 @@ public class cshControlSky : MonoBehaviour
             switch (weatherNum)
             {
                 case 0:
-                    Debug.Log("day");
                     dayday();
                     break;
                 case 1:
-                    Debug.Log("night");
                     nightnight();
                     break;
                 case 2:
-                    Debug.Log("space");
                     spacespace();
                     break;
                 case 3:
-                    Debug.Log("ani");
                     aniani();
                     break;
             }

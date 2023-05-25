@@ -52,7 +52,7 @@ public class LoadScene : BaseScene
 
         }
 
-
+        Debug.Log(CurrnetSceneNum);
 
         Manager.UI_Instance.ShowUI<BasicWindow>();
         Manager.UI_Instance.ShowUI<HierarchyCanvas>();
@@ -83,7 +83,7 @@ public class LoadScene : BaseScene
         for (int i = 0; i < Ro.Length; i++)
         {
             GameObject go = Manager.Resource_Instance.Instantiate($"{BaseObejctPath}/{Na[i]}/{Na[i]}{Ke[i]}");
-            go.transform.position = CurrentObject.objectMake.transform.position;
+            //go.transform.position = CurrentObject.objectMake.transform.position;
             go.transform.localEulerAngles = Ro[i];
             go.transform.position = Pos[i];
             Hiera.PlusPrefabsInHierarchy(Na[i], Ke[i], go);

@@ -37,7 +37,7 @@ public class PlayerSelectPage : UI_ETC
         Stage1,
         CreatePlayerButton,
         Blue,
-        CancleButton,
+        CancelButton,
         Manuel,
         Manu
     }
@@ -71,7 +71,6 @@ public class PlayerSelectPage : UI_ETC
                 bu.transform.parent = Get<Image>((int)Panels.NumberGrid).transform;
                 bu.GetComponentInChildren<TextMeshProUGUI>().text = $"{i+1}";
                 int index = i;
-                Debug.Log($"{i}");
                 bu.onClick.AddListener(() => { ClickNumButton(index); });
             }
             string[] names = ES3.Load<string[]>("SceneNames");
@@ -79,6 +78,7 @@ public class PlayerSelectPage : UI_ETC
             int[] SceneTypeList = ES3.Load<int[]>("SceneTypes");
             for (int i = 0; i<ix; i++)
             {
+                Debug.Log(SceneTypeList[i]);
                 GameObject go = Manager.Resource_Instance.Instantiate(path);
                 go.transform.parent = Get<Image>((int)Panels.stage).gameObject.transform;
                 Stage2 S2 = go.GetComponent<Stage2>();
@@ -98,7 +98,7 @@ public class PlayerSelectPage : UI_ETC
         Get<Button>((int)Buttons.Stage1).onClick.AddListener(CreateNew);
         Get<Button>((int)Buttons.CreatePlayerButton).onClick.AddListener(CreateButton);
         Get<Button>((int)Buttons.Blue).onClick.AddListener(CreateNew);
-        Get<Button>((int)Buttons.CancleButton).onClick.AddListener(Cancel);
+        Get<Button>((int)Buttons.CancelButton).onClick.AddListener(Cancel);
         Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
         Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
     }

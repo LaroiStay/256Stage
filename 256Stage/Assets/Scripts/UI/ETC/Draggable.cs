@@ -152,7 +152,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
             goList.Add(LightObject);
             goList.Add(go2);
             var postObjectSpawnAction = new PostObjectSpawnAction(goList);
-            Debug.Log(postObjectSpawnAction);
             //CurrentObject.HierarchyButtonsDetail.Add(LightObject, postObjectSpawnAction);
             postObjectSpawnAction.Execute();
             postObjectSpawnAction.OnRemovedFromUndoRedoStack();

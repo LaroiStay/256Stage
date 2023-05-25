@@ -131,7 +131,6 @@ public class TopBackgroundCanvas : UI_ETC
 
 
             ES3.Save<int>("CurrentSceneCount", newValue);
-            Debug.Log(ES3.Load<int>("CurrentSceneCount"));
 
             int[] defaultIInt = { };
             int[] sceneTypeList = ES3.Load<int[]>("SceneTypes", defaultIInt);
@@ -147,7 +146,6 @@ public class TopBackgroundCanvas : UI_ETC
         ES3.Save<Vector3[]>($"{CurrentScene}Rotation", RotationBundle.ToArray());
         ES3.Save<Vector3[]>($"{CurrentScene}Pos", PosBundle.ToArray());
 
-        Debug.Log(CurrentScene);
 
 
 
@@ -236,12 +234,14 @@ public class TopBackgroundCanvas : UI_ETC
     {
         RTGRedo.Undo();
     }
-    void FileButtonFunc()
-    {
-        Debug.Log("FileButton");
-    }
+    //void FileButtonFunc()
+    //{
+    //    Debug.Log("FileButton");
+    //}
     void Home()
     {
+        CurrentMusicAudioS.audioSourceDic = new Dictionary<AudioSource, string>();
+        TurssQueue.GameObjects = new Queue<GameObject>();
         Manager.UI_Instance.ClearETCUI();
         Manager.UI_Instance.compulsionClear();
         Manager.Scene_Instance.LoadScene(Define.Scene.PlayerSelect);

@@ -11,6 +11,8 @@ public class Stage2 : MonoBehaviour
     public Button Clickbutton;
     public Image im;
     public Button bu;
+    public Image underImage;
+    public TextMeshProUGUI etcText;
     
     [HideInInspector] public string name;
     [HideInInspector] public int SceneNum;

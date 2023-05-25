@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obj
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 86539cd6369e2db48bc9c36c6dd230fa, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

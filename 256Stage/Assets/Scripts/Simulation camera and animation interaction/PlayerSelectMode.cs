@@ -9,7 +9,7 @@ public class PlayerSelectMode : MonoBehaviour
     bool flag = false;
     List<GameObject> kk = new List<GameObject>();
 
-  
+
     void Start()
     {
         Key();
@@ -22,7 +22,7 @@ public class PlayerSelectMode : MonoBehaviour
 
     }
 
-   
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M) && !flag)
@@ -56,7 +56,25 @@ public class PlayerSelectMode : MonoBehaviour
             return;
         for (int i = 0; i < kk.Count; i++)
         {
-            kk[i].GetComponent<Animator>().enabled = false;
+            Animator ani = kk[i].GetComponent<Animator>();
+            if (ani != null)
+                ani.enabled = false;
         }
     }
+
+    public void TurnOffLight()
+    {
+        List<GameObject> goodgood = new List<GameObject>(CurrentObject.LightObj.Keys);
+        if (goodgood.Count == 0)
+            return;
+        for (int i = 0; i < goodgood.Count; i++)
+        {
+            Animator ani = goodgood[i].GetComponent<Animator>();
+            if (ani != null)
+                ani.enabled = false;
+        }
+    }
+
+
+
 }

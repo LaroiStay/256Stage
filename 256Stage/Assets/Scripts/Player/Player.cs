@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
+            TurnOffLight();
             if (CurrentMusicAudioS.audioSourceDic.Count != 0)
                 foreach (var key in CurrentMusicAudioS.audioSourceDic.Keys)
                     key.Stop();
@@ -120,6 +121,18 @@ public class Player : MonoBehaviour
     private void CloseMode2Text()
     {
         Manager.UI_Instance.CloseETCUI<Mode2Text>();
+    }
+    void TurnOffLight()
+    {
+        List<GameObject> goodgood = new List<GameObject>(CurrentObject.LightObj.Keys);
+        if (goodgood.Count == 0)
+            return;
+        for (int i = 0; i < goodgood.Count; i++)
+        {
+            Animator ani = goodgood[i].GetComponent<Animator>();
+            if (ani != null)
+                ani.enabled = false;
+        }
     }
 
 }

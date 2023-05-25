@@ -212,6 +212,7 @@ public class TopBackgroundCanvas : UI_ETC
         TLO.gizmosClear();
         CurrentObject.selectedCurrentObject = null;
         HC.Minus30();
+        HC.falsefalse();
         CurrentObject.i--;
     }
 

@@ -213,6 +213,33 @@ public class HierarchyCanvas : UI_ETC
         Get<Button>((int)Buttons.Close).gameObject.SetActive(true);
     }
 
+
+    public void falsefalse()
+    {
+        tempGo = null;
+        int k = Get<Image>((int)Images.RealHierarchyPanel).gameObject.transform.childCount;
+        Get<Image>((int)Images.Empty).gameObject.SetActive(false);
+        Get<Image>((int)Images.PosText).gameObject.SetActive(false);
+        Get<Image>((int)Images.PosX).gameObject.SetActive(false);
+        Get<Image>((int)Images.PosY).gameObject.SetActive(false);
+        Get<Image>((int)Images.PosZ).gameObject.SetActive(false);
+        Get<Image>((int)Images.RoText).gameObject.SetActive(false);
+        Get<Image>((int)Images.RoX).gameObject.SetActive(false);
+        Get<Image>((int)Images.RoY).gameObject.SetActive(false);
+        Get<Image>((int)Images.RoZ).gameObject.SetActive(false);
+
+        Get<Image>((int)Images.Empty).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.RoZ).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.RoY).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.RoX).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.RoText).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.PosZ).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.PosY).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.PosX).gameObject.transform.SetSiblingIndex(k);
+        Get<Image>((int)Images.PosText).gameObject.transform.SetSiblingIndex(k);
+    }
+
+
     public void GetNum(GameObject go, int i)
     {
         if (i == -1)
@@ -222,9 +249,7 @@ public class HierarchyCanvas : UI_ETC
         {
 
             tempGo = null;
-            
             int k =  Get<Image>((int)Images.RealHierarchyPanel).gameObject.transform.childCount;
-
             Get<Image>((int)Images.Empty).gameObject.SetActive(false);
             Get<Image>((int)Images.PosText).gameObject.SetActive(false);
             Get<Image>((int)Images.PosX).gameObject.SetActive(false);

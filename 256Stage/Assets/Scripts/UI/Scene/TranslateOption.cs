@@ -21,7 +21,7 @@ public class TranslateOption : UI_ETC
         HandIcon,
         TranslateIcon,
         RotationIcon,
-        ScaleIcon
+        //ScaleIcon
 
     }
     void OptionBindThings()
@@ -37,7 +37,7 @@ public class TranslateOption : UI_ETC
         Get<Button>((int)OptionButton.HandIcon).onClick.AddListener(HandMouseMove);
         Get<Button>((int)OptionButton.TranslateIcon).onClick.AddListener(TranslateMouseMove);
         Get<Button>((int)OptionButton.RotationIcon).onClick.AddListener(RotationMouseMove);
-        Get<Button>((int)OptionButton.ScaleIcon).onClick.AddListener(ScaleMouseMove);
+        //Get<Button>((int)OptionButton.ScaleIcon).onClick.AddListener(ScaleMouseMove);
     }
 
     void HandMouseMove()

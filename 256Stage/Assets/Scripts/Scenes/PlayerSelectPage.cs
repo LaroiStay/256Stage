@@ -39,7 +39,8 @@ public class PlayerSelectPage : UI_ETC
         Blue,
         CancelButton,
         Manuel,
-        Manu
+        Manu,
+        PlayerExitButton
     }
 
     private void Start()
@@ -101,6 +102,7 @@ public class PlayerSelectPage : UI_ETC
         Get<Button>((int)Buttons.CancelButton).onClick.AddListener(Cancel);
         Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
         Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
+        Get<Button>((int)Buttons.PlayerExitButton).onClick.AddListener(PlayerExitButtonClick);
     }
 
 
@@ -159,88 +161,19 @@ public class PlayerSelectPage : UI_ETC
         Get<Image>((int)Panels.Manual).gameObject.SetActive(false);
 
     }
+    void PlayerExitButtonClick()
+    {
+#if UNITY_EDITOR // 에디터에서는 종료됨
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL // 웹에서는 종료됨
+        Application.OpenURL("about:blank");
+#else // 안드로이드, iOS 등에서는 백그라운드로 전환됨
+        Application.Quit();
+#endif
+    }
+
+    
 
 
-
-
-
-
-
-    //public GameObject createStagePanel;
-    //public TMP_Text[] slotText;
-
-    //public TMP_Text newStageName;
-
-    //bool[] savefile = new bool[4];
-
-    //void Start()
-    //{
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        if (!File.Exists(DataManager.instance.path + $"{i}"))
-    //        {
-    //            slotText[i].text = "No Player";
-    //        }
-    //        else
-    //        {
-    //            savefile[i] = true;
-    //            DataManager.instance.nowSlot = i;
-    //            DataManager.instance.LoadData();
-    //            slotText[i].text = DataManager.instance.nowPlayer.StageName;
-
-    //        }
-    //    }
-    //    DataManager.instance.DataClear();
-
-    //}
-    //public void Slot(int number)
-    //{
-    //    DataManager.instance.nowSlot = number;
-    //    if (savefile[number])
-    //    {
-
-    //        DataManager.instance.LoadData();
-
-    //        GotoStageSelect();
-    //    }
-    //    else
-    //    {
-
-    //        CreateSlot();
-    //    }
-    //}
-    //public void DeleteSlot(int number)
-    //{
-    //    DataManager.instance.nowSlot = number;
-    //    if (savefile[number])
-    //    {
-    //        DataManager.instance.DeleteData();
-    //        SceneManager.LoadScene(1);
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
-    //public void CreateSlot()
-    //{
-    //    NewMethod();
-
-    //}
-
-    //private void NewMethod()
-    //{
-    //    createStagePanel.gameObject.SetActive(true);
-    //}
-
-    //public void GotoStageSelect()
-    //{
-    //    if (!savefile[DataManager.instance.nowSlot])
-    //    {
-    //        DataManager.instance.nowPlayer.StageName = newStageName.text;
-    //        DataManager.instance.SaveData();
-    //    }
-    //    //SceneManager.LoadScene(2);
-    //}
 
 }

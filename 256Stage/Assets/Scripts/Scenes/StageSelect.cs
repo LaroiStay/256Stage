@@ -26,7 +26,8 @@ public class StageSelect : UI_ETC
         stage2,
         stage3,
         Manuel,
-        Manu
+        Manu,
+        StageExitButton
         //DoneButton
     }
 
@@ -77,6 +78,7 @@ public class StageSelect : UI_ETC
         //Get<Button>((int)Buttons.HomeButton).onClick.AddListener();
         Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
         Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
+        Get<Button>((int)Buttons.StageExitButton).onClick.AddListener(StageExitButtonClick);
     }
 
 
@@ -183,63 +185,14 @@ public class StageSelect : UI_ETC
         }
     }
 
-
-
-
-    //public GameObject StageSizePanel;
-
-    //public TMP_Text StageSaveName;
-    //public TMP_Text StageNum;
-    //public TMP_Text StageX;
-    //public TMP_Text StageY;
-
-    //public TMP_Text InputX;
-    //public TMP_Text InputY;
-
-
-    //void Start()
-    //{
-    //    StageSaveName.text = DataManager.instance.nowPlayer.StageName;
-    //    StageNum.text = DataManager.instance.nowPlayer.StageNum.ToString();
-    //    StageX.text = DataManager.instance.nowPlayer.StageX.ToString();
-    //    StageY.text = DataManager.instance.nowPlayer.StageY.ToString();
-    //    SelectSetting(DataManager.instance.nowPlayer.StageNum);
-    //}
-
-
-
-    //public void Save()
-    //{
-    //    DataManager.instance.SaveData();
-    //}
-    //public void SelectSetting(int number)
-    //{
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        if (number == i)
-    //        {
-    //            DataManager.instance.nowPlayer.StageNum = number;
-    //            StageNum.text = DataManager.instance.nowPlayer.StageNum.ToString();
-    //        }
-
-    //    }
-
-    //}
-    //public void ShowSizePage()
-    //{
-    //    StageSizePanel.gameObject.SetActive(true);
-    //}
-    //public void GotoToolPage()
-    //{
-
-    //    DataManager.instance.nowPlayer.StageX = InputX.text;
-    //    DataManager.instance.nowPlayer.StageY = InputY.text;
-    //    DataManager.instance.SaveData();
-
-    //    //SceneManager.LoadScene(3);
-    //}
-    //public void GotoHome()
-    //{
-    //    //SceneManager.LoadScene(0);
-    //}
+    void StageExitButtonClick()
+    {
+#if UNITY_EDITOR // 에디터에서는 종료됨
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL // 웹에서는 종료됨
+        Application.OpenURL("about:blank");
+#else // 안드로이드, iOS 등에서는 백그라운드로 전환됨
+        Application.Quit();
+#endif
+    }
 }

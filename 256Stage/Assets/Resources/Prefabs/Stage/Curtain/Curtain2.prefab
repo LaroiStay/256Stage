@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4115363024372912084}
   - component: {fileID: 292535291160881271}
   m_Layer: 0
-  m_Name: TrussCurtain4_6
+  m_Name: Curtain2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

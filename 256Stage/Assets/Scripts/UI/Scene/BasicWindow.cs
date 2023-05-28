@@ -11,7 +11,7 @@ public class BasicWindow : UI_ETC
     static bool CurrentState = false;
     //int Box_Length =1;
     int Camera_Lenght = 1;
-    int Curtain_Length = 1;
+    int Curtain_Length = 4;
     int Floor_Length = 15;
     int Light_Length = 6;
     int Other_Length = 3;

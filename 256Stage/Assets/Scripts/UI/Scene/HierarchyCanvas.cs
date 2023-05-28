@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HierarchyCanvas : UI_ETC 
 {
+    public bool IsCanDo = true;
+
     GameObject ObjectsMove
     {
         get
@@ -59,7 +61,22 @@ public class HierarchyCanvas : UI_ETC
     }
     private void Update()
     {
-       
+        if (!IsCanDo)
+        {
+            if (tempGo == null)
+                return;
+            Transform ttt = tempGo.transform;
+            Get<Image>((int)Images.PosX).GetComponentInChildren<TMP_InputField>().text = ttt.transform.position.x.ToString();
+            Get<Image>((int)Images.PosY).GetComponentInChildren<TMP_InputField>().text = ttt.transform.position.y.ToString();
+            Get<Image>((int)Images.PosZ).GetComponentInChildren<TMP_InputField>().text = ttt.transform.position.z.ToString();
+            Get<Image>((int)Images.RoX).GetComponentInChildren<TMP_InputField>().text = ttt.transform.localEulerAngles.x.ToString();
+            Get<Image>((int)Images.RoY).GetComponentInChildren<TMP_InputField>().text = ttt.transform.localEulerAngles.y.ToString();
+            Get<Image>((int)Images.RoZ).GetComponentInChildren<TMP_InputField>().text = ttt.transform.localEulerAngles.z.ToString();
+
+            return;
+
+
+        }
 
         if (tempGo == null)
             return;

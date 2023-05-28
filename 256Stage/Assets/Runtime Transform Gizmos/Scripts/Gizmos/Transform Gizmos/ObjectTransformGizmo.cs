@@ -354,6 +354,8 @@ namespace RTG
 
         public override void OnGizmoDragBegin(int handleId)
         {
+            HierarchyCanvas go = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
+            go.IsCanDo = false;
             _preTransformSnapshots = LocalTransformSnapshot.GetSnapshotCollection(_targetObjects,true);
             _transformableParents = GetTransformableParentObjects();
             _targetGroupAABBOnDragBegin = GetTargetObjectGroupWorldAABB();
@@ -370,6 +372,8 @@ namespace RTG
         {
             if (_transformableParents.Count != 0)
             {
+                HierarchyCanvas go = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
+                go.IsCanDo = true;
                 //for(int i=0; i<_transformableParents.Count; i++)
                 //{
                 //    if (_transformableParents[i].GetComponent<Rigidbody>() != null)

@@ -54,6 +54,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
                 GameObject go = Manager.Resource_Instance.Instantiate("UI/ETC/RealSelectButton", this.transform.parent);
                 go.transform.SetSiblingIndex(temp_key - 1);
                 go.GetComponent<RealSelectButton>().SetImage(temp_name, temp_key);
+                this.transform.SetSiblingIndex(20);
             }
             rectTransform.position = eventData.position - offset;
         }

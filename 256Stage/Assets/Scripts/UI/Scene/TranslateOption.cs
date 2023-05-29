@@ -20,7 +20,7 @@ public class TranslateOption : UI_ETC
     string tempSavestring;
     bool flag = true;
 
-    private Vector3 PlusVec = new Vector3(0.5f, 0.5f, 0.5f);
+    private Vector3 PlusVec = new Vector3(0.5f, 0f, 0f);
     Vector3 TempSaveVec;
 
     enum OptionButton
@@ -205,7 +205,7 @@ public class TranslateOption : UI_ETC
             }
            
         }
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)&&CurrentObject.selectedCurrentObject != null)
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)&&CurrentObject.selectedCurrentObject != null&&CurrentMode != Define.CurrentClickMode.Base)
         {
             string originalString = CurrentObject.selectedCurrentObject.name;
 
@@ -216,7 +216,7 @@ public class TranslateOption : UI_ETC
             tempSavestring = originalString.Substring(0, originalString.Length - 1);
             TempSaveVec = CurrentObject.selectedCurrentObject.transform.position + PlusVec;
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag)
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag && CurrentMode != Define.CurrentClickMode.Base)
         {
             flag = false;
             if (tempSaveInt == 0)

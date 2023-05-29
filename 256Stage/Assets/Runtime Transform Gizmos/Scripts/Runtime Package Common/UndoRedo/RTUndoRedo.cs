@@ -37,7 +37,8 @@ namespace RTG
         private bool _isEnabled = true;
         [SerializeField]
         private int _actionLimit = 50;
-
+        HierarchyCanvas HC;
+        TranslateOption TLO;
         private List<ActionGroup> _actionGroupStack = new List<ActionGroup>();
         private int _stackPointer = -1;
         public bool IsEnabled { get { return _isEnabled; } }
@@ -103,6 +104,12 @@ namespace RTG
 
         public void Undo()
         {
+            if (TLO == null)
+                TLO = GameObject.Find("TranslateOption").GetComponent<TranslateOption>();
+            if (HC == null)
+                HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
+            TLO.gizmosClear();
+            HC.falsefalse();
             if (!_isEnabled || _stackPointer < 0) return;
 
             var group = _actionGroupStack[_stackPointer];
@@ -122,6 +129,12 @@ namespace RTG
 
         public void Redo()
         {
+            if (TLO == null)
+                TLO = GameObject.Find("TranslateOption").GetComponent<TranslateOption>();
+            if (HC == null)
+                HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
+            TLO.gizmosClear();
+            HC.falsefalse();
             if (!_isEnabled) return;
             if (_actionGroupStack.Count == 0 || _stackPointer == _actionGroupStack.Count - 1) return;
 

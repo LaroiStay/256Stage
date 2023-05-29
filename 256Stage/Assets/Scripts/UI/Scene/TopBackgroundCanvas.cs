@@ -180,8 +180,6 @@ public class TopBackgroundCanvas : UI_ETC
         if (CurrentObject.HierarchyButtons.Count == 0)
             return;
         GameObject value = null;
-
-
         CurrentObject.HierarchyButtons.TryGetValue(CurrentObject.selectedCurrentObject,out value);
         if (value == null)
             return;
@@ -202,7 +200,6 @@ public class TopBackgroundCanvas : UI_ETC
             CurrentObject.LightObj.TryGetValue(go__, out ii);
             if (ii == 1)
                 CurrentObject.LightObj.Remove(go__);
-
         }
         CurrentMusicAudioS.audioSourceDic.Remove(go__.GetComponent<AudioSource>());
         var DesTTT = new PostObjectDesAction(goList);

@@ -21,7 +21,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-      
     }
 
 
@@ -44,7 +43,6 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
         if (flag)
         {
             flag = false;
-            //this.transform.parent = null;
         }
         if (isLight == false)
         {
@@ -128,31 +126,23 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndD
             {
                 GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{temp_name}/{temp_name}{temp_key}");
                 GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, go);
-
                 go.transform.position = hit.point;
                 List<GameObject> goList = new List<GameObject>();
                 goList.Add(go);
                 goList.Add(go2);
                 var postObjectSpawnAction = new PostObjectSpawnAction(goList);
-                //Debug.Log(postObjectSpawnAction);
-
-                //CurrentObject.HierarchyButtonsDetail.Add(LightObject, postObjectSpawnAction);
                 postObjectSpawnAction.Execute();
                 postObjectSpawnAction.OnRemovedFromUndoRedoStack();
-
             }
-
             Manager.Resource_Instance.Destroy(this.gameObject);
         }
         else
         {
             List<GameObject> goList = new List<GameObject>();
             GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(temp_name, temp_key, LightObject);
-            
             goList.Add(LightObject);
             goList.Add(go2);
             var postObjectSpawnAction = new PostObjectSpawnAction(goList);
-            //CurrentObject.HierarchyButtonsDetail.Add(LightObject, postObjectSpawnAction);
             postObjectSpawnAction.Execute();
             postObjectSpawnAction.OnRemovedFromUndoRedoStack();
             Manager.Resource_Instance.Destroy(this.gameObject);

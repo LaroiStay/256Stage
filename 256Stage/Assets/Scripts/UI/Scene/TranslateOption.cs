@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using System;
 using Unity.VisualScripting;
 using RTG;
+using System.Linq;
 
 public class TranslateOption : UI_ETC
 {
@@ -15,13 +16,18 @@ public class TranslateOption : UI_ETC
     GameObject Currentobj;
     CamOptions CO;
     GameObject tempSaveScreenObj;
+    int tempSaveInt;
+    string tempSavestring;
+    bool flag = true;
+
+    private Vector3 PlusVec = new Vector3(0.5f, 0.5f, 0.5f);
+    Vector3 TempSaveVec;
 
     enum OptionButton
     {
         HandIcon,
         TranslateIcon,
         RotationIcon,
-        //ScaleIcon
 
     }
     void OptionBindThings()
@@ -199,7 +205,44 @@ public class TranslateOption : UI_ETC
             }
            
         }
-        if (TG != null)
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)&&CurrentObject.selectedCurrentObject != null)
+        {
+            string originalString = CurrentObject.selectedCurrentObject.name;
+
+            string lastNumberString = originalString.Where(char.IsDigit).Select(c => c.ToString()).LastOrDefault();
+
+            tempSaveInt = int.Parse(lastNumberString);
+
+            tempSavestring = originalString.Substring(0, originalString.Length - 1);
+            TempSaveVec = CurrentObject.selectedCurrentObject.transform.position + PlusVec;
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag)
+        {
+            flag = false;
+            if (tempSaveInt == 0)
+                return;
+            GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{tempSavestring}/{tempSavestring}{tempSaveInt}");
+            go.transform.position = TempSaveVec;
+            TempSaveVec = go.transform.position + PlusVec;
+            GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(tempSavestring, tempSaveInt, go);
+            List<GameObject> goList = new List<GameObject>();
+            goList.Add(go);
+            goList.Add(go2);
+            var postObjectSpawnAction = new PostObjectSpawnAction(goList);
+            postObjectSpawnAction.Execute();
+            postObjectSpawnAction.OnRemovedFromUndoRedoStack();
+        }
+        else if(CurrentObject.selectedCurrentObject == null)
+        {
+            tempSaveInt = 0;
+            tempSavestring = "";
+        }
+        else
+        {
+            flag = true;
+        }
+
+            if (TG != null)
             TG.RefreshPositionAndRotation();
 
     }

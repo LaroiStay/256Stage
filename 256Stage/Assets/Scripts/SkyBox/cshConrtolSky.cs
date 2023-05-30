@@ -19,6 +19,14 @@ public class cshControlSky : MonoBehaviour
 
     public int weatherNum = 0;
     private int previousWeatherNum = -1;
+    private float Firstfloat;
+
+
+    private void Start()
+    {
+        Firstfloat = dayLight.GetComponent<Light>().intensity;
+    }
+
     public void Update()
     {
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * 0.5f);
@@ -72,6 +80,7 @@ public class cshControlSky : MonoBehaviour
         RenderSettings.fogColor = dayFog;
         Debug.Log(RenderSettings.fog);
         dayLight.SetActive(true);
+        dayLight.GetComponent<Light>().intensity = Firstfloat;
         nightLight.SetActive(false);
     }
     public void nightnight()
@@ -101,6 +110,7 @@ public class cshControlSky : MonoBehaviour
 
         RenderSettings.skybox = animationMat;
         RenderSettings.fogColor = dayFog;
-
+        dayLight.GetComponent<Light>().intensity = 1f;
+        nightLight.SetActive(true);
     }
 }

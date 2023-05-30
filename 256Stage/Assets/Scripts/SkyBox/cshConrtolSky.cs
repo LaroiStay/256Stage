@@ -72,27 +72,29 @@ public class cshControlSky : MonoBehaviour
         RenderSettings.fogColor = dayFog;
         Debug.Log(RenderSettings.fog);
         dayLight.SetActive(true);
-        //nightLight.SetActive(false);
+        nightLight.SetActive(false);
     }
     public void nightnight()
     {
         /*RenderSettings.skybox = nightMat;
         RenderSettings.fogColor = nightFog;
         dayLight.SetActive(false);
-        nightLight.SetActive(true);*/
+       */
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.Linear;
         RenderSettings.fogStartDistance = 10f; // 시작 거리
         RenderSettings.fogEndDistance = 50f; // 끝 거리
         RenderSettings.skybox = nightMat;
         RenderSettings.fogColor = nightFog;
-
+        nightLight.SetActive(true);
         dayLight.SetActive(false);
     }
     public void spacespace()
     {
         RenderSettings.skybox = spaceMat;
-        dayLight.SetActive(false);
+        dayLight.SetActive(true);
+        dayLight.GetComponent<Light>().intensity = 1f;
+        nightLight.SetActive(true);
     }
     public void aniani()
     {

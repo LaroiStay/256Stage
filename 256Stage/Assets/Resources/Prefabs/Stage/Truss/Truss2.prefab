@@ -275,4 +275,4 @@ MonoBehaviour:
   m_truss_width: 0.5
   m_truss_light_or_speaker_quantity: 5
   AlreadyMade: 0
-  isZ: 1
+  isZ: 0

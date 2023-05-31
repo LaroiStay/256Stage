@@ -12,7 +12,7 @@ using System.Linq;
 public class TranslateOption : UI_ETC
 {
     ObjectTransformGizmo TG = null;
-    Define.CurrentClickMode CurrentMode = Define.CurrentClickMode.Base;
+    Define.CurrentClickMode CurrentMode ;
     List<Gizmo> gizmos = new List<Gizmo>();
     GameObject Currentobj;
     CamOptions CO;
@@ -37,20 +37,18 @@ public class TranslateOption : UI_ETC
     {
         Bind<Button>(typeof(OptionButton));
     }
-    void Start()
+    void Awake()
     {
         Currentobj = GameObject.Find("Plane");
         OptionBindThings();
         Get<Button>((int)OptionButton.HandIcon).onClick.AddListener(HandMouseMove);
         Get<Button>((int)OptionButton.TranslateIcon).onClick.AddListener(TranslateMouseMove);
         Get<Button>((int)OptionButton.RotationIcon).onClick.AddListener(RotationMouseMove);
-        //Get<Button>((int)OptionButton.ScaleIcon).onClick.AddListener(ScaleMouseMove);
-        Debug.Log(Get<Button>((int)OptionButton.RotationIcon));
     }
 
+    
     void HandMouseMove()
     {
-
         SetButtonDefault(Define.CurrentClickMode.Handle);
 
     }
@@ -68,10 +66,10 @@ public class TranslateOption : UI_ETC
 
 
 
-    void ScaleMouseMove()
-    {
-        SetButtonDefault(Define.CurrentClickMode.Scale);
-    }
+    //void ScaleMouseMove()
+    //{
+    //    SetButtonDefault(Define.CurrentClickMode.Scale);
+    //}
 
 
 

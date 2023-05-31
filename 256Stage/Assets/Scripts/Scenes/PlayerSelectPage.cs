@@ -79,7 +79,6 @@ public class PlayerSelectPage : UI_ETC
             int[] SceneTypeList = ES3.Load<int[]>("SceneTypes");
             for (int i = 0; i<ix; i++)
             {
-                Debug.Log(SceneTypeList[i]);
                 GameObject go = Manager.Resource_Instance.Instantiate(path);
                 go.transform.parent = Get<Image>((int)Panels.stage).gameObject.transform;
                 Stage2 S2 = go.GetComponent<Stage2>();

@@ -52,7 +52,6 @@ public class LoadScene : BaseScene
 
         }
 
-        Debug.Log(CurrnetSceneNum);
 
         Manager.UI_Instance.ShowUI<BasicWindow>();
         Manager.UI_Instance.ShowUI<HierarchyCanvas>();

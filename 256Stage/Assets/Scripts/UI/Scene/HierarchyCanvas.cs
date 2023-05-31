@@ -166,7 +166,6 @@ public class HierarchyCanvas : UI_ETC
     {
         if (Get<Image>((int)Images.RealHierarchyPanel).transform.childCount == 0)
             return;
-        AllOn();
         int iii = Get<Image>((int)Images.RealHierarchyPanel).transform.childCount;
         for (int kk = 0; kk< iii; kk++){
 
@@ -181,7 +180,7 @@ public class HierarchyCanvas : UI_ETC
     {
         if (ObjectsMove.transform.childCount == 0)
             return;
-        falsefalse();
+        //falsefalse();
         int iii = ObjectsMove.transform.childCount;
         for (int kk = 0; kk < iii; kk++)
         {
@@ -338,7 +337,6 @@ public class HierarchyCanvas : UI_ETC
             Get<Image>((int)Images.PosX).gameObject.transform.SetSiblingIndex(i);
             Get<Image>((int)Images.PosText).gameObject.transform.SetSiblingIndex(i);
         }
-        Debug.Log(i);
     }
 
     public void SetPosFalse()

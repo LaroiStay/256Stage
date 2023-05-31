@@ -66,13 +66,11 @@ public class TempHierarchyButton : UI_Base
             TO.SetButtonStateOther(Define.CurrentClickMode.Transform , CurrentObject.selectedCurrentObject);
             Vector3 direction = CurrentObject.selectedCurrentObject.transform.position - Cam.transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction, Cam.transform.up);
-
-            // 카메라를 오브젝트에서 일정 거리만큼 떨어진 위치로 이동
             Cam.transform.position = CurrentObject.selectedCurrentObject.transform.position - rotation * Vector3.forward * distance;
             Cam.transform.rotation = rotation;
             Cam.transform.localEulerAngles = new Vector3(Cam.transform.localEulerAngles.x, Cam.transform.localEulerAngles.y, 0);
         }
-        else /*(CurrentObject.selectedCurrentObject != go)*/
+        else 
         {
             HC.dkwhwrkxek();
             TO.SetButtonStateOther(Define.CurrentClickMode.Transform , go);
@@ -81,18 +79,10 @@ public class TempHierarchyButton : UI_Base
             HC.GetNum(CurrentObject.selectedCurrentObject, k);
             Vector3 direction = CurrentObject.selectedCurrentObject.transform.position - Cam.transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction, Cam.transform.up);
-
-            // 카메라를 오브젝트에서 일정 거리만큼 떨어진 위치로 이동
             Cam.transform.position = CurrentObject.selectedCurrentObject.transform.position - rotation * Vector3.forward * distance;
             Cam.transform.rotation = rotation;
             Cam.transform.localEulerAngles = new Vector3(Cam.transform.localEulerAngles.x, Cam.transform.localEulerAngles.y, 0);
         }
-        //else
-        //{
-        //    TO.SetButtonStateOther(Define.CurrentClickMode.Base);
-        //    Cam.transform.LookAt(CurrentObject.selectedCurrentObject.transform);
-        //    CurrentObject.selectedCurrentObject = null;
-        //}
     }
 
 

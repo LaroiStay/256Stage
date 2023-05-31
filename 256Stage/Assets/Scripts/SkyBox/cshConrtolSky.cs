@@ -78,7 +78,6 @@ public class cshControlSky : MonoBehaviour
         RenderSettings.fogStartDistance = 0f; // 시작 거리
         RenderSettings.fogEndDistance = 50f; // 끝 거리
         RenderSettings.fogColor = dayFog;
-        Debug.Log(RenderSettings.fog);
         dayLight.SetActive(true);
         dayLight.GetComponent<Light>().intensity = Firstfloat;
         nightLight.SetActive(false);

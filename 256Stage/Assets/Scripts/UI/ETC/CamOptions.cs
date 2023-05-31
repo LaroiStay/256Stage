@@ -61,7 +61,6 @@ public class CamOptions : UI_ETC
 
     public void AddOption(Camera c)
     {
-        Debug.Log(c);
         i++;
         string s = $"Cam{i}";
         Cam_Dic.Add(c, s);

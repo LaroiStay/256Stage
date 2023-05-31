@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 922427206062063219}
   - component: {fileID: -8654254291027290226}
   - component: {fileID: -390988484006050630}
+  - component: {fileID: 1090615020188921336}
   m_Layer: 0
   m_Name: Speaker3
   m_TagString: Obj
@@ -273,6 +274,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1090615020188921336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9026501636362824544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9279617, y: 0.33599496, z: 0.5615062}
+  m_Center: {x: -0.004698172, y: 0.1534729, z: 0.015660495}
 --- !u!1 &9026967523083101422
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +396,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30

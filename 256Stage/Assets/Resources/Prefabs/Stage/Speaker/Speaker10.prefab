@@ -169,8 +169,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.8354213, z: 1.27279}
+  m_Center: {x: 0, y: 0.28557765, z: -0.2941022}
 --- !u!1001 &140679830553576373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,6 +179,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (2)
@@ -251,6 +255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (5)
@@ -323,6 +331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5
@@ -395,6 +407,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (6)
@@ -467,6 +483,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (7)
@@ -539,6 +559,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (1)
@@ -611,6 +635,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (3)
@@ -683,6 +711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1524408187998503691}
     m_Modifications:
+    - target: {fileID: 1083869195691808622, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585688466887465560, guid: a07993c967b9d6c48a245783bbe9696f, type: 3}
       propertyPath: m_Name
       value: Speaker5 (4)

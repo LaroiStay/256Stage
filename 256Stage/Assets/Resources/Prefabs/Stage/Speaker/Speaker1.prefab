@@ -101,7 +101,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1.5000001, z: 1}
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: -1571951164158866001}
   - component: {fileID: 53153575184313373}
   - component: {fileID: 5773732830473944991}
+  - component: {fileID: 7521837876066981401}
   m_Layer: 0
   m_Name: Speaker1
   m_TagString: Obj
@@ -466,3 +467,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7521837876066981401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292932071787543689}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.5134408, z: 1}
+  m_Center: {x: 0, y: 0.7701613, z: 0}

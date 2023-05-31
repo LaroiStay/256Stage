@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 2240331112247037025}
   - component: {fileID: 7021553605058271306}
   m_Layer: 9
-  m_Name: Ligth6
+  m_Name: Light6
   m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

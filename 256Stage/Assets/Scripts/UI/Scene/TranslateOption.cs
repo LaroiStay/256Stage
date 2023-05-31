@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using RTG;
 using System.Linq;
@@ -15,11 +16,12 @@ public class TranslateOption : UI_ETC
     List<Gizmo> gizmos = new List<Gizmo>();
     GameObject Currentobj;
     CamOptions CO;
+    HierarchyCanvas HC;
     GameObject tempSaveScreenObj;
     int tempSaveInt;
     string tempSavestring;
     bool flag = true;
-
+    string pattern = @"\d+$";
     private Vector3 PlusVec = new Vector3(0.5f, 0f, 0f);
     Vector3 TempSaveVec;
     Vector3 TempSaveRot;
@@ -209,9 +211,12 @@ public class TranslateOption : UI_ETC
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)&&CurrentObject.selectedCurrentObject != null&&CurrentMode != Define.CurrentClickMode.Base)
         {
             string originalString = CurrentObject.selectedCurrentObject.name;
-            string lastNumberString = originalString.Where(char.IsDigit).Select(c => c.ToString()).LastOrDefault();
+            Match match = Regex.Match(originalString, pattern);
+            string lastNumberString = match.Value;
             tempSaveInt = int.Parse(lastNumberString);
-            tempSavestring = originalString.Substring(0, originalString.Length - 1);
+            string pattern2 = @"^[A-Za-z]+";
+            Match match2 = Regex.Match(originalString, pattern2);
+            tempSavestring = match2.Value;
             TempSaveVec = CurrentObject.selectedCurrentObject.transform.position + PlusVec;
             TempSaveRot = CurrentObject.selectedCurrentObject.transform.eulerAngles;
         }
@@ -220,6 +225,8 @@ public class TranslateOption : UI_ETC
             flag = false;
             if (tempSaveInt == 0)
                 return;
+            if (HC == null)
+                HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();
             GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{tempSavestring}/{tempSavestring}{tempSaveInt}");
             go.transform.position = TempSaveVec;
             go.transform.eulerAngles = TempSaveRot;
@@ -231,6 +238,7 @@ public class TranslateOption : UI_ETC
             var postObjectSpawnAction = new PostObjectSpawnAction(goList);
             postObjectSpawnAction.Execute();
             postObjectSpawnAction.OnRemovedFromUndoRedoStack();
+            HC.Plus30();
         }
         else if(CurrentObject.selectedCurrentObject == null)
         {

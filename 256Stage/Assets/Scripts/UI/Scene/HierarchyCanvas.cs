@@ -171,6 +171,11 @@ public class HierarchyCanvas : UI_ETC
 
            
             GameObject go = Get<Image>((int)Images.RealHierarchyPanel).transform.GetChild(0).gameObject;
+            if (!go.activeSelf)
+            {
+                Destroy(go);
+                continue;
+            }
             go.transform.parent = ObjectsMove.transform;
         }
     }
@@ -352,7 +357,7 @@ public class HierarchyCanvas : UI_ETC
         Get<Image>((int)Images.RoZ).gameObject.SetActive(false);
     }
 
-    public void dkwhwrkxek()
+    public void dkwhwrkxe()
     {
         int ii = 10000;
         Get<Image>((int)Images.Empty).gameObject.transform.SetSiblingIndex(ii);

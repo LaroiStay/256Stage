@@ -54,7 +54,7 @@ public class TranslateOption : UI_ETC
     }
     void TranslateMouseMove()
     {
-
+        Debug.Log(1111);
         SetButtonDefault(Define.CurrentClickMode.Transform);
 
     }
@@ -96,6 +96,9 @@ public class TranslateOption : UI_ETC
     public void SetButtonStateOther(Define.CurrentClickMode ToChangmode, GameObject go)
     {
 
+
+
+
         if (ToChangmode == Define.CurrentClickMode.Base)
         {
             Get<Button>((int)CurrentMode-1).GetComponent<Animator>().Play("anim");
@@ -107,6 +110,7 @@ public class TranslateOption : UI_ETC
             if(CurrentMode == Define.CurrentClickMode.Base)
             {
                 CurrentMode = Define.CurrentClickMode.Transform;
+                Debug.Log(Get<Button>((int)CurrentMode));
                 Get<Button>((int)CurrentMode - 1).GetComponent<Animator>().Play("anim 0");
                 gizmosClear();
                 TG = RTGizmosEngine.Get.CreateObjectMoveGizmo();
@@ -250,6 +254,9 @@ public class TranslateOption : UI_ETC
             if (TG != null)
             TG.RefreshPositionAndRotation();
 
+
+        //Debug.Log(Get<Button>((int)CurrentMode));
+       
     }
 
 

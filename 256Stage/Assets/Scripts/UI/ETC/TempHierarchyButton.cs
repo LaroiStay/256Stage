@@ -59,7 +59,11 @@ public class TempHierarchyButton : UI_Base
     {
         if (CurrentObject.selectedCurrentObject == null)
         {
-            HC.dkwhwrkxek();
+            if (HC == null)
+                HC = FindObjectOfType<HierarchyCanvas>();
+            if (TO == null)
+                TO = FindObjectOfType<TranslateOption>();
+            HC.dkwhwrkxe();
             int k = GetChildIndex(transform.parent.gameObject, this.gameObject);
             CurrentObject.selectedCurrentObject = go;
             HC.GetNum(CurrentObject.selectedCurrentObject, k);
@@ -72,7 +76,11 @@ public class TempHierarchyButton : UI_Base
         }
         else 
         {
-            HC.dkwhwrkxek();
+            if (HC == null)
+                HC = FindObjectOfType<HierarchyCanvas>();
+            if (TO == null)
+                TO = FindObjectOfType<TranslateOption>();
+            HC.dkwhwrkxe();
             TO.SetButtonStateOther(Define.CurrentClickMode.Transform , go);
             int k = GetChildIndex(transform.parent.gameObject, this.gameObject);
             CurrentObject.selectedCurrentObject = go;

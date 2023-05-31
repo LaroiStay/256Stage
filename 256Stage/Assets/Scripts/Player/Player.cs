@@ -38,11 +38,11 @@ public class Player : MonoBehaviour
             Manager.UI_Instance.CloseETCUI<JText>();
             Manager.UI_Instance.CloseETCUI<Mode1Text>();
             Manager.UI_Instance.ShowUI<BasicWindow>();
-            Manager.UI_Instance.ShowUI<HierarchyCanvas>();
             Manager.UI_Instance.ShowUI<TranslateOption>();
             Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
             Manager.UI_Instance.ShowUI<BottomCanvas>();
-            FindObjectOfType<HierarchyCanvas>().ObjectsLoad();
+            Manager.UI_Instance.ShowUI<HierarchyCanvas>().ObjectsLoad();
+            //FindObjectOfType<HierarchyCanvas>().ObjectsLoad();
             Destroy(this.gameObject);
         }
         else if (Input.GetKeyDown(KeyCode.M))

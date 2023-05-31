@@ -30,7 +30,7 @@ public class TopBackgroundCanvas : UI_ETC
         Manuel,
         Manu,
         HomeButton,
-        QuestionButton,
+        //QuestionButton,
 
     }
 
@@ -64,7 +64,7 @@ public class TopBackgroundCanvas : UI_ETC
         Get<Button>((int)Buttons.ExitButton).onClick.AddListener(ExitButtonClick);
         Get<Button>((int)Buttons.Manu).onClick.AddListener(OffMan);
         Get<Button>((int)Buttons.Manuel).onClick.AddListener(OnMan);
-        Get<Button>((int)Buttons.QuestionButton).onClick.AddListener(OnMan);
+        //Get<Button>((int)Buttons.QuestionButton).onClick.AddListener(OnMan);
         Get<Button>((int)Buttons.HomeButton).onClick.AddListener(Home);
         //ES3AutoSave
     }

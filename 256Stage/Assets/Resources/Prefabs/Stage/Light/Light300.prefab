@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 182d4f4ad308f754ea1e106b667a1dc9, type: 3}
       propertyPath: m_Name
-      value: Ligth3
+      value: Light300
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 182d4f4ad308f754ea1e106b667a1dc9, type: 3}
       propertyPath: m_TagString

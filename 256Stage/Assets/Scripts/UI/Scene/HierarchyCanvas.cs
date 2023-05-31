@@ -166,7 +166,7 @@ public class HierarchyCanvas : UI_ETC
     {
         if (Get<Image>((int)Images.RealHierarchyPanel).transform.childCount == 0)
             return;
-
+        AllOn();
         int iii = Get<Image>((int)Images.RealHierarchyPanel).transform.childCount;
         for (int kk = 0; kk< iii; kk++){
 
@@ -181,11 +181,13 @@ public class HierarchyCanvas : UI_ETC
     {
         if (ObjectsMove.transform.childCount == 0)
             return;
+        falsefalse();
         int iii = ObjectsMove.transform.childCount;
         for (int kk = 0; kk < iii; kk++)
         {
             GameObject go = ObjectsMove.transform.GetChild(0).gameObject;
             go.transform.parent = Get<Image>((int)Images.RealHierarchyPanel).transform;
+            Plus30();
         }
     }
 
@@ -254,6 +256,19 @@ public class HierarchyCanvas : UI_ETC
         Get<Image>((int)Images.PosY).gameObject.transform.SetSiblingIndex(k);
         Get<Image>((int)Images.PosX).gameObject.transform.SetSiblingIndex(k);
         Get<Image>((int)Images.PosText).gameObject.transform.SetSiblingIndex(k);
+    }
+
+    public void AllOn()
+    {
+        Get<Image>((int)Images.Empty).gameObject.SetActive(true);
+        Get<Image>((int)Images.PosText).gameObject.SetActive(true);
+        Get<Image>((int)Images.PosX).gameObject.SetActive(true);
+        Get<Image>((int)Images.PosY).gameObject.SetActive(true);
+        Get<Image>((int)Images.PosZ).gameObject.SetActive(true);
+        Get<Image>((int)Images.RoText).gameObject.SetActive(true);
+        Get<Image>((int)Images.RoX).gameObject.SetActive(true);
+        Get<Image>((int)Images.RoY).gameObject.SetActive(true);
+        Get<Image>((int)Images.RoZ).gameObject.SetActive(true);
     }
 
 

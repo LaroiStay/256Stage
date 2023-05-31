@@ -40,13 +40,12 @@ public class TranslateOption : UI_ETC
     void Start()
     {
         Currentobj = GameObject.Find("Plane");
-
         OptionBindThings();
-
         Get<Button>((int)OptionButton.HandIcon).onClick.AddListener(HandMouseMove);
         Get<Button>((int)OptionButton.TranslateIcon).onClick.AddListener(TranslateMouseMove);
         Get<Button>((int)OptionButton.RotationIcon).onClick.AddListener(RotationMouseMove);
         //Get<Button>((int)OptionButton.ScaleIcon).onClick.AddListener(ScaleMouseMove);
+        Debug.Log(Get<Button>((int)OptionButton.RotationIcon));
     }
 
     void HandMouseMove()

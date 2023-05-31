@@ -216,7 +216,7 @@ public class TranslateOption : UI_ETC
             tempSavestring = originalString.Substring(0, originalString.Length - 1);
             TempSaveVec = CurrentObject.selectedCurrentObject.transform.position + PlusVec;
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag && CurrentMode != Define.CurrentClickMode.Base)
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag && CurrentMode != Define.CurrentClickMode.Base && !EventSystem.current.IsPointerOverGameObject())
         {
             flag = false;
             if (tempSaveInt == 0)

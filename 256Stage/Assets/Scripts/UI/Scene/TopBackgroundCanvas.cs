@@ -185,10 +185,6 @@ public class TopBackgroundCanvas : UI_ETC
             return;
       
         List<GameObject> goList = new List<GameObject>();
-        //CurrentObject.HierarchyButtonsDetail.TryGetValue(CurrentObject.selectedCurrentObject, out DeleteValue);
-        // if (DeleteValue == null)
-        //return;
-        //DeleteValue.OnRemovedFromUndoRedoStack();
         GameObject go__ = CurrentObject.selectedCurrentObject;
         goList.Add(value);
         goList.Add(go__);

@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 963731858574458137}
   m_Layer: 9
   m_Name: Light5
-  m_TagString: Light
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

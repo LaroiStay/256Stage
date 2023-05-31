@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
+            Manager.UI_Instance.ShowUI<TranslateOption>();
             TurnOffLight();
             if (CurrentMusicAudioS.audioSourceDic.Count != 0)
                 foreach (var key in CurrentMusicAudioS.audioSourceDic.Keys)
@@ -39,7 +40,6 @@ public class Player : MonoBehaviour
             Manager.UI_Instance.CloseETCUI<Mode1Text>();
             Manager.UI_Instance.ShowUI<BasicWindow>();
             Manager.UI_Instance.ShowUI<HierarchyCanvas>();
-            Manager.UI_Instance.ShowUI<TranslateOption>();
             Manager.UI_Instance.ShowUI<TopBackgroundCanvas>();
             Manager.UI_Instance.ShowUI<BottomCanvas>();
             GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>().ObjectsLoad();

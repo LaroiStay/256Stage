@@ -22,6 +22,7 @@ public class TranslateOption : UI_ETC
 
     private Vector3 PlusVec = new Vector3(0.5f, 0f, 0f);
     Vector3 TempSaveVec;
+    Vector3 TempSaveRot;
 
     enum OptionButton
     {
@@ -208,13 +209,11 @@ public class TranslateOption : UI_ETC
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C)&&CurrentObject.selectedCurrentObject != null&&CurrentMode != Define.CurrentClickMode.Base)
         {
             string originalString = CurrentObject.selectedCurrentObject.name;
-
             string lastNumberString = originalString.Where(char.IsDigit).Select(c => c.ToString()).LastOrDefault();
-
             tempSaveInt = int.Parse(lastNumberString);
-
             tempSavestring = originalString.Substring(0, originalString.Length - 1);
             TempSaveVec = CurrentObject.selectedCurrentObject.transform.position + PlusVec;
+            TempSaveRot = CurrentObject.selectedCurrentObject.transform.eulerAngles;
         }
         else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V)&&flag && CurrentMode != Define.CurrentClickMode.Base && !EventSystem.current.IsPointerOverGameObject())
         {
@@ -223,6 +222,7 @@ public class TranslateOption : UI_ETC
                 return;
             GameObject go = Manager.Resource_Instance.Instantiate($"Stage/{tempSavestring}/{tempSavestring}{tempSaveInt}");
             go.transform.position = TempSaveVec;
+            go.transform.eulerAngles = TempSaveRot;
             TempSaveVec = go.transform.position + PlusVec;
             GameObject go2 = FindObjectOfType<HierarchyCanvas>().PlusPrefabsInHierarchy(tempSavestring, tempSaveInt, go);
             List<GameObject> goList = new List<GameObject>();

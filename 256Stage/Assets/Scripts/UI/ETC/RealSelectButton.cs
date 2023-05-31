@@ -32,7 +32,7 @@ public class RealSelectButton : UI_Base
         }
         else if(name == "Speaker")
         {
-            if(key == 1 || key == 4 || key == 7)
+            if(key == 1 || key == 4 || key == 6 || key == 7)
             {
 
             }

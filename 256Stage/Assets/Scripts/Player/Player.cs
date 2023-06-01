@@ -6,11 +6,11 @@ using System;
 public class Player : MonoBehaviour
 {
 
-    string DancingPath = "Player/DancingGirl";
+    //string DancingPath = "Player/DancingGirl";
     string MusicPath = "Music/";
     Mode1Text Mode;
 
-    public Transform DancingPoint;
+    //public Transform DancingPoint;
 
     private bool isModeImage;
 
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public void Start()
     {
             
-        DancingPoint = transform.Find("DancingPoint");
+        //DancingPoint = transform.Find("DancingPoint");
         Mode = GameObject.Find("Mode1Text").GetComponent<Mode1Text>();
     }
     void Update()
@@ -59,10 +59,10 @@ public class Player : MonoBehaviour
 
             isModeImage = !isModeImage;
         }
-        else if (Input.GetKeyDown(KeyCode.P))
+        /*else if (Input.GetKeyDown(KeyCode.P))
         {
             Manager.Resource_Instance.Instantiate(DancingPath).transform.position = DancingPoint.transform.position;
-        }
+        }*/
         else if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             MusicOn(1);
         else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))

@@ -23,16 +23,12 @@ public class TopBackgroundCanvas : UI_ETC
     {
         RedoButton,
         UndoButton,
-        //FileButton,
-        //EditButton,
         TrashButton,
         SaveButton,
         ExitButton,
         Manuel,
         Manu,
         HomeButton,
-        //QuestionButton,
-
     }
 
     private void Start()
@@ -171,7 +167,7 @@ public class TopBackgroundCanvas : UI_ETC
 
 
 
-    void TrashButtonFunc()
+    public void TrashButtonFunc()
     {
         if (HC == null)
             HC = GameObject.Find("HierarchyCanvas").GetComponent<HierarchyCanvas>();

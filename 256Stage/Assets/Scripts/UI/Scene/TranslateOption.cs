@@ -246,6 +246,11 @@ public class TranslateOption : UI_ETC
             tempSaveInt = 0;
             tempSavestring = "";
         }
+        else if(CurrentObject.selectedCurrentObject != null && Input.GetKey(KeyCode.Delete))
+        {
+            TopBackgroundCanvas TB = FindObjectOfType<TopBackgroundCanvas>();
+            TB.TrashButtonFunc();
+        }
         else
         {
             flag = true;

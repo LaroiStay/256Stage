@@ -13,6 +13,7 @@ public class TopBackgroundCanvas : UI_ETC
     CamOptions CO = null;
     HierarchyCanvas HC;
     private bool flag = true;
+    private bool IEnumFlag = true;
     enum Panels
     {
         FilePanel,
@@ -73,6 +74,8 @@ public class TopBackgroundCanvas : UI_ETC
 
     void SaveFuc()
     {
+        StopAllCoroutines();
+        StartCoroutine(SaveButtonClick());
         List<GameObject> activeChildren = new List<GameObject>();
         List<TempHierarchyButton> ActiveTempHier = new List<TempHierarchyButton>();
         List<int> KeySBundle = new List<int>();
@@ -250,9 +253,17 @@ public class TopBackgroundCanvas : UI_ETC
         CurrentScene = i;
     }
 
-    
+    IEnumerator SaveButtonClick()
+    {
+        if (FindObjectOfType<SaveCanvas>()!=null)
+            Manager.UI_Instance.CloseETCUI<SaveCanvas>();
+        Manager.UI_Instance.ShowUI<SaveCanvas>();
+        yield return new WaitForSeconds(1f);
+        Manager.UI_Instance.CloseETCUI<SaveCanvas>();
 
-    
+    }
+
+
 
 
 

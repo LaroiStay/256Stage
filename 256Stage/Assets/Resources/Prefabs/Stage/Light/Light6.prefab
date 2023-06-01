@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 2240331112247037025}
   - component: {fileID: 7021553605058271306}
   - component: {fileID: 5120653846988926030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light6
   m_TagString: Obj
   m_Icon: {fileID: 0}

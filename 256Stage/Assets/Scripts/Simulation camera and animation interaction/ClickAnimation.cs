@@ -21,10 +21,10 @@ public class ClickAnimation : MonoBehaviour
         {
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactionDistance, interactableLayer))
             {
+                Debug.Log("good");
                 Animator animator = hit.collider.gameObject.GetComponent<Animator>();
                 if (animator != null)
                 {
-                    // Animator의 상태를 반전합니다.
                     animator.enabled = !animator.enabled;
                 }
             }

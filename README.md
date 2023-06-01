@@ -1,6 +1,5 @@
 # **[Make Some Noise]**
 팀256Stage
-<br/>(팀장: 권현우1871018, 팀원:김수연1971534, 이수빈1971520, 윤유로1971067 )
 ___
 
 + 작품개요
@@ -27,12 +26,12 @@ ___
 ![KakaoTalk_20230601_160145448](https://github.com/LaroiStay/256Stage/assets/124904435/5c8b3901-c539-4466-a843-9bba5984a9a5)
 <br/>새로운 프로젝트를 생성하고, 진행중인 프로젝트를 확인할 수 있으며, 만들어진 프로젝트를 삭제할 수 있다.
 
-<br/>
+<br/><br/>
 **무대 선택 화면**
 ![KakaoTalk_20230601_160145448_01](https://github.com/LaroiStay/256Stage/assets/124904435/58747b45-7ffc-41fc-b103-be2005e7a1be)
 <br/>돌출형, 기본형, 원형 무대 중 한가지를 선택할 수 있다.
 
-<br/>
+<br/><br/>
 **무대 제작 화면**
 ![KakaoTalk_20230601_160145448_02](https://github.com/LaroiStay/256Stage/assets/124904435/479c33ee-1d32-48cd-8671-e0f30640825c)
 

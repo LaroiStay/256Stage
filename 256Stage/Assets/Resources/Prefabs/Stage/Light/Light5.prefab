@@ -293,8 +293,8 @@ GameObject:
   - component: {fileID: 5582720548984408169}
   - component: {fileID: 5582720548991631135}
   - component: {fileID: 8985624130204462794}
-  - component: {fileID: 8549865531070448972}
   - component: {fileID: 963731858574458137}
+  - component: {fileID: 3494538515766489849}
   m_Layer: 9
   m_Name: Light5
   m_TagString: Obj
@@ -354,39 +354,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 0.5231766, z: 0.43759325}
   m_Center: {x: 0.012226343, y: 0.2384117, z: -0.008150712}
---- !u!54 &8549865531070448972
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582720548984078553}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &963731858574458137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +370,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d5096b29cfbe542b69608a4b700917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3494538515766489849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582720548984078553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14423c95ceed6478eeafe68b1aa817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5582720548984078619

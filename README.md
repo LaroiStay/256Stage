@@ -2,7 +2,7 @@
 ### 팀256Stage
 <br/>(팀장: 권현우1871018, 팀원:김수연1971534, 이수빈1971520, 윤유로1971067
 ___
-+작품 발표영상
++ 작품 발표영상
 ![image](https://github.com/LaroiStay/256Stage/assets/124904435/d15071e6-43ac-458e-ba3f-f8f1630f64c6)
 <br/>https://www.youtube.com/watch?v=6RZjxTnCYSw
 ___
